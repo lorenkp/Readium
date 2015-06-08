@@ -1,7 +1,5 @@
 # Readium
 
-[link here ...]
-
 ## Minimum Viable Product
 Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do the following:
 
@@ -9,13 +7,12 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 
 - [ ] Create an account
 - [ ] Create a session (log in)
-- [ ] View a feed of stories after logging in
-- [ ] Compose a story from home page
-- [ ] Upload photos, style text
-- [ ] Filter stories based on tag by clicking on sidebar
-- [ ] User profile pages (stories written, bookmarked, recommended)
+- [ ] View a feed of stories on home page
+- [ ] Compose a story from home page, featuring styling of text and photo uploads
+- [ ] Select a tag from sidebar to view stories with that tag
 - [ ] Follow other users
-- [ ] Bookmark story
+- [ ] View own and other users' profile pages (stories written, bookmarked, recommended by user; following, followers)
+- [ ] Bookmark a story
 - [ ] Write responses to stories
 
 ## Design Docs
@@ -29,7 +26,7 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 
 ### Phase 1: User Authentication, Story creation (~2 day)
 
-Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone index view. Create Backbone post-form view making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
+Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
 
 [Details][phase-one]
 
@@ -51,8 +48,8 @@ Modify Rails API to support user pages. Backbone view will have avatar, info suc
 
 [Details][phase-four]
 
-### Phase 5: Creation of toggle-able custom feed on index page (~1 days)
-Selectable view on index page to see stories bookmarked, stories from followed authors.
+### Phase 5: Creation of toggle-able custom feed on index page, write responses (~1 days)
+Tabbed view on index page to see stories bookmarked, and stories from followed authors. Write responses to stories.
 
 [Details][phase-five]
 

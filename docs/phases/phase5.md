@@ -6,17 +6,21 @@
 ### Controllers
 * Api::Bookmarks(index)
 * Api::PostsController (search)
+* Api::Responses(create, edit, show, destroy)
 
 ### Views
-* bookmarks/index.show.jbuilder
+* responses/show.json.jbuilder
 
 ## Backbone
 ### Models
+* Response
 
 ### Collections
+* Responses
 
 ### Views
 * CustomFeed
+* ResponseShow (nested in StoriesShow)
 
 ## Gems/Libraries
 
