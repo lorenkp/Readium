@@ -72,4 +72,3 @@ Tabbed view on index page to see stories bookmarked, and stories from followed u
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
