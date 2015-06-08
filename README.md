@@ -24,14 +24,16 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Story creation (~2 day)
+### Phase 1: User Authentication, Story creation (~2 days)
+
+Create log in page and user authentication.
 
 Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
 
 [Details][phase-one]
 
 ### Phase 2: View story page (~2 days)
-Create Backbone view for story page. Edit functionality for author.
+Create Backbone view for story page. Give edit functionality on this page for the author.
 
 
 [Details][phase-two]
@@ -44,12 +46,12 @@ Set up Rails API to support tagging of stories. Modify index view to display sid
 [Details][phase-three]
 
 ### Phase 4: User profile, interaction of users (2 days)
-Modify Rails API to support user pages. Backbone view will have avatar, info such as followers, following, stories written. If not story creator, story view will have button to follow author. Index page will have button for bookmarking story.
+Modify Rails API to support user pages. Backbone view will have an avatar, info such as followers, following, and stories written. If not story creator, story view will have button to follow author. Index page will have button for bookmarking story.
 
 [Details][phase-four]
 
-### Phase 5: Creation of toggle-able custom feed on index page, write responses (~1 days)
-Tabbed view on index page to see stories bookmarked, and stories from followed authors. Write responses to stories.
+### Phase 5: Creation of toggle-able custom feed on index page, write responses (~1 day)
+Tabbed view on index page to see stories bookmarked, and stories from followed authors. Make ability to write responses to stories.
 
 [Details][phase-five]
 
@@ -57,7 +59,7 @@ Tabbed view on index page to see stories bookmarked, and stories from followed a
 - [ ] Style composition's image uploader to better imitate Medium's
 - [ ] Search by keyword
 - [ ] Follow a tag
-- [ ] Create/own publication, invite other users to edit
+- [ ] Create/own publication; invite other users to edit
 - [ ] Drafts page
 - [ ] Leave notes on sections of stories
 

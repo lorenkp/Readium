@@ -19,7 +19,7 @@
 ![user-story-index]
 
 
-[log-in]: ./wireframes/new_session.png
+[log-in]: ./wireframes/log_in.png
 [index]: ./wireframes/index.png
 [story-view]: ./wireframes/story_view.png
 [user-profile]: ./wireframes/user_profile.png
