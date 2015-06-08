@@ -3,6 +3,7 @@
 ## Rails
 ### Models
 * Api::TagsController(create, index, show)
+* Api::TaggingsController(create, destroy, show)
 
 ### Controllers
 

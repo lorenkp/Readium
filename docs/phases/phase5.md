@@ -4,9 +4,9 @@
 ### Models
 
 ### Controllers
-* Api::Bookmarks(index)
+* Api::BookmarksController(index)
 * Api::PostsController (search)
-* Api::Responses(create, edit, show, destroy)
+* Api::ResponsesController(create, edit, show, destroy)
 
 ### Views
 * responses/show.json.jbuilder

@@ -3,15 +3,14 @@
 ## Minimum Viable Product
 Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do the following:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Create a session (log in)
 - [ ] View a feed of stories on home page
-- [ ] Compose a story from home page, featuring styling of text and photo uploads
+- [ ] Compose a story from home page, with styling of text and photo uploading
 - [ ] Select a tag from sidebar to view stories with that tag
 - [ ] Follow other users
-- [ ] View own and other users' profile pages (stories written, bookmarked, recommended by user; following, followers)
+- [ ] View own and other users' profile pages (stories written, bookmarked, recommended by user; followed users, and followers)
 - [ ] Bookmark a story
 - [ ] Write responses to stories
 
@@ -28,7 +27,7 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 
 Create log in page and user authentication.
 
-Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
+Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view, making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
 
 [Details][phase-one]
 
@@ -46,7 +45,11 @@ Set up Rails API to support tagging of stories. Modify index view to display sid
 [Details][phase-three]
 
 ### Phase 4: User profile, interaction of users (2 days)
-Modify Rails API to support user pages. Backbone view will have an avatar, info such as followers, following, and stories written. If not story creator, story view will have button to follow author. Index page will have button for bookmarking story.
+Modify Rails API to support user pages. Backbone view will have an avatar, and info such as followers, followed users, and stories written. 
+
+If not the story creator, story view will have button to follow the author. 
+
+Index page will have button for bookmarking a story.
 
 [Details][phase-four]
 

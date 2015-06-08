@@ -5,8 +5,8 @@
 
 ### Controllers
 * Api::UsersController(show)
-* Api::FollowsController(create, destroy)
-* Api::Bookmarks(create, destroy, show)
+* Api::FollowingsController(create, destroy)
+* Api::BookmarksController(create, destroy, show)
 
 ### Views
 * users/show.json.jbuilder

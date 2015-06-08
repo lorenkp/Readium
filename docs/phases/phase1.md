@@ -5,7 +5,6 @@
 * User
 * Session
 * Story
-* Post
 
 ### Controllers
 * Api::UsersController (create, new)
