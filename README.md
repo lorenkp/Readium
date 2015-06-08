@@ -10,7 +10,7 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 - [ ] Compose a story from home page, with styling of text and photo uploading
 - [ ] Select a tag from sidebar to view stories with that tag
 - [ ] Follow other users
-- [ ] View own and other users' profile pages (stories written, bookmarked, recommended by user; followed users, and followers)
+- [ ] View own and other users' profile pages (stories written, bookmarked, and recommended by user; followed users, and followers)
 - [ ] Bookmark a story
 - [ ] Write responses to stories
 
@@ -25,7 +25,7 @@ Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do 
 
 ### Phase 1: User Authentication, Story creation (~2 days)
 
-Create log in page and user authentication.
+Create log in page and implement user authentication.
 
 Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view, making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
 
@@ -44,7 +44,7 @@ Set up Rails API to support tagging of stories. Modify index view to display sid
 
 [Details][phase-three]
 
-### Phase 4: User profile, interaction of users (2 days)
+### Phase 4: User profile, interaction with other users (~2 days)
 Modify Rails API to support user pages. Backbone view will have an avatar, and info such as followers, followed users, and stories written. 
 
 If not the story creator, story view will have button to follow the author. 
@@ -53,8 +53,8 @@ Index page will have button for bookmarking a story.
 
 [Details][phase-four]
 
-### Phase 5: Creation of toggle-able custom feed on index page, write responses (~1 day)
-Tabbed view on index page to see stories bookmarked, and stories from followed authors. Make ability to write responses to stories.
+### Phase 5: Creation of toggle-able custom feed on index page; write responses (~1 day)
+Tabbed view on index page to see stories bookmarked, and stories from followed users. Make ability to write responses to stories.
 
 [Details][phase-five]
 

@@ -4,8 +4,8 @@
 ### Models
 
 ### Controllers
-Api:: StoriesController (edit, destroy)
-Api::PostsController (create, destroy, show, update)
+* Api:: StoriesController (edit, destroy)
+* Api::PostsController (create, destroy, show, update)
 
 ### Views
 * stories/show.json.jbuilder
