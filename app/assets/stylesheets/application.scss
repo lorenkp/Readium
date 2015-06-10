@@ -23,6 +23,11 @@
   src: url(/assets/clarenbd.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'freight';
+  src: url(/assets/freight.ttf) format('truetype');
+}
+
 .sign-in {
   font-family: clarendon;
   text-align: center;
@@ -42,5 +47,19 @@
 .navbar-default {
   background-color: white;
   border-color: white;
+}
+
+.article {
+  font-family: freight;
+  font-size: 22px;
+}
+
+.row {
+  width: 700px;
+  margin: auto;
+}
+
+.article p {
+  margin-bottom: 30px;
 }
 

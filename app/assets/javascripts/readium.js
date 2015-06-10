@@ -13,7 +13,3 @@ window.Readium = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Readium.initialize();
-});
