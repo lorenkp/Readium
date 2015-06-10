@@ -19,4 +19,4 @@ Readium.Collections.Stories = Backbone.Collection.extend({
 
     return story;
   }
-})
+});

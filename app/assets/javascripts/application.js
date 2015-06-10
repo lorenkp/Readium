@@ -19,6 +19,7 @@
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
+//= require composite_view
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
