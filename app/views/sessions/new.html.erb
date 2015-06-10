@@ -1,0 +1,23 @@
+<h1 class="sign-in">Readium</h1>
+
+  
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+
+    <div id="login-fields">
+      
+  <input type="text" class="cred-fields" name="user[username]" value="<%= @user.username %>" placeholder="Username">
+  </label>
+  <br>
+
+  <input type="password" name="user[password]" class="cred-fields" placeholder="Password">
+  <br>
+  <br>
+
+  <input type="submit" value="Log In">
+    </div>
+
+
+
+</form>

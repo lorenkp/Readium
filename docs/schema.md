@@ -29,7 +29,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
-stories_id  | integer   | not null, foreign key (references stories)
+story_id  | integer   | not null, foreign key (references stories)
 body        | text      | not null
 
 ## tags
@@ -42,7 +42,7 @@ label       | string    | not null, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references stories)
+story_id     | integer   | not null, foreign key (references stories)
 tag_id      | integer   | not null, foreign key (references tags)
 
 ## users

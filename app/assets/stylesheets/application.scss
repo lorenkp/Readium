@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+@font-face {
+  font-family: 'clarendon';
+  src: url(/assets/clarenbd.ttf) format('truetype');
+}
+
+.sign-in {
+  font-family: clarendon;
+  text-align: center;
+  padding-top: 250px;
+  font-size: 68px;
+}
+
+#login-fields {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.cred-fields {
+  width: 250px;
+}
+
+.navbar-default {
+  background-color: white;
+  border-color: white;
+}
+
