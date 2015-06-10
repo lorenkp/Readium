@@ -1,2 +1,17 @@
+# == Schema Information
+#
+# Table name: stories
+#
+#  id         :integer          not null, primary key
+#  author_id  :integer          not null
+#  title      :string           not null
+#  subtitle   :string
+#  body       :text             not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Story < ActiveRecord::Base
+  validates :title, :body, presence: true
+  belongs_to :user, foreign_key: :author_id
 end
