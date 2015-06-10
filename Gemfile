@@ -25,6 +25,8 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 
 gem 'backbone-on-rails'
+
+gem 'jbuilder'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
