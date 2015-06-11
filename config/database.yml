@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: Readium_production
-  username: Readium
-  password: <%= ENV['READIUM_DATABASE_PASSWORD'] %>

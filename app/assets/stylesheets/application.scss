@@ -18,6 +18,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+a, u {
+    text-decoration: none;
+}
 
 @font-face {
   font-family: 'clarendon';
@@ -47,7 +50,9 @@
 
 .navbar-default {
   background-color: white;
-  border-color: white;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
+  border-bottom-style: solid;
+  border-bottom: 1px;
 }
 
 .article {
@@ -109,5 +114,25 @@
 .main-feed {
   width: auto;
   margin-right: 400px;
+}
+
+.single-column {
+  width: 580px;
+  margin: auto;
+}
+
+.story-feed {
+  font-family: freight;
+}
+
+.story-title {
+  font-size: 28px;
+  font-family: 'Lucida Grande';
+  font-weight: bold;
+}
+
+.story-preview-text {
+  font-family: 'freight';
+  font-size: 18px;
 }
 

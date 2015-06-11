@@ -11,6 +11,7 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   home: function() {
+    this.storiesCollection.fetch()
     var createStoryHome = new Readium.Models.Story();
     var view = new Readium.Views.Home({
       collection: this.storiesCollection,
