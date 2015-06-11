@@ -25,8 +25,10 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 
 gem 'backbone-on-rails'
+gem 'newrelic_rpm'
 
 gem 'jbuilder'
+gem 'filepicker-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
