@@ -6,7 +6,15 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   },
 
   postStory: function() {
-    this.collection.create({body: this.$('.editable').html()});
+    var story = new Readium.Models.Story();
+    story.set({body: this.$('.editable').html()});
+    var that = this;
+    story.save({}, {
+      success: function(story) {
+        that.collection.add(story);
+        that.render();
+      }
+    });
   },
 
   remove: function() {

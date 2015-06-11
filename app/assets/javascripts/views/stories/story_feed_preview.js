@@ -8,5 +8,13 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  shortenLength: function shorten(text, maxLength) {
+    var ret = text;
+    if (ret.length > maxLength) {
+        ret = ret.substr(0,maxLength-3) + '...';
+    }
+    return ret;
   }
 });

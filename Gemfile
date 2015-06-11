@@ -15,6 +15,7 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'jbuilder'
 gem 'filepicker-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'

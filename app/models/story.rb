@@ -12,6 +12,6 @@
 #
 
 class Story < ActiveRecord::Base
-  validates :title, :body, presence: true
+  validates :body, presence: true
   belongs_to :author, foreign_key: :author_id, class_name: 'User'
 end

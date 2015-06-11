@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610035037) do
+ActiveRecord::Schema.define(version: 20150611223344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
     t.integer  "author_id",  null: false
-    t.string   "title",      null: false
+    t.string   "title"
     t.string   "subtitle"
     t.text     "body",       null: false
     t.datetime "created_at", null: false
