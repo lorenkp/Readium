@@ -5,6 +5,9 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'remove sync', this.render);
     this.collection.each(this.addStoryFeedPreview.bind(this));
     this.listenTo(this.collection, 'add', this.addStoryFeedPreview);
+    this.addSubview('.compose', new Readium.Views.ComposeHome({
+      collection: this.collection
+    }));
   },
 
   addStoryFeedPreview: function(story) {

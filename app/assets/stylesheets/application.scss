@@ -18,8 +18,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-a, u {
-    text-decoration: none;
+a {
+    text-decoration: none !important;
+    color:inherit;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: inherit;
 }
 
 @font-face {
@@ -100,7 +106,7 @@ a, u {
   margin-top: 5px;
 }
 
-.editable.home {
+.editable.compose-home {
   height: 160px;
   width: 580px;
   margin: auto;
@@ -134,5 +140,11 @@ a, u {
 .story-preview-text {
   font-family: 'freight';
   font-size: 18px;
+  height: 500px;
+}
+
+.medium-editor-placeholder {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.298039);
 }
 
