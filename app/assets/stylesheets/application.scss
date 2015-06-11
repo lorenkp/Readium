@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require medium-editor/medium-editor.min.css
  */
 
  @import "bootstrap-sprockets";
@@ -92,5 +93,21 @@
 
 .navbar-right {
   margin-top: 5px;
+}
+
+.editable.home {
+  height: 160px;
+  width: 580px;
+  margin: auto;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
+  font-family: freight;
+  font-size: 18px;
+}
+
+.main-feed {
+  width: auto;
+  margin-right: 400px;
 }
 

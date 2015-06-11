@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       render :new
     else
       log_in(@user)
-      render text: 'logged in'
+      redirect_to root_url
     end
   end
 

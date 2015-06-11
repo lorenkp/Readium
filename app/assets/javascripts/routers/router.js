@@ -5,12 +5,27 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    '': 'home',
     'stories/new': 'newStory',
     'stories/:id': 'storyShow'
   },
 
+  home: function() {
+    var createStoryHome = new Readium.Models.Story();
+    var view = new Readium.Views.Home({
+      collection: this.storiesCollection,
+      model: createStoryHome
+    });
+    this._swapView(view);
+  },
+
   newStory: function() {
-    var story = new Readium.Models.Story();
+    var createStoryNew = new Readium.Models.Story();
+    var view = new Readium.Views.StoryNew({
+      collection: this.storiesCollection,
+      model: createStoryNew
+    });
+    this._swapView(view)
   },
 
   storyShow: function(id) {
@@ -26,5 +41,4 @@ Readium.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
   }
-
 });

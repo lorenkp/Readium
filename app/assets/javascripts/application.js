@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require readium
+//= require medium-editor.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
