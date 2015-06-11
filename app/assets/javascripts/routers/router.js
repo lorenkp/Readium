@@ -5,7 +5,12 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    'stories/new': 'newStory',
     'stories/:id': 'storyShow'
+  },
+
+  newStory: function() {
+    var story = new Readium.Models.Story();
   },
 
   storyShow: function(id) {
