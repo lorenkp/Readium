@@ -1,7 +1,6 @@
 Readium.Views.ComposeHome = Backbone.View.extend({
   
   initialize: function() {
-    console.log('render');
     var story = new Readium.Models.Story();
     this.story = story;
   },
@@ -19,6 +18,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
+        debugger
         that.refreshView();
       }
     });

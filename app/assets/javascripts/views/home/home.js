@@ -19,6 +19,7 @@ Readium.Views.Home = Backbone.CompositeView.extend({
   },
 
   addStoryFeedPreview: function(story) {
+    story.fetch();
     var view = new Readium.Views.StoryFeedPreview({
       model: story
     });

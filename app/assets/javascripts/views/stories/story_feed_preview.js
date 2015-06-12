@@ -6,6 +6,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     var text = this.model.get('body');
     var previewLength = this.model.previewLength(text);
     this.model.set({body: previewLength});
+    debugger
   },
 
   render: function() {
@@ -14,13 +15,5 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     return this;
-  },
-
-  // shortenLength: function(text, maxLength) {
-  //   var ret = text;
-  //   if (ret.length > maxLength) {
-  //       ret = ret.substr(0,maxLength-3) + '...';
-  //   }
-  //   return ret;
-  // }
+  }
 });

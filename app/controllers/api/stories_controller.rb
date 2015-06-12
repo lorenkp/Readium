@@ -34,6 +34,6 @@ class Api::StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :subtitle, :body)
+    params.require(:story).permit(:title, :subtitle, :body, :header_url, :home_url)
   end
 end
