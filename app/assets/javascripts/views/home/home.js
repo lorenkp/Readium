@@ -24,12 +24,14 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     this.addSubview('.story-feed', view, true);
   },
 
-  addTag: function() {
-
+  addTag: function(tag) {
+    var view = new Readium.Views.HomeTag({
+      model: tag
+    });
+    this.addSubview('.tag-feed', view);
   },
 
   addStoryFeedPreview: function(story) {
-    story.fetch();
     var view = new Readium.Views.StoryFeedPreview({
       model: story
     });
