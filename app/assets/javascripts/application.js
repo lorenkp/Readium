@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//=require cloudinary
 //= require readium
 //= require medium-editor.min.js
 //= require_tree ../templates
