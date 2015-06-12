@@ -3,26 +3,30 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   initialize: function() {
     console.log('render');
     var story = new Readium.Models.Story();
+    this.story = story;
   },
 
   template: JST['home/compose_home'],
 
   events: {
-    'click button': 'postStory',
+    'click .post': 'postStory',
     'click .upload-image': 'uploadImage'
   },
 
   postStory: function() {
-    var story = new Readium.Models.Story()
-    story.set({body: this.$('.editable').html()});
+    this.story.set({body: this.$('.editable').html()});
     var that = this;
-    story.save({}, {
+    this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
-        console.log('rendering');
-        that.render();
+        that.refreshView();
       }
     });
+  },
+
+  refreshView: function() {
+    this.render();
+    this.story = new Readium.Models.Story();
   },
 
   remove: function() {
@@ -46,7 +50,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
-      that.model.set({header_url: data.url, home_url: data.thumbnail_url});
+      that.story.set({header_url: data.url, home_url: data.thumbnail_url});
     });
   }
 });
