@@ -16,6 +16,7 @@ gem 'newrelic_rpm'
 gem 'jbuilder'
 gem 'filepicker-rails'
 gem 'figaro'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug'

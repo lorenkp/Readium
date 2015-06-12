@@ -147,3 +147,27 @@ a:hover {
   color: rgba(0, 0, 0, 0.298039);
 }
 
+.storyPreview {
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
+}
+
+*:focus {
+    outline: 0;
+}
+
+.story-header-img {
+  width: 100%;
+}
+
+div.overlay {
+    opacity: .9;
+    background-color: black;
+    position: absolute;
+    left: 0; top: 0; height: 256px; width: 256px;
+}
+
+#container {
+    position: relative;
+}

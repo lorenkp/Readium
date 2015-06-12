@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Story.create(body: <<-HTML, title: 'Pope Creates Tribunal for Bishop Negligence in Child Sexual Abuse Cases', author_id: 1)
+Story.create(body: <<-HTML, title: 'Pope Creates Tribunal for Bishop Negligence in Child Sexual Abuse Cases', author_id: 1, header_url: 'https://d262ilb51hltx0.cloudfront.net/max/2000/1*No3f1EMoENLyr7A6r_Vupg.jpeg')
 <p>The creation of the tribunal now marks a significant step in holding bishops accountable for the abuses of priests under their charge. Francis’s predecessor, Benedict, reorganized and streamlined the Vatican’s procedures for dealing with priests accused of abuse, but action was slow to come. The move by Francis becomes part of what has been a far more frontal, public and assertive stance in addressing an unseemly legacy for the church.</p>
 <p>The church has procedures for judging priests accused of abuse, but until now bishops accused of negligence or cover-ups were almost never held accountable by the church itself.</p>
 <p>In announcing the step, the Vatican’s chief spokesman, the Rev. Federico Lombardi, stressed that the tribunal’s responsibilities would include questions of omission. “What one should have done and didn’t do,” he said. “This is another kind of responsibility, and shortcoming, and has to be judged in an appropriate way with appropriate rules.”</p>
@@ -20,3 +20,5 @@ Story.create(body: <<-HTML, title: 'Pope Creates Tribunal for Bishop Negligence 
 <p>A special new judicial section will be created within the Congregation for the Doctrine of the Faith “to judge bishops with regard to crimes of the abuse of office when connected to the abuse of minors,” a Vatican statement said.</p>
 <p>The procedures were proposed by a commission that Francis appointed early in his papacy to examine “best practices” for dealing with sexual abuse and suggest reforms. The group, called the Pontifical Commission for the Protection of Minors, includes victims of abuse by priests.</p>
 HTML
+
+User.create(username: 'Loren', password: 'lauren');

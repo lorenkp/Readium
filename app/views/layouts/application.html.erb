@@ -5,11 +5,13 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <!-- <script src="http://widget.cloudinary.com/global/all.js" type="text/javascript" charset="utf-8"></script> -->
 
   <script type="text/javascript" charset="utf-8">
     window.CLOUDINARY_OPTIONS = {
       cloud_name: "<%=ENV['CLOUD_NAME']%>",
-      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
+      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
+      theme: 'minimal',
     };
   </script>
 
