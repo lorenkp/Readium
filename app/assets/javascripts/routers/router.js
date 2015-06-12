@@ -26,7 +26,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       collection: this.storiesCollection,
       model: createStoryNew
     });
-    this._swapView(view)
+    this._swapView(view);
   },
 
   storyShow: function(id) {

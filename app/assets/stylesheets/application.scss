@@ -171,3 +171,33 @@ div.overlay {
 #container {
     position: relative;
 }
+
+// .editable.editor-title.medium-edit-placeholder {
+//   color: rgba(0, 0, 0, 0.298039);
+//   font-size: 36px;
+//   font-family: 'Lucida Grande';
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
+.editable.editor-title {
+  font-family: 'Lucida Grande';
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 4px;
+}
+
+.medium-editor-placeholder:after {
+  font-style: normal !important;
+}
+
+.title-body-container {
+  max-width: 700px;
+  margin: auto;
+  padding-top: 75px
+}
+
+.editable.editor-body {
+  font-family: freight;
+  font-size: 22px;
+}

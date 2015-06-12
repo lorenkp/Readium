@@ -6,7 +6,6 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     var text = this.model.get('body');
     var previewLength = this.model.previewLength(text);
     this.model.set({body: previewLength});
-    debugger
   },
 
   render: function() {
