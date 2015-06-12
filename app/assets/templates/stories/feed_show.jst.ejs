@@ -1,6 +1,6 @@
 <a href="#stories/<%= story.get('id') %>">
-<% if (story.escape('header_url')) { %>
-  <img style="width:100%;" src="<%= story.escape('header_url') %>"/>
+<% if (story.escape('home_url')) { %>
+  <img style="width:100%;" src="<%= story.get('home_url') %>"/>
 <% }  %>
 <div class="story-title">
   <%= story.get('title')  %>

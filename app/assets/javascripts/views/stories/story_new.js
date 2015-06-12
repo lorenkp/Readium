@@ -43,8 +43,9 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     var that = this;
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+      debugger
       var data = result[0];
-      that.story.set({header_url: data.url, home_url: data.thumbnail_url});
+      that.story.set({header_url: data.secure_url, home_url: data.thumbnail_url});
     });
   }
   
