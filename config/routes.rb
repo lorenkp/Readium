@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :api do
+  get 'tags/show'
+  end
+
+  namespace :api do
+  get 'tags/index'
+  end
+
+  namespace :api do
+  get 'tags/create'
+  end
+
+  namespace :api do
+  get 'tags/destroy'
+  end
+
   root 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do
@@ -7,20 +23,4 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session
-
-  # namespace :api do
-  # get 'stories/create'
-  # end
-
-  # namespace :api do
-  # get 'stories/new'
-  # end
-
-  # namespace :api do
-  # get 'stories/show'
-  # end
-
-  # namespace :api do
-  # get 'stories/index'
-  # end
 end
