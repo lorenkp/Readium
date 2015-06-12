@@ -21,4 +21,6 @@ Story.create(body: <<-HTML, title: 'Pope Creates Tribunal for Bishop Negligence 
 <p>The procedures were proposed by a commission that Francis appointed early in his papacy to examine “best practices” for dealing with sexual abuse and suggest reforms. The group, called the Pontifical Commission for the Protection of Minors, includes victims of abuse by priests.</p>
 HTML
 
-User.create(username: 'Loren', password: 'lauren');
+User.create(username: 'Loren', password: 'lauren')
+Tag.create(name: 'tubular')
+Tagging.create(story_id: 1, tag_id: 1)

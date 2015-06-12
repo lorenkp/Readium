@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'taggings/create'
+
+  get 'taggings/destroy'
+
   namespace :api do
   get 'tags/show'
   end

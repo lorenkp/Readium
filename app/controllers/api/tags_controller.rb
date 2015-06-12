@@ -1,13 +1,20 @@
 class Api::TagsController < ApplicationController
-  def show
+  def create
+  end
+
+  def destroy
   end
 
   def index
   end
 
-  def create
+  def show
+    @tag = Tag
   end
 
-  def destroy
+  private
+
+  def tag_params
+    params.require(:tag).permit(:name)
   end
 end
