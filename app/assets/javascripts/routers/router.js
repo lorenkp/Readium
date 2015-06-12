@@ -2,6 +2,7 @@ Readium.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     this.storiesCollection = options.storiesCollection;
+    this.tagsCollection = options.tagsCollection;
   },
 
   routes: {
@@ -11,10 +12,10 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   home: function() {
-    this.storiesCollection.fetch()
+    this.storiesCollection.fetch();
     var createStoryHome = new Readium.Models.Story();
     var view = new Readium.Views.Home({
-      collection: this.storiesCollection,
+      storiesCollection: this.storiesCollection,
       model: createStoryHome
     });
     this._swapView(view);

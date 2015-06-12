@@ -1,13 +1,14 @@
 Readium.Views.Home = Backbone.CompositeView.extend({
   template: JST['home/home'],
 
-  initialize: function() {
-    this.listenTo(this.collection, 'remove sync', this.render);
+  initialize: function(options) {
+    this.storiesCollection = options.storiesCollection;
+    this.listenTo(this.storiesCollection, 'remove sync', this.render);
     $('.write-button').one('click', this.navigateToStoryNew);
-    this.collection.each(this.addStoryFeedPreview.bind(this));
-    this.listenTo(this.collection, 'add', this.addNewStoryFeedPreview);
+    this.storiesCollection.each(this.addStoryFeedPreview.bind(this));
+    this.listenTo(this.storiesCollection, 'add', this.addNewStoryFeedPreview);
     this.addSubview('.compose', new Readium.Views.ComposeHome({
-      collection: this.collection,
+      collection: this.storiesCollection,
     }));
   },
 
