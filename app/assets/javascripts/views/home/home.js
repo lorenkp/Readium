@@ -1,6 +1,6 @@
 Readium.Views.Home = Backbone.CompositeView.extend({
   template: JST['home/home'],
-  className: 'main-feed',
+  // className: 'main-feed',
 
   initialize: function(options) {
     this.storiesCollection = options.storiesCollection;
