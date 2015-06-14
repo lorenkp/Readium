@@ -8,8 +8,13 @@ Readium.Views.ComposeHome = Backbone.View.extend({
 
   events: {
     'click .post': 'postStory',
-    'click .upload-image': 'uploadImage'
+    'click .upload-image': 'uploadImage',
+    // 'click .compose-header': 'expand'
   },
+
+  // expand: function(){
+  //   this.editor.focus();
+  // },
 
   postStory: function() {
     this.story.set({body: this.$('.editable').html()});
@@ -36,8 +41,8 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    new MediumEditor(this.$el.find('.editable'), {
-      placeholder: {text: 'Write here...'},
+    this.editor = new MediumEditor(this.$el.find('.editable'), {
+      placeholder: {text: ''},
       elementsContainer: this.el
     });
     return this;
