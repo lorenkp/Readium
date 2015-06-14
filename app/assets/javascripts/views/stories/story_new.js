@@ -33,8 +33,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       elementsContainer: this.el
     });
     new MediumEditor(this.$el.find('.editable.editor-body'), {
-      placeholder: {text: 'Tell your story...'},
-      elementsContainer: this.el
+      placeholder: {text: 'Tell your story...'}
     });
     return this;
   },

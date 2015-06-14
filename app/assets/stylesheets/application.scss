@@ -11,7 +11,9 @@
  * file per style scope.
  *
  *= require_self
- *= require medium-editor/medium-editor.min.css
+ *= require medium-editor.css
+ *= require default
+ 
  *= require_tree .
  */
 
@@ -27,18 +29,6 @@ a:hover {
     text-decoration: none !important;
     color: inherit;
 }
-
-// @font-face {
-//   font-family: 'clarendon';
-//   src: url(/assets/clarenbd.ttf) format('truetype');
-// }
-
-// @font-face {
-//   font-family: 'freight';
-//   src: url(/assets/freight.ttf) format('truetype');
-// }
-
-
 
 .sign-in {
   font-family: clarendon;
@@ -56,26 +46,19 @@ a:hover {
   width: 250px;
 }
 
-// .navbar-default {
-//   background-color: white;
-//   border-bottom-color: rgba(0, 0, 0, 0.0980392);
-//   border-bottom-style: solid;
-//   border-bottom: 1px;
-// }
-
-// .article {
-//   font-family: freight;
-//   font-size: 22px;
-// }
+.article {
+  font-family: freight;
+  font-size: 22px;
+}
 
 // .row {
 //   width: 700px;
 //   margin: auto;
 // }
 
-// .article p {
-//   margin-bottom: 30px;
-// }
+.article p {
+  margin-bottom: 30px;
+}
 
 // .navbar-brand img {
 //   width: 135px;
@@ -124,10 +107,10 @@ a:hover {
 //   margin-right: 400px;
 // }
 
-// // .single-column {
-// //   width: 580px;
-// //   margin: auto;
-// // }
+// .single-column {
+//   width: 580px;
+//   margin: auto;
+// }
 
 // .story-feed {
 //   font-family: freight;
@@ -155,9 +138,9 @@ a:hover {
 //   border-bottom-color: rgba(0, 0, 0, 0.0980392);
 // }
 
-*:focus {
-    outline: 0;
-}
+// *:focus {
+//     outline: 0;
+// }
 
 // .story-header-img {
 //   width: 100%;
@@ -174,24 +157,24 @@ a:hover {
 //     position: relative;
 // }
 
-// // .editable.editor-title.medium-edit-placeholder {
-// //   color: rgba(0, 0, 0, 0.298039);
-// //   font-size: 36px;
-// //   font-family: 'Lucida Grande';
-// //   font-weight: bold;
-// //   font-style: normal;
-// // }
+.editable.editor-title.medium-edit-placeholder {
+  color: rgba(0, 0, 0, 0.298039);
+  font-size: 36px;
+  font-family: 'Lucida Grande';
+  font-weight: bold;
+  font-style: normal;
+}
 
-// .editable.editor-title {
-//   font-family: 'Lucida Grande';
-//   font-weight: bold;
-//   font-size: 36px;
-//   margin-bottom: 4px;
-// }
+.editable.editor-title {
+  font-family: 'Lucida Grande';
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 4px;
+}
 
-// .medium-editor-placeholder:after {
-//   font-style: normal !important;
-// }
+.medium-editor-placeholder:after {
+  font-style: normal !important;
+}
 
 // .title-body-container {
 //   max-width: 700px;
@@ -199,10 +182,10 @@ a:hover {
 //   padding-top: 75px
 // }
 
-// .editable.editor-body {
-//   font-family: freight;
-//   font-size: 22px;
-// }
+.editable.editor-body {
+  font-family: freight;
+  font-size: 22px;
+}
 
 img {
   height: 92%;
@@ -221,6 +204,15 @@ img {
   width: 100%;
 }
 
+.container {
+  width: 100%;
+}
+
+.story-col {
+  width: 580px;
+  margin: auto;
+}
+
 .col-sm-7 {
   padding-left: 230px;
   padding-right: 50px;
@@ -230,9 +222,9 @@ img {
   padding-left: 180px;
 }
 
-.container.main {
-  width: 100%;
-}
+// .container.main {
+//   width: 100%;
+// }
 
 .navbar-brand {
   min-height: 67px;
@@ -251,11 +243,34 @@ img {
 
 }
 
+.feed {
+  float: left;
+  width: 73%;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+}
+
+.tag-feed {
+  float: right;
+  width: 400px;
+  margin-left: auto;
+  left: calc(100% - 400px);
+  position: absolute;
+  background-color: #FAFAFA;
+  height: 100%;
+}
+
+.navbar {
+  border: 0;
+}
+
 .navbar-default {
     background-color: white;
     border-bottom: 1px;
     // border-bottom-color: black;
     box-shadow: rgba(0, 0, 0, 0.14902) 0px 0px 1px 0px;
+    margin-bottom: 0;
 }
 
 .write-story {
