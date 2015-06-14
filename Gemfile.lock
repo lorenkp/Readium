@@ -211,6 +211,7 @@ DEPENDENCIES
   byebug
   cloudinary
   coffee-rails (~> 4.1.0)
+  ejs
   figaro
   filepicker-rails
   jbuilder

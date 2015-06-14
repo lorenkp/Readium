@@ -17,6 +17,7 @@ gem 'filepicker-rails'
 gem 'figaro'
 gem 'cloudinary'
 gem 'rails_12factor'
+gem 'ejs'
 
 group :development, :test do
   gem 'byebug'

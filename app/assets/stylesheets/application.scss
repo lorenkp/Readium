@@ -94,12 +94,12 @@ a:hover {
 .editable.compose-home {
   height: 160px;
   width: 580px;
-  margin: auto;
   border-bottom: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(0, 0, 0, 0.0980392);
-  font-family: freight;
+  font-family: "freight-text-pro";
   font-size: 18px;
+  letter-spacing: 0.0833333px;
+  outline: none;
+
 }
 
 // .main-feed {
@@ -127,10 +127,11 @@ a:hover {
 //   font-size: 18px;
 // }
 
-// .medium-editor-placeholder {
-//   opacity: 1;
-//   color: rgba(0, 0, 0, 0.298039);
-// }
+.medium-editor-placeholder {
+  font-family: 'freight-text-pro';
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.298039);
+}
 
 // .storyPreview {
 //   border-bottom: 1px;
@@ -248,7 +249,7 @@ img {
   width: 73%;
   margin-right: auto;
   margin-left: auto;
-  clear: both;
+  margin-top: 100px
 }
 
 .tag-feed {
