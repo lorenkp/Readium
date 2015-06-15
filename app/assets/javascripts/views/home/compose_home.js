@@ -9,12 +9,21 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   events: {
     'click .post': 'postStory',
     'click .upload-image': 'uploadImage',
-    // 'click .compose-header': 'expand'
+    'click .compose-header': 'disappearText'
   },
 
-  // expand: function(){
-  //   this.editor.focus();
-  // },
+  disappearText: function() {
+    if ($('#user-name').css('display') === 'none') {
+      $('#write-here').slideToggle('400', function() {
+      $('#user-name').slideToggle('fast');
+    });
+  } else {
+    $('#user-name').slideToggle('fast', function() {
+      $('#write-here').slideToggle('fast');
+    });
+  }
+    
+  },
 
   postStory: function() {
     this.story.set({body: this.$('.editable').html()});
@@ -45,6 +54,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       placeholder: {text: ''},
       elementsContainer: this.el
     });
+    $('.editable').focus();
     return this;
   },
 

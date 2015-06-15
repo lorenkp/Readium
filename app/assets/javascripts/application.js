@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require cloudinary
+//= jquery.animsition.min
 //= require medium-editor.min
 //= require readium
 //= require_tree ../templates

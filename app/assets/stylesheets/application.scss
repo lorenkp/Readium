@@ -13,7 +13,7 @@
  *= require_self
  *= require medium-editor.css
  *= require default
- 
+ *= animsition.min.css
  *= require_tree .
  */
 
@@ -355,5 +355,17 @@ a::-moz-focus-inner {border:0;}
   transition-duration: 0.15s;
 }
 
+#write-here {
+  font-family: 'freight-text-pro';
+  font-size: 18px;
+  letter-spacing: .16666px;
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.3);
+  margin-left: 10px;
+}
+#user-name {
+  display: none;
+  margin-left: 10px;
+}
 
 
