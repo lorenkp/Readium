@@ -51,11 +51,21 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    this.editor = new MediumEditor(this.$el.find('.editable'), {
-      placeholder: {text: ''},
-      elementsContainer: this.el
-    });
-    $('.editable').focus();
+    // this.editor = new MediumEditor(this.$el.find('.editable'), {
+    //   placeholder: {text: ''},
+    //   elementsContainer: this.el
+    // });
+    setTimeout(function () {
+      this.editor = new Dante.Editor({
+        el: '.compose-home',
+        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+        // store_url: "/save" //post to save
+
+      });
+      this.editor.start();
+    }.bind(this), 500);
+    
+    // $('.editable').focus();
     return this;
   },
 
