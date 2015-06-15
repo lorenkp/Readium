@@ -9,15 +9,15 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
-gem 'bootstrap-sass'
-gem 'medium-editor-rails'
 gem 'backbone-on-rails'
+gem 'bootstrap-sass'
 gem 'newrelic_rpm'
 gem 'jbuilder'
 gem 'filepicker-rails'
 gem 'figaro'
 gem 'cloudinary'
 gem 'rails_12factor'
+gem 'ejs'
 
 group :development, :test do
   gem 'byebug'

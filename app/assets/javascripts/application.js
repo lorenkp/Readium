@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//=require cloudinary
+//= require cloudinary
+//= jquery.animsition.min
+//= require medium-editor.min
 //= require readium
-//= require medium-editor.min.js
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

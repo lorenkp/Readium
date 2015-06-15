@@ -7,8 +7,22 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   template: JST['home/compose_home'],
 
   events: {
-    'click .post': 'postStory',
-    'click .upload-image': 'uploadImage'
+    'click #publish': 'postStory',
+    'click .upload-image': 'uploadImage',
+    'click .compose-header': 'disappearText'
+  },
+
+  disappearText: function() {
+    if ($('#user-name').css('display') === 'none') {
+      $('#write-here').slideToggle(75, function() {
+      $('#user-name').slideToggle(75);
+    });
+  } else {
+    $('#user-name').slideToggle(75, function() {
+      $('#write-here').slideToggle(75);
+    });
+  }
+    
   },
 
   postStory: function() {
@@ -17,6 +31,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
+
         that.refreshView();
       }
     });
@@ -36,10 +51,11 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    new MediumEditor(this.$el.find('.editable'), {
-      placeholder: {text: 'Write here...'},
+    this.editor = new MediumEditor(this.$el.find('.editable'), {
+      placeholder: {text: ''},
       elementsContainer: this.el
     });
+    $('.editable').focus();
     return this;
   },
 
