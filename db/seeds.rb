@@ -22,5 +22,13 @@ Story.create(body: <<-HTML, title: 'Pope Creates Tribunal for Bishop Negligence 
 HTML
 
 User.create(username: 'Loren', password: 'lauren')
-Tag.create(name: 'tubular')
 Tagging.create(story_id: 1, tag_id: 1)
+Tag.create(name: 'tubular')
+Tag.create(name: 'fun!')
+Tag.create(name: 'hot!')
+Tag.create(name: 'smooth!')
+Tag.create(name: 'now that's what i call music!)
+Tag.create(name: 'chicken wings!')
+Tag.create(name: 'fire sale!')
+Tag.create(name: 'jericho')
+

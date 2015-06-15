@@ -404,3 +404,33 @@ a::-moz-focus-inner {border:0;}
   border-color: #57AD68;
 }
 
+.tag-frame {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.tag-interior {
+  padding-top: 40px;
+}
+
+.featured-header {
+  padding-top: 16px;
+  border-top-width: 1.25px;
+  border-top-style: solid;
+  font-family: 'jaf-bernino-sans';
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px
+}
+
+.tag-header {
+  border-top-color: rgba(0, 0, 0, 0.05);
+  border-top-style: solid;
+  border-top-width: 1.25px;
+}
+
+.featured-tags {
+  margin-top: 18px;
+}
+

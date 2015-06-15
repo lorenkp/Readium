@@ -26,7 +26,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
 
   render: function() {
     var content= this.template();
-    // debugger
     this.$el.html(content)
     new MediumEditor(this.$el.find('.editable.editor-title'), {
       placeholder: {text: 'Title'},
@@ -42,7 +41,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     var that = this;
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
-      debugger
       var data = result[0];
       that.story.set({header_url: data.secure_url, home_url: data.thumbnail_url});
     });

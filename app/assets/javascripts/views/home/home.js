@@ -17,6 +17,8 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     this.addSubview('.compose', new Readium.Views.ComposeHome({
       collection: this.storiesCollection,
     }));
+
+    this.addSubview('.tag-feed', new Readium.Views.TagFeed());
   },
 
   addNewStoryFeedPreview: function(story) {

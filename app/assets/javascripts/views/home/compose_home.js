@@ -1,15 +1,14 @@
 Readium.Views.ComposeHome = Backbone.View.extend({
-  
-  initialize: function() {
-    this.story = new Readium.Models.Story();
-  },
-
   template: JST['home/compose_home'],
-
+  
   events: {
     'click #publish': 'postStory',
     'click .upload-image': 'uploadImage',
     'click .compose-header': 'disappearText'
+  },
+
+  initialize: function() {
+    this.story = new Readium.Models.Story();
   },
 
   disappearText: function() {
@@ -51,10 +50,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    // this.editor = new MediumEditor(this.$el.find('.editable'), {
-    //   placeholder: {text: ''},
-    //   elementsContainer: this.el
-    // });
+    
     setTimeout(function () {
       this.editor = new Dante.Editor({
         el: '.compose-home',
