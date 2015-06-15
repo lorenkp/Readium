@@ -249,7 +249,7 @@ img {
   width: 73%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 100px
+  margin-top: 45px;
 }
 
 .tag-feed {
@@ -366,6 +366,13 @@ a::-moz-focus-inner {border:0;}
 #user-name {
   display: none;
   margin-left: 10px;
+  color: #57AD68;
+  font-size: 14px;
+  letter-spacing: 0.366667px;
+  font-family: 'jaf-bernino-sans'
 }
 
+.compose-header {
+  margin-bottom: 20px;
+}
 
