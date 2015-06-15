@@ -92,7 +92,7 @@ a:hover {
 // }
 
 .editable.compose-home {
-  height: 160px;
+  min-height: 160px;
   width: 580px;
   border-bottom: 1px;
   font-family: "freight-text-pro";
@@ -399,5 +399,11 @@ a::-moz-focus-inner {border:0;}
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
   height: 38px;
+  margin-bottom: 10px;
+}
+
+#publish:hover {
+  color: #468C54;
+  border-color: #57AD68;
 }
 

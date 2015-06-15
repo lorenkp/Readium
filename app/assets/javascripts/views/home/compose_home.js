@@ -7,7 +7,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   template: JST['home/compose_home'],
 
   events: {
-    'click .post': 'postStory',
+    'click #publish': 'postStory',
     'click .upload-image': 'uploadImage',
     'click .compose-header': 'disappearText'
   },
