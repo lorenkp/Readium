@@ -14,12 +14,12 @@ Readium.Views.ComposeHome = Backbone.View.extend({
 
   disappearText: function() {
     if ($('#user-name').css('display') === 'none') {
-      $('#write-here').slideToggle(50, function() {
-      $('#user-name').slideToggle(50);
+      $('#write-here').slideToggle(75, function() {
+      $('#user-name').slideToggle(75);
     });
   } else {
-    $('#user-name').slideToggle(50, function() {
-      $('#write-here').slideToggle(50);
+    $('#user-name').slideToggle(75, function() {
+      $('#write-here').slideToggle(75);
     });
   }
     
@@ -31,6 +31,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
+
         that.refreshView();
       }
     });

@@ -376,3 +376,28 @@ a::-moz-focus-inner {border:0;}
   margin-bottom: 20px;
 }
 
+.compose {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 25px;
+}
+
+#publish {
+  border-bottom-left-radius: 19px;
+  border-color: rgb(169, 216, 178);
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  color: rgb(87, 173, 104);
+  font-family: jaf-bernino-sans;
+  font-size: 15px;
+  letter-spacing: -0.44999998807907104px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom-right-radius: 19px;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  height: 38px;
+}
+
