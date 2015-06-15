@@ -57,15 +57,15 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     // });
     setTimeout(function () {
       this.editor = new Dante.Editor({
-        el: '.editable',
-        upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
-        store_url: "/save" //post to save
+        el: '.compose-home',
+        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+        // store_url: "/save" //post to save
 
       });
-      this.editor.start()
-     }.bind(this), 0)
+      this.editor.start();
+    }.bind(this), 500);
     
-    $('.editable').focus();
+    // $('.editable').focus();
     return this;
   },
 
