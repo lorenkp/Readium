@@ -10,11 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require dante-editor
  *= require_self
- *= require medium-editor
- *= require default
- *= animsition.min.css
- *= require_tree .
  */
 
 @import "bootstrap-sprockets";
