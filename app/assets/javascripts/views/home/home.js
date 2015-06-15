@@ -7,7 +7,6 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
 
-    this.tagsCollection.each(this.addTag.bind(this));
     this.storiesCollection.each(this.addStoryFeedPreview.bind(this));
 
     this.listenTo(this.storiesCollection, 'remove sync', this.render);
@@ -18,7 +17,9 @@ Readium.Views.Home = Backbone.CompositeView.extend({
       collection: this.storiesCollection,
     }));
 
-    this.addSubview('.tag-feed', new Readium.Views.TagFeed());
+    this.addSubview('.tag-feed', new Readium.Views.TagFeed({
+      collection: this.tagsCollection
+    }));
   },
 
   addNewStoryFeedPreview: function(story) {
@@ -26,13 +27,6 @@ Readium.Views.Home = Backbone.CompositeView.extend({
       model: story
     });
     this.addSubview('.story-feed', view, true);
-  },
-
-  addTag: function(tag) {
-    var view = new Readium.Views.HomeTag({
-      model: tag
-    });
-    this.addSubview('.tag-feed', view);
   },
 
   addStoryFeedPreview: function(story) {

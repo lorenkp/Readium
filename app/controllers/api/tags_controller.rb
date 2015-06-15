@@ -1,22 +1,16 @@
 class Api::TagsController < ApplicationController
   def create
-        render text: "huh"
-
   end
 
   def destroy
-        render text: "huh"
-
   end
 
   def index
-    render text: "huh"
+    @tags = Tag.all
+    render 'index'
   end
 
   def show
-    @tag = Tag
-        render text: "huh"
-
   end
 
   private

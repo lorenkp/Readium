@@ -3,8 +3,10 @@
     <div class= "tag-header">
       <div class="featured-header">FEATURED TAGS</div>
       <div class="featured-tags">
-        <%=   %>
+        <% tags.each(function(tag) { %>
+        <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+        <% }) %>
       </div>
-    </div>   
+    </div>
   </div>
 </div>
