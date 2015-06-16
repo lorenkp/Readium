@@ -5,18 +5,18 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     'click #publish': 'postStory',
     'click .upload-image': 'uploadImage',
     'click .compose-header': 'disappearText',
-    'show.bs.collapse #editable': 'collapsed'
+    // 'show.bs.collapse #editable': 'collapsed'
   },
 
-  collapsed: function () {
-    setTimeout(function () {
-      var event = jQuery.Event('mouseup');
-      event.target = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf.graf--p.graf--first > span')[0];
-      event.currentTarget = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin')[0];
-      var elem = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf')[0];
-      this.editor.handleMouseUp(event, elem);
-    }.bind(this), 100)
-  },
+  // collapsed: function () {
+  //   setTimeout(function () {
+  //     var event = jQuery.Event('mouseup');
+  //     event.target = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf.graf--p.graf--first > span')[0];
+  //     event.currentTarget = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin')[0];
+  //     var elem = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf')[0];
+  //     this.editor.handleMouseUp(event, elem);
+  //   }.bind(this), 100)
+  // },
 
   initialize: function() {
     this.story = new Readium.Models.Story();
@@ -66,7 +66,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
 
       this.editor = window.ed = new Dante.Editor({
         el: '.compose-home',
-        disable_title: true
+        body_placeholder: '<img src="http://www.bestinspired.com/wp-content/uploads/2015/04/colorful-flowers-flower-hd-wallpaper.jpg">'
         // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
         // store_url: "/save" //post to save
 
