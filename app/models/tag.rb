@@ -13,4 +13,5 @@ class Tag < ActiveRecord::Base
   validates :name, uniqueness: true
   has_many :taggings
   has_many :stories, through: :taggings
+  has_many :followers, as: :followable, class_name: 'Follow'
 end
