@@ -1,3 +1,6 @@
-json.array! @stories do |story|
-  json.extract! story, :title, :body, :subtitle, :id
-end
+json.extract! @tag, :name, :id
+json.stories @stories
+
+
+
+

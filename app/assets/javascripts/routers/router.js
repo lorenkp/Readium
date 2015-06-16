@@ -8,7 +8,8 @@ Readium.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'home',
     'stories/new': 'newStory',
-    'stories/:id': 'storyShow'
+    'stories/:id': 'storyShow',
+    'tags/:id': ''
   },
 
   home: function() {
