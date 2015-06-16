@@ -42,8 +42,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       });
       this.editor.start();
     }.bind(this), 0);
-    
-    // $('.editable').focus();
+    this.attachSubviews();    
     return this;
   },
 

@@ -16,9 +16,6 @@ Readium.Collections.Tags = Backbone.Collection.extend({
     } else {
       tag.fetch();
     }
-
     return tag;
   }
-
-
 });
