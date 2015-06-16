@@ -23,6 +23,8 @@ HTML
 
 User.create(username: 'Loren', password: 'lauren')
 Tagging.create(story_id: 1, tag_id: 1)
+Tagging.create(story_id: 1, tag_id: 2)
+
 Tag.create(name: 'tubular')
 Tag.create(name: 'fun!')
 Tag.create(name: 'hot!')

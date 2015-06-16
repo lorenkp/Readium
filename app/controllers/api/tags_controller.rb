@@ -11,6 +11,9 @@ class Api::TagsController < ApplicationController
   end
 
   def show
+    @tag = Tag.find(params[:id])
+    @stories = @tag.stories
+    render 'show'
   end
 
   private
