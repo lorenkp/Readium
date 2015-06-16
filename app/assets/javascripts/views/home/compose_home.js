@@ -60,9 +60,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       });
       this.editor.start();
     }.bind(this), 500);
-    
-    // $('.editable').focus();
-    return this;
+        return this;
   },
 
   uploadImage: function(event) {

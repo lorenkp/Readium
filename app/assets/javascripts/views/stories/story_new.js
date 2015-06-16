@@ -1,9 +1,14 @@
 Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
-  initialize: function() {
+  initialize: function(options) {
+    this.storiesCollection = options.storiesCollection;
+    this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
-    this.addSubview('.tag-create', new Readium.Views.TagCreate());
+    this.addSubview('.create-box', new Readium.Views.TagCreateBox({
+      story: this.story,
+      tagsCollection: this.tagsCollection
+    }));
   },
 
   events: {
