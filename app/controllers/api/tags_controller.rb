@@ -1,4 +1,5 @@
 class Api::TagsController < ApplicationController
+  # TA: Probably don't need create and destroy here
   def create
   end
 

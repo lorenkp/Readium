@@ -20,12 +20,13 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       success: function(story) {
         that.collection.add(story);
         Backbone.history.navigate('', {trigger: true});
+        // Add error callback
       }
     });
   },
 
   render: function() {
-    var content= this.template();
+    var content = this.template();
     this.$el.html(content)
     new MediumEditor(this.$el.find('.editable.editor-title'), {
       placeholder: {text: 'Title'},
