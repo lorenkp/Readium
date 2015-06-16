@@ -36,4 +36,3 @@ Tag.create(name: "now that's what i call music!")
 Tag.create(name: 'chicken wings!')
 Tag.create(name: 'fire sale!')
 Tag.create(name: 'jericho')
-
