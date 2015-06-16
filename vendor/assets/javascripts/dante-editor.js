@@ -916,10 +916,10 @@
       return $(element).parent(".graf--figure").removeClass("is-mediaFocused");
     };
 
-    Editor.prototype.handleMouseUp = function(ev) {
+    Editor.prototype.handleMouseUp = function(ev, node) {
       var anchor_node;
       utils.log("MOUSE UP");
-      anchor_node = this.getNode();
+      anchor_node = node || this.getNode();
       if (_.isNull(anchor_node)) {
         return;
       }

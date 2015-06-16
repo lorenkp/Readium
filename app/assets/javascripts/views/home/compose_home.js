@@ -4,7 +4,18 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   events: {
     'click #publish': 'postStory',
     'click .upload-image': 'uploadImage',
-    'click .compose-header': 'disappearText'
+    'click .compose-header': 'disappearText',
+    'show.bs.collapse #editable': 'collapsed'
+  },
+
+  collapsed: function () {
+    setTimeout(function () {
+      var event = jQuery.Event('mouseup');
+      event.target = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf.graf--p.graf--first > span')[0];
+      event.currentTarget = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin')[0];
+      var elem = $('#editable > article > div > div > div.editable.compose-home.postField.postField--body.smart-media-plugin > section > div.section-content > div > p.graf')[0];
+      this.editor.handleMouseUp(event, elem);
+    }.bind(this), 100)
   },
 
   initialize: function() {
@@ -25,7 +36,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   },
 
   postStory: function() {
-    this.story.set({body: this.$('.editable').html()});
+    this.story.set({body: this.$('.section-content').html()});
     var that = this;
     this.story.save({}, {
       success: function(story) {
@@ -52,8 +63,10 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     this.$el.html(content);
     
     setTimeout(function () {
-      this.editor = new Dante.Editor({
+
+      this.editor = window.ed = new Dante.Editor({
         el: '.compose-home',
+        disable_title: true
         // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
         // store_url: "/save" //post to save
 

@@ -314,6 +314,7 @@ a::-moz-focus-inner {border:0;}
   color: rgb(87, 173, 104);
   font-family: jaf-bernino-sans;
   font-size: 15px;
+  font-weight: 300;
   letter-spacing: -0.44999998807907104px;
   padding-left: 16px;
   padding-right: 16px;
@@ -326,7 +327,7 @@ a::-moz-focus-inner {border:0;}
 
 #publish:hover {
   color: #468C54;
-  border-color: #57AD68;
+  border-color: #468C54;
 }
 
 .tag-frame {
