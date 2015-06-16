@@ -48,45 +48,9 @@ a:hover {
   font-size: 22px;
 }
 
-// .row {
-//   width: 700px;
-//   margin: auto;
-// }
-
 .article p {
   margin-bottom: 30px;
 }
-
-// .navbar-brand img {
-//   width: 135px;
-// }
-
-// .write-button {
-//   padding-left: 16px;
-//   padding-right: 16px;
-//   padding-top: 0px;
-//   padding-bottom: 0px;
-//   height: 38px;
-//   border-bottom-left-radius: 13986px;
-//   border-bottom-right-radius: 13986px;
-//   border-top-left-radius: 13986px;
-//   border-top-right-radius: 13986px;
-//   color: rgba(0,0,0,0.44);
-// }
-
-// .write-button:hover {
-//   color: rgba(0,0,0,0.6);
-//   border-color: rgba(0,0,0,0.3);
-//   background-color: white;
-// }
-
-// .write-button:focus {
-//   outline: none;
-// }
-
-// .navbar-right {
-//   margin-top: 5px;
-// }
 
 .editable.compose-home {
   min-height: 160px;
@@ -99,61 +63,15 @@ a:hover {
 
 }
 
-// .main-feed {
-//   width: auto;
-//   margin-right: 400px;
-// }
-
-// .single-column {
-//   width: 580px;
-//   margin: auto;
-// }
-
-// .story-feed {
-//   font-family: freight;
-// }
-
-// .story-title {
-//   font-size: 28px;
-//   font-family: 'Lucida Grande';
-//   font-weight: bold;
-// }
-
-// .story-preview-text {
-//   font-family: 'freight';
-//   font-size: 18px;
-// }
-
 .medium-editor-placeholder {
   font-family: 'freight-text-pro';
   opacity: 1;
   color: rgba(0, 0, 0, 0.298039);
 }
 
-// .storyPreview {
-//   border-bottom: 1px;
-//   border-bottom-style: solid;
-//   border-bottom-color: rgba(0, 0, 0, 0.0980392);
-// }
-
-// *:focus {
-//     outline: 0;
-// }
-
-// .story-header-img {
-//   width: 100%;
-// }
-
-// div.overlay {
-//     opacity: .9;
-//     background-color: black;
-//     position: absolute;
-//     left: 0; top: 0; height: 256px; width: 256px;
-// }
-
-// #container {
-//     position: relative;
-// }
+*:focus {
+    outline: 0;
+}
 
 .editable.editor-title.medium-edit-placeholder {
   color: rgba(0, 0, 0, 0.298039);
@@ -459,5 +377,16 @@ a::-moz-focus-inner {border:0;}
   color: #468C54;
   border-color: #A9D8B2;
   background: rgba(87, 173, 104, 0.1);
+}
+
+.story-new-wrapper {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 75px;
+}
+
+textarea:focus, input:focus{
+    outline-style: none !important;
 }
 

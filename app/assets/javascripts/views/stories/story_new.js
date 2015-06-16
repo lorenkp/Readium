@@ -2,7 +2,8 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
   initialize: function() {
-    this.story = new Readium.Models.Story();    
+    this.story = new Readium.Models.Story();
+    this.addSubview('.tag-create', new Readium.Views.TagCreate());
   },
 
   events: {
@@ -27,13 +28,17 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   render: function() {
     var content= this.template();
     this.$el.html(content)
-    new MediumEditor(this.$el.find('.editable.editor-title'), {
-      placeholder: {text: 'Title'},
-      elementsContainer: this.el
-    });
-    new MediumEditor(this.$el.find('.editable.editor-body'), {
-      placeholder: {text: 'Tell your story...'}
-    });
+    setTimeout(function () {
+      this.editor = new Dante.Editor({
+        el: '.editable',
+        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+        // store_url: "/save" //post to save
+
+      });
+      this.editor.start();
+    }.bind(this), 0);
+    
+    // $('.editable').focus();
     return this;
   },
 
