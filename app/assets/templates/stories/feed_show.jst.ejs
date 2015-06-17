@@ -1,12 +1,17 @@
+<a href="#users/<%= story.get('author_id') %>">
+  <div class="author-info">
+    
+  </div>
+</a>
 <a href="#stories/<%= story.id %>">
-<% if (story.escape('home_url')) { %>
+  <% if (story.escape('home_url')) { %>
   <img style="width:100%;" src="<%= story.get('home_url') %>"/>
-<% }  %>
-<div class="story-title-home">
-  <%= story.get('title') %>
-</div>
-<br>
-<div class="story-preview-text">
-   <%= story.get('body') %>
-</div>
+  <% }  %>
+  <div class="story-title-home">
+    <%= story.get('title') %>
+  </div>
+  <br>
+  <div class="story-preview-text">
+    <%= story.get('body') %>
+  </div>
 </a>

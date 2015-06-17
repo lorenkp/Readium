@@ -1,6 +1,6 @@
 Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
   template: JST['stories/feed_show'],
-  className: 'storyPreview',
+  className: 'story-preview',
 
   initialize: function() {
     var text = this.model.get('body');
