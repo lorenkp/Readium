@@ -66,10 +66,11 @@ Readium.Views.ComposeHome = Backbone.View.extend({
 
       this.editor = window.ed = new Dante.Editor({
         el: '.compose-home',
-        body_placeholder: '<img src="http://www.bestinspired.com/wp-content/uploads/2015/04/colorful-flowers-flower-hd-wallpaper.jpg">'
-        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
-        // store_url: "/save" //post to save
-
+        // body_placeholder: '<img src="http://www.bestinspired.com/wp-content/uploads/2015/04/colorful-flowers-flower-hd-wallpaper.jpg">',
+        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        upload_callback: function(event) {
+          $('.graf-image').attr('src', event.secure_url);
+        }
       });
       this.editor.start();
     }.bind(this), 500);
