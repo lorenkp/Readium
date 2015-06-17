@@ -1,5 +1,6 @@
 Readium.Views.StoryShow = Backbone.CompositeView.extend({
   template: JST['stories/show'],
+  className: 'storyShow',
   
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
