@@ -13,6 +13,7 @@
  *= require_self
  *= require default
  *= require medium-editor
+ *= dante-editor
  */
 
 @import "bootstrap-sprockets";
@@ -398,9 +399,10 @@ textarea:focus, input:focus{
 
 @font-face{
   font-family:'medium-icons';
-  src:url('/fonts/medium-icons.ttf') format('truetype');
+  src:url('/assets/medium-icons.eot');
+  src:url('/assets/medium-icons.GL0UGUn2SflsrDQQebdo3Q.eot') format("embedded-opentype"),url('/assets/medium-icons.woff') format("woff"),url('/assets/medium-icons.tff') format("truetype");
   font-weight:normal;
-  font-style:normal
+  font-style:normal;
 }
 
 .icon {
@@ -412,13 +414,67 @@ textarea:focus, input:focus{
     text-transform: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
 .icon--addMediaImage:before {
-    content: "\f106"
+    content:"\f106";
+    display: inline-block;
 }
+
+@font-face {
+  font-family: "dante-tooltip";
+  src: url("dante.eot");
+  src: url("dante.eot?#iefix") format("embedded-opentype"), url("dante.woff") format("woff"), url("dante.ttf") format("truetype"), url("dante.svgdante") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+  .icon-image:before {
+  content: "\e601"; }
+
+  .tooltip-icon:before {
+  font-family: 'dante-tooltip';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.dante-icon:before {
+  display: inline-block;
+  font-family: "dante";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1em;
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none; }
+
+button.inlineTooltip-button.scale {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  line-height: 36px;
+  background-color: white;
+  border-color: rgba(0,0,0,0.6);
+  padding: 0;
+  margin-left: 3px;
+  position: relative;
+  top: 4px;
+  font-size: 19px;
+  color: rgba(0,0,0,0.6);
+}
+
+button.inlineTooltip-button.scale:hover {
+  color: rgba(0,0,0,0.9);
+  border-color: rgba(0,0,0,0.9);
+}
+
 
 
 

@@ -3,7 +3,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   
   events: {
     'click #publish': 'postStory',
-    'click .upload-image': 'uploadImage',
+    'click .scale': 'uploadImage',
     'click .compose-header': 'disappearText',
     // 'show.bs.collapse #editable': 'collapsed'
   },
