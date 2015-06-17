@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.timeago
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require underscore
