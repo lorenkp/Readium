@@ -522,9 +522,35 @@ button.inlineTooltip-button.scale:hover {
   text-align: center;
 }
 
-.story-title-show {
-  
+.tags-show-column {
+  width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.tag-show-header {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
 
+.tagged-in { 
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  margin-bottom: 0px;
+}
+
+.tag-category {
+  display: inline-block;
+  font-family: 'jaf-bernino-sans';
+  margin-bottom: 0px;
+}
+
+.tag-name-show {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 44.8px;
+  letter-spacing: -0.633333px;
+  margin-bottom: 0px;
+}
 

@@ -1,5 +1,6 @@
 Readium.Views.TagShow = Backbone.CompositeView.extend({
   template: JST['tags/show'],
+  className: 'tags-show-column',
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
