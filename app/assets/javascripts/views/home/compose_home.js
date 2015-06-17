@@ -61,20 +61,11 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    
-    setTimeout(function () {
-
-      this.editor = window.ed = new Dante.Editor({
-        el: '.compose-home',
-        // body_placeholder: '<img src="http://www.bestinspired.com/wp-content/uploads/2015/04/colorful-flowers-flower-hd-wallpaper.jpg">',
-        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
-        upload_callback: function(event) {
-          $('.graf-image').attr('src', event.secure_url);
-        }
-      });
-      this.editor.start();
-    }.bind(this), 500);
-        return this;
+    new MediumEditor(this.$el.find('.editable'), {
+      placeholder: {text: ''},
+      elementsContainer: this.el
+    }); 
+    return this;
   },
 
   uploadImage: function(event) {
