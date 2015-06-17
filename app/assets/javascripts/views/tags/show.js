@@ -4,6 +4,14 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
+    this.model.stories().each(this.addStoryFeedPreview.bind(this));
+  },
+
+  addStoryFeedPreview: function(story) {
+    var view = new Readium.Views.StoryFeedPreview({
+      model: story
+    });
+    this.addSubview('.tag-stories-feed', view);
   },
 
   render: function() {
@@ -11,6 +19,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       tag: this.model
     });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });

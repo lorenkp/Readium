@@ -1,11 +1,8 @@
 <div class="tag-show-header">
   <div class="tag-category">
     <p class="tagged-in">TAGGED IN</p>
-    <p class="tag-name-show">Your mom</p>
+    <p class="tag-name-show"><%= tag.get('name') %></p>
   </div>
-  <div class="tag-follow" id="publish">Follow</div>
+  <div class="tag-follow">Follow</div>
 </div>
-
-<% tag.stories().each(function(story) { %>
-  <%= story.get('title') %> 
-<% }) %>
+<div class="tag-stories-feed"></div>
