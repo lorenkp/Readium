@@ -1,4 +1,23 @@
-<h1 class="story-title-show"><%= story.get('title') %></h1>
-<div class="article">
-  <%= story.get('body') %>
+<style>
+.background-image {
+background:
+linear-gradient(
+rgba(0, 0, 0, 0.5),
+rgba(0, 0, 0, 0.5)
+),
+url(<%= story.get('header_url') %>);
+background-size: cover;
+height: 100vh;
+margin-bottom: 80px;
+}
+</style>
+<div class="background-image">
+  <div class="title">
+    <h1 class="story-title-show"><%= story.get('title') %></h1>
+  </div>
+</div>
+<div class="story-body-show">
+  <div class="article">
+    <%= story.get('body') %>
+  </div>
 </div>
