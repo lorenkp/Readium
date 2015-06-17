@@ -3,8 +3,14 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
   className: 'tags-show-column',
 
   initialize: function() {
-    this.listenTo(this.model, 'sync', this.render);
-    this.model.stories().each(this.addStoryFeedPreview.bind(this));
+    this.listenTo(this.model, 'sync', this.render); 
+    if (this.model.stories().length === 0) {
+      this.listenToOnce(this.model, 'sync', function() {
+        this.model.stories().each(this.addStoryFeedPreview.bind(this));
+      }.bind(this));
+    } else {
+      this.model.stories().each(this.addStoryFeedPreview.bind(this));
+    }
   },
 
   addStoryFeedPreview: function(story) {

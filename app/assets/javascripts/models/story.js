@@ -3,8 +3,8 @@ Readium.Models.Story = Backbone.Model.extend({
 
   previewLength: function(text) {
     var ret = text;
-    if (ret.length > 224) {
-        ret = ret.substr(0, 224-3) + ' . . .';
+    if (ret.length > 200) {
+        ret = ret.substr(0, 200-3) + ' . . .';
     }
     return ret;
   }
