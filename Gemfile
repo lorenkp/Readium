@@ -13,7 +13,6 @@ gem 'newrelic_rpm'
 gem 'jbuilder'
 gem 'filepicker-rails'
 gem 'figaro'
-gem 'cloudinary'
 gem 'rails_12factor'
 
 group :development, :test do

@@ -36,7 +36,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   },
 
   postStory: function() {
-    this.story.set({body: this.$('.section-content').html()});
+    this.story.set({body: this.$('.editable').html()});
     var that = this;
     this.story.save({}, {
       success: function(story) {
@@ -74,6 +74,8 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
       that.story.set({header_url: data.url, home_url: data.thumbnail_url});
+      $('.editable').prepend('<img src="' + data.thumbnail_url + '">');
+      $('iframe').remove();
     });
   }
 });
