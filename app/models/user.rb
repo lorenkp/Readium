@@ -20,10 +20,24 @@ class User < ActiveRecord::Base
   has_many :followers, through: :followings, source: :follower
   has_many :follows, class_name: :Follow, foreign_key: :follower_id
 
-
   after_initialize :ensure_session_token
   attr_reader :password
 
+  def followed_users
+    users = []
+    self.follows.each do |el|
+      users << User.find(el.followable_id) if el.followable_type == 'User'
+    end
+    users
+  end
+
+  def followed_tags
+    tags = []
+    self.follows.each do |el|
+      tags << Tag.find(el.followable_id) if el.followable_type == 'Tag'
+    end
+    tags
+  end
 
   def ensure_session_token
     self.session_token ||= generate_session_token
