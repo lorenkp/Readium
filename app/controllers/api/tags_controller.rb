@@ -1,6 +1,8 @@
 class Api::TagsController < ApplicationController
   # TA: Probably don't need create and destroy here
   def create
+    @tag = Tag.new(tag_params)
+    render json: {} if @tag.save
   end
 
   def destroy

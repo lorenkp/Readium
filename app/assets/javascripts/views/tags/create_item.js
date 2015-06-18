@@ -27,12 +27,14 @@ Readium.Views.CreateItem = Backbone.View.extend({
     var tag = new Readium.Models.Tag();
     tag.set({name: input});
     var that = this;
-    // tag.save({}, {
-    //   success: function(tag) {
-    //     that.tagsCollection.add(tag);
-    //     that.story.set({tag:})
-    //   }
-    // });
+    tag.save({}, {
+      success: function(tag, response) {
+        that.tagsCollection.add(tag);
+        that.story.set('tag', input);
+      },
+      error: function () {
+        
+      }
+    });
   }
-
 });

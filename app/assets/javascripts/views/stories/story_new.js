@@ -34,15 +34,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content)
-    setTimeout(function () {
-      this.editor = new Dante.Editor({
-        el: '.editable',
-        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
-        // store_url: "/save" //post to save
-
-      });
-      this.editor.start();
-    }.bind(this), 0);
     this.attachSubviews();    
     return this;
   },
@@ -55,5 +46,15 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       that.story.set({header_url: data.secure_url, home_url: data.thumbnail_url});
     });
   }
+
+  // setTimeout(function () {
+  // this.editor = new Dante.Editor({
+  // -        el: '.editable',
+  // -        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+  // -        // store_url: "/save" //post to save
+  // -
+  // -      });
+  // -      this.editor.start();
+  // -    }.bind(this), 0);
   
 });
