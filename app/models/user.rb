@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
   attr_reader :password
+  
 
   def ensure_session_token
     self.session_token ||= generate_session_token
