@@ -36,3 +36,13 @@ Tag.create(name: "now that's what i call music!")
 Tag.create(name: 'chicken wings!')
 Tag.create(name: 'fire sale!')
 Tag.create(name: 'jericho')
+
+
+Story.create(body: <<-HTML, title: 'Sunlight on Summer Solstice Will Light Up Fulton Center Hub', author_id: 2, header_url: 'http://static01.nyt.com/images/2015/06/18/nyregion/BLOCKSweb1/BLOCKSweb1-superJumbo.jpg', home_url: 'http://static01.nyt.com/images/2015/06/18/nyregion/BLOCKSweb1/BLOCKSweb1-superJumbo.jpg')
+<p>Druids, take note.</p>
+<p>On the summer solstice, clouds permitting, the Fulton Center in Lower Manhattan will be filled with more sunshine than has ever before reached its interior.</p>
+<p>Rays of sunlight will burnish Sky Reflector-Net — the 79-foot-high convex tracery of aluminum panels and stainless steel cables in the Fulton Center atrium — for more than nine hours on Sunday, between 7:50 a.m. and 5 p.m. (At the winter solstice, by contrast, direct sunlight hits the net for only 70 minutes.)</p>
+<p>From 12:15 p.m. until 3:30 p.m., the rays will penetrate about 40 feet below sidewalk level to recesses on the lowest level of the center.</p>
+<p>The $1.4 billion Fulton Center, New York’s newest transportation hub, was opened in November by the Metropolitan Transportation Authority, 11 years after the project began, at almost twice the originally estimated budget. It was designed to untangle the tortuous connections among the 2, 3, 4, 5, A, C, J, R and Z subway lines.</p>
+<p>This is its first summer solstice.</p>
+HTML
