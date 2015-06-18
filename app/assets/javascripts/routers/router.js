@@ -3,6 +3,7 @@ Readium.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
+    this.usersCollection = options.usersCollection;
   },
 
   routes: {

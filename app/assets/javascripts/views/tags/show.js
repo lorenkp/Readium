@@ -2,6 +2,10 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
   template: JST['tags/show'],
   className: 'tags-show-column',
 
+  events: {
+    'click .tag-follow': 'toggleFollow'
+  },
+
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render); 
     if (this.model.stories().length === 0) {
@@ -18,6 +22,13 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       model: story
     });
     this.addSubview('.tag-stories-feed', view);
+  },
+
+  toggleFollow: function() {
+    var follow = new Readium.Models.Follow({
+      followable_type: 'Tag',
+      followable_id: this.model.id
+    });
   },
 
   render: function() {

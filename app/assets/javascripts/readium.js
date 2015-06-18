@@ -4,12 +4,14 @@ window.Readium = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // alert('Hello from Backbone!');
     var storiesCollection = new Readium.Collections.Stories();
     var tagsCollection = new Readium.Collections.Tags();
+    var usersCollection = new Readium.Collections.Users();
+    window.currentUser = usersCollection.getOrFetch(CURRENT_USER_ID);
     new Readium.Routers.Router({
       tagsCollection: tagsCollection,
       storiesCollection: storiesCollection,
+      usersCollection: usersCollection,
       $rootEl: $('#main')
     });
     Backbone.history.start();
