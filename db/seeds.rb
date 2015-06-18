@@ -27,6 +27,8 @@ Tagging.create(story_id: 1, tag_id: 1)
 Tagging.create(story_id: 1, tag_id: 2)
 Follow.create(follower_id: 1, followable_id: 1, followable_type: 'Tag')
 Follow.create(follower_id: 1, followable_id: 2, followable_type: 'User')
+Follow.create(follower_id: 2, followable_id: 1, followable_type: 'User')
+Follow.create(follower_id: 2, followable_id: 3, followable_type: 'Tag')
 
 Tag.create(name: 'tubular')
 Tag.create(name: 'fun!')
