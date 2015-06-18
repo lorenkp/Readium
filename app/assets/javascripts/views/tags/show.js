@@ -42,15 +42,19 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
         }
       });
     } else {
-      var follow = this.model.followings().findWhere({follower_id: currentUser.id});
-      follow.destroy({
-        success: function () { this.render() }.bind(this)
-      });
+      var following = this.model.followings().findWhere({follower_id: currentUser.id});
+      following.destroy({
+        success: function(follower) {
+          this.model.followers().remove({id: follower.escape('follower_id')});
+        }.bind(this)
+      })
+      // follow.destroy({
+      //   success: function () { this.render() }.bind(this)
+      // });
     }
   },
 
   render: function() {
-    console.log('hello');
     var content = this.template({
       tag: this.model
     });
