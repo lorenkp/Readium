@@ -13,7 +13,6 @@ class Api::TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @stories = @tag.stories
     render 'show'
   end
 
