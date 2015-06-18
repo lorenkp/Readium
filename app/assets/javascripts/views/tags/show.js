@@ -8,7 +8,6 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(currentUser.followedTags(), 'sync', this.render);
     this.listenTo(this.model.followings(), 'remove sync', this.render);
     // this.listenTo(this.model.followers(), 'sync add remove', this.render);
 
