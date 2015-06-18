@@ -2,7 +2,7 @@
   <div class="author-info">
     <img class="avatar" src="/assets/loren_avatar.jpg"/>
     <div class="author-time">
-    <a class="author-name"><%= story.get('username') %></a>
+      <a class="author-name"><%= story.get('username') %></a>
       <a class="timeago" title="<%= story.get('created_at') %>"></a>
     </div>
   </div>
@@ -14,8 +14,15 @@
   <div class="story-title-home">
     <%= story.get('title') %>
   </div>
-  <br>
   <div class="story-preview-text">
     <%= story.get('body') %>
   </div>
 </a>
+<div class="preview-footer">
+  <a class="continue" href="#stories/<%= story.id %>">Continue reading </a>
+  &middot
+  <div class="bookmark">
+    <span class="icon icon--readingList u-noUserSelect"></span>
+    <span class="min-read">5 min read</span>
+  </div>
+</div>

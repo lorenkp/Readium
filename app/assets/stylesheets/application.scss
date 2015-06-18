@@ -481,6 +481,8 @@ button.inlineTooltip-button.scale:hover {
   font-size: 28px;
   letter-spacing: -0.02em;
   line-height: 1.15;
+  margin-top: 20px;
+  margin-bottom: 5px;
 
 }
 
@@ -617,5 +619,69 @@ button.inlineTooltip-button.scale:hover {
 
 .author-info {
   margin-bottom: 20px;
+}
+
+.continue {
+  color: #57AD68;
+  display: inline-block;
+  font-family: 'jaf-bernino-sans';
+  letter-spacing: -0.449999988079071px;
+  font-size: 15px;
+}
+
+.continue:hover {
+  color: #468c54;
+}
+
+// .bookmark {
+//   display: inline-block;
+// }
+
+@font-face {
+  font-family: 'medium-icons';
+  src: url('medium-icons.eot');
+  src: url('medium-icons.eot?#iefix') format("embedded-opentype"),
+    url('medium-icons.woff') format("woff"),
+    url("medium-icons.tff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+    font-family: 'medium-icons';
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: none;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon--readingList:before {
+    content: "\f15c";
+    color: rgba(0, 0, 0, 0.14902);
+    font-size: 15px;
+}
+
+// .icon--readingList:hover:before {
+//   color: rgba(0, 0, 0, 0.6);
+//   content: 'Bookmark';
+// }
+
+.min-read {
+  font-family: 'jaf-bernino-sans';
+  font-size: 15px;
+  letter-spacing: -0.280000001192093px;
+  color: rgba(0, 0, 0, 0.298039);
+}
+
+.bookmark:hover .icon--readingList {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.bookmark:hover .min-read {
+  content: 'Bookmark';
 }
 
