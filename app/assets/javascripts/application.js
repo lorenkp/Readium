@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery.timeago
+//= require typeahead.bundle.min
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require underscore
 //= require backbone
 //= require cloudinary
-//= require medium-editor.min
 //= require readium
 //= require composite_view
 //= require_tree ../templates
