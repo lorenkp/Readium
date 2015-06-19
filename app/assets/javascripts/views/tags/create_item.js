@@ -1,5 +1,6 @@
 Readium.Views.CreateItem = Backbone.View.extend({
   template: JST['tags/create_item'],
+  className: 'tag-input',
 
   initialize: function(options) {
     this.story = options.story;
@@ -13,7 +14,11 @@ Readium.Views.CreateItem = Backbone.View.extend({
 
   keyAction: function(e) {
     if (e.which === 13) {
-      this.saveTag(e.target.value);
+      $(e.target).remove();
+      $('.tag-input').append('<p class="created-tag">' + e.target.value + '</p>');
+      $('.tag-input').append('<input class="entry" type="text">');
+      $('.entry').focus();
+      this.attachTag(e.target.value);
     }
   },
 
@@ -23,18 +28,27 @@ Readium.Views.CreateItem = Backbone.View.extend({
     return this;
   },
 
-  saveTag: function(input) {
-    var tag = new Readium.Models.Tag();
-    tag.set({name: input});
-    var that = this;
-    tag.save({}, {
-      success: function(tag, response) {
-        that.tagsCollection.add(tag);
-        that.story.set('tag', input);
-      },
-      error: function () {
-        
-      }
-    });
+  attachTag: function(input) {
+    var _tags = this.story.get('tags');
+    _tags.push(input);
+    if (_tags.length === 3) {
+      this.story.set({'tags': _tags});
+    }
   }
+
+  // saveTagging: function(input) {
+  //   var tagging = new Readium.Models.Tagging({
+  //     :
+  //   });
+  //   var that = this;
+  //   tag.save({}, {
+  //     success: function(tag, response) {
+  //       that.tagsCollection.add(tag);
+  //       that.story.set('tag', input);
+  //     },
+  //     error: function () {
+        
+  //     }
+  //   });
+  // }
 });

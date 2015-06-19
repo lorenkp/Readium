@@ -597,11 +597,12 @@ button.inlineTooltip-button.scale:hover {
 }
 
 .author-name {
-  color: #57AD68;
+  color: rgba(0, 0, 0, 0.3);
   font-family: 'jaf-bernino-sans';
   font-size: 14px;
   letter-spacing: -0.366667px;
   line-height: 19.6px;
+  font-weight: 300px;
   cursor: pointer;
   display: block;
 }
@@ -683,5 +684,39 @@ button.inlineTooltip-button.scale:hover {
 
 .bookmark:hover .min-read {
   content: 'Bookmark';
+}
+
+.created-tag {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 13px;
+  font-family: 'jaf-bernino-sans';
+  padding: 3px 10px 3px 10px;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 8px;
+  border-radius: 2px;
+  background-color: #FAFAFA;
+  border-color: #F0F0F0;
+}
+
+.created-tag:hover {
+  color: #468C54;
+  border-color: #A9D8B2;
+  background: rgba(87, 173, 104, 0.1);
+}
+
+.entry {
+    border: none;
+    color: rgba(0, 0, 0, 0.3);
+    font-family: 'jaf-bernino-sans';
+    font-weight: 300;
+    display: inline-block;
+    text-shadow: 0 0 0 gray;
+    font-size: 12px;
+    width: 12em;
+    &:focus {
+        outline: none;
+    }
 }
 
