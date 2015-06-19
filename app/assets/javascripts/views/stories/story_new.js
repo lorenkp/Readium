@@ -2,6 +2,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
   initialize: function(options) {
+    debugger
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
@@ -26,14 +27,20 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       success: function(story) {
         that.collection.add(story);
         Backbone.history.navigate('', {trigger: true});
-        // Add error callback
       }
     });
   },
 
   render: function() {
+    debugger
     var content = this.template();
-    this.$el.html(content)
+    this.$el.html(content);
+    setTimeout(function() {
+      this.editor = new Dante.Editor({
+        el: '.editor'
+      });
+      this.editor.start();
+    }.bind(this), 0);
     this.attachSubviews();    
     return this;
   },

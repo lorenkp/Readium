@@ -12,10 +12,9 @@
  *
  *= require_self
  *= require default
- *= require medium-editor
- *= dante-editor
  */
 
+@import "dante";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -57,55 +56,9 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.editable.compose-home {
-  min-height: 160px;
-  width: 580px;
-  border-bottom: 1px;
-  font-family: "freight-text-pro";
-  font-size: 18px;
-  letter-spacing: 0.0833333px;
-  outline: none;
-
-}
-
-.medium-editor-placeholder {
-  font-family: 'freight-text-pro';
-  opacity: 1;
-  color: rgba(0, 0, 0, 0.298039);
-}
 
 *:focus {
     outline: 0;
-}
-
-.editable.editor-title.medium-edit-placeholder {
-  color: rgba(0, 0, 0, 0.298039);
-  font-size: 36px;
-  font-family: 'Lucida Grande';
-  font-weight: bold;
-  font-style: normal;
-}
-
-.editable.editor-title {
-  font-family: 'Lucida Grande';
-  font-weight: bold;
-  font-size: 36px;
-  margin-bottom: 4px;
-}
-
-.medium-editor-placeholder:after {
-  font-style: normal !important;
-}
-
-// .title-body-container {
-//   max-width: 700px;
-//   margin: auto;
-//   padding-top: 75px
-// }
-
-.editable.editor-body {
-  font-family: freight;
-  font-size: 22px;
 }
 
 img {
@@ -394,85 +347,6 @@ a::-moz-focus-inner {border:0;}
 
 textarea:focus, input:focus{
     outline-style: none !important;
-}
-
-@font-face{
-  font-family:'medium-icons';
-  src:url('/assets/medium-icons.eot');
-  src:url('/assets/medium-icons.GL0UGUn2SflsrDQQebdo3Q.eot') format("embedded-opentype"),url('/assets/medium-icons.woff') format("woff"),url('/assets/medium-icons.tff') format("truetype");
-  font-weight:normal;
-  font-style:normal;
-}
-
-.icon {
-    font-family: 'medium-icons';
-    font-weight: normal;
-    font-style: normal;
-    speak: none;
-    text-decoration: none;
-    text-transform: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-.icon--addMediaImage:before {
-    content:"\f106";
-    display: inline-block;
-}
-
-@font-face {
-  font-family: "dante-tooltip";
-  src: url("dante.eot");
-  src: url("dante.eot?#iefix") format("embedded-opentype"), url("dante.woff") format("woff"), url("dante.ttf") format("truetype"), url("dante.svgdante") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-  .icon-image:before {
-  content: "\e601"; }
-
-  .tooltip-icon:before {
-  font-family: 'dante-tooltip';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.dante-icon:before {
-  display: inline-block;
-  font-family: "dante";
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1em;
-  text-align: center;
-  text-decoration: inherit;
-  text-transform: none; }
-
-button.inlineTooltip-button.scale {
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
-  line-height: 36px;
-  background-color: white;
-  border-color: rgba(0,0,0,0.6);
-  padding: 0;
-  margin-left: 3px;
-  position: relative;
-  top: 4px;
-  font-size: 19px;
-  color: rgba(0,0,0,0.6);
-  border-width: 1px;
-}
-
-button.inlineTooltip-button.scale:hover {
-  color: rgba(0,0,0,0.9);
-  border-color: rgba(0,0,0,0.9);
 }
 
 .story-title-home {

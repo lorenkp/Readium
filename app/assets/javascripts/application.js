@@ -17,7 +17,8 @@
 //= require underscore
 //= require backbone
 //= require cloudinary
-//= require medium-editor.min
+//= require sanitize
+//= require dante-editor
 //= require readium
 //= require composite_view
 //= require_tree ../templates

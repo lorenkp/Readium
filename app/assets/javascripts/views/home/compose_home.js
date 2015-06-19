@@ -61,10 +61,6 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    new MediumEditor(this.$el.find('.editable'), {
-      placeholder: {text: ''},
-      elementsContainer: this.el
-    }); 
     return this;
   },
 
