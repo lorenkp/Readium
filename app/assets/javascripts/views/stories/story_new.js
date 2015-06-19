@@ -9,6 +9,9 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       story: this.story,
       tagsCollection: this.tagsCollection
     }));
+
+    this.addSubview('.search', new Readium.Views.Search());
+
   },
 
   events: {
@@ -19,13 +22,19 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   publish: function(event) {
 
     event.preventDefault();
-    this.story.set({title: this.$('.editable.editor-title').html()});
-    this.story.set({body: this.$('.editable.editor-body').html()});
+    this.story.set({
+      title: this.$('.editable.editor-title').html()
+    });
+    this.story.set({
+      body: this.$('.editable.editor-body').html()
+    });
     var that = this;
     this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
-        Backbone.history.navigate('', {trigger: true});
+        Backbone.history.navigate('', {
+          trigger: true
+        });
         // Add error callback
       }
     });
@@ -33,8 +42,9 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
 
   render: function() {
     var content = this.template();
-    this.$el.html(content)
-    this.attachSubviews();    
+    this.$el.html(content);
+    this.attachSubviews();
+    this.subviews('.search').first().render();
     return this;
   },
 
@@ -43,7 +53,10 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
-      that.story.set({header_url: data.secure_url, home_url: data.thumbnail_url});
+      that.story.set({
+        header_url: data.secure_url,
+        home_url: data.thumbnail_url
+      });
     });
   }
 
@@ -56,5 +69,5 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   // -      });
   // -      this.editor.start();
   // -    }.bind(this), 0);
-  
+
 });

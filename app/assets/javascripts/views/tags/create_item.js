@@ -9,6 +9,8 @@ Readium.Views.CreateItem = Backbone.View.extend({
     this.firstBackspace = false;
   },
 
+  // {data: {query: value}}
+
   events: {
     'keydown': 'keyAction'
   },
@@ -24,7 +26,7 @@ Readium.Views.CreateItem = Backbone.View.extend({
       }
     } else if (e.which === 8 && e.target.value === '') {
       e.preventDefault();
-      if (!this.firstBackspace){
+      if (!this.firstBackspace) {
         // highlight last p; mark first backspace as true
         this.$('.created-tag:last').addClass('created-tag-delete');
         this.firstBackspace = true;
@@ -50,16 +52,19 @@ Readium.Views.CreateItem = Backbone.View.extend({
     var _tags = this.story.get('tags');
     _tags.push(tagName);
     if (_tags.length === 3) {
-      this.story.set({'tags': _tags});
+      this.story.set({
+        'tags': _tags
+      });
     }
   },
 
   removeTag: function(tagName) {
     var _tags = this.story.get('tags');
     _tags = _.without(_tags, tagName);
-    this.story.set({'tags': _tags});
+    this.story.set({
+      'tags': _tags
+    });
   }
-  
 
   // saveTagging: function(input) {
   //   var tagging = new Readium.Models.Tagging({
@@ -72,7 +77,7 @@ Readium.Views.CreateItem = Backbone.View.extend({
   //       that.story.set('tag', input);
   //     },
   //     error: function () {
-        
+
   //     }
   //   });
   // }
