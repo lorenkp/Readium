@@ -16,9 +16,11 @@ Readium.Views.CreateItem = Backbone.View.extend({
     if (e.which === 13) {
       $(e.target).remove();
       $('.tag-input').append('<p class="created-tag">' + e.target.value + '</p>');
-      $('.tag-input').append('<input class="entry" type="text">');
-      $('.entry').focus();
-      this.attachTag(e.target.value);
+      if ($('div p').length < 3) {
+        $('.tag-input').append('<input class="entry" type="text">');
+        $('.entry').focus();
+        this.attachTag(e.target.value);
+      }
     }
   },
 
