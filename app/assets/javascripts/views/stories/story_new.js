@@ -2,7 +2,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
   initialize: function(options) {
-    debugger
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
@@ -32,7 +31,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    debugger
     var content = this.template();
     this.$el.html(content);
     setTimeout(function() {
