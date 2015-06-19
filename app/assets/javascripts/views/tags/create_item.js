@@ -5,7 +5,8 @@ Readium.Views.CreateItem = Backbone.View.extend({
   initialize: function(options) {
     this.story = options.story;
     this.tagsCollection = options.tagsCollection;
-    this.listenTo(this.story, 'change', this.render);
+    // this.listenTo(this.story, 'change', this.render);
+    this.firstBackspace = false;
   },
 
   events: {
@@ -21,6 +22,21 @@ Readium.Views.CreateItem = Backbone.View.extend({
         $('.entry').focus();
         this.attachTag(e.target.value);
       }
+    } else if (e.which === 8 && e.target.value === '') {
+      e.preventDefault();
+      if (!this.firstBackspace){
+        // highlight last p; mark first backspace as true
+        this.$('.created-tag:last').addClass('created-tag-delete');
+        this.firstBackspace = true;
+
+      } else {
+        // if not first backspace, remove highlighted p
+        var tagDelete = this.$('.created-tag:last').text();
+        this.removeTag(tagDelete);
+        this.firstBackspace = false;
+        this.$('.created-tag:last').remove();
+      }
+
     }
   },
 
@@ -30,13 +46,20 @@ Readium.Views.CreateItem = Backbone.View.extend({
     return this;
   },
 
-  attachTag: function(input) {
+  attachTag: function(tagName) {
     var _tags = this.story.get('tags');
-    _tags.push(input);
+    _tags.push(tagName);
     if (_tags.length === 3) {
       this.story.set({'tags': _tags});
     }
+  },
+
+  removeTag: function(tagName) {
+    var _tags = this.story.get('tags');
+    _tags = _.without(_tags, tagName);
+    this.story.set({'tags': _tags});
   }
+  
 
   // saveTagging: function(input) {
   //   var tagging = new Readium.Models.Tagging({
