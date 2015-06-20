@@ -1,6 +1,6 @@
 Readium.Views.ComposeHome = Backbone.View.extend({
   template: JST['home/compose_home'],
-  
+
   events: {
     'click #publish': 'postStory',
     'click .scale': 'uploadImage',
@@ -32,7 +32,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       $('#write-here').slideToggle(75);
     });
   }
-    
+
   },
 
   postStory: function() {
@@ -61,10 +61,6 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    // new MediumEditor(this.$el.find('.editable'), {
-    //   placeholder: {text: ''},
-    //   elementsContainer: this.el
-    // }); 
     return this;
   },
 

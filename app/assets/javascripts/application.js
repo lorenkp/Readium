@@ -18,6 +18,8 @@
 //= require underscore
 //= require backbone
 //= require cloudinary
+//= require sanitize
+//= require dante-editor
 //= require readium
 //= require composite_view
 //= require_tree ../templates

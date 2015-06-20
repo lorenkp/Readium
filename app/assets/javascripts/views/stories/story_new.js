@@ -35,7 +35,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
         Backbone.history.navigate('', {
           trigger: true
         });
-        // Add error callback
       }
     });
   },
@@ -43,8 +42,13 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
+    setTimeout(function() {
+      this.editor = new Dante.Editor({
+        el: '.editor'
+      });
+      this.editor.start();
+    }.bind(this), 0);
     this.attachSubviews();
-    this.subviews('.search').first().render();
     return this;
   },
 

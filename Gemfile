@@ -14,6 +14,7 @@ gem 'jbuilder'
 gem 'filepicker-rails'
 gem 'figaro'
 gem 'rails_12factor'
+gem "dante-editor"
 
 group :development, :test do
   gem 'byebug'
