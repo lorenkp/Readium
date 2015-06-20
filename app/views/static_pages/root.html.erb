@@ -1,4 +1,6 @@
-<script>$(Readium.initialize);</script>
+<script>
+$(Readium.initialize);
+</script>
 <nav class="navbar navbar-default">
   <div class="container bar">
     <a href="#" class="navbar-brand" style="width:254px">
@@ -17,6 +19,9 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
+        <div class="search"></div>
+      </li>
+      <li>
         <a href="#stories/new">
           <button class="write-story btn">Write a Story</button>
         </a>
@@ -25,5 +30,9 @@
   </div>
 </nav>
 <div id="main"></div>
-<script>window.CURRENT_USER = '<%= current_user.username %>'</script>
-<script>window.CURRENT_USER_ID = <%= current_user.id %></script>
+<script>
+window.CURRENT_USER = '<%= current_user.username %>';
+</script>
+<script>
+window.CURRENT_USER_ID = <%= current_user.id %>
+</script>

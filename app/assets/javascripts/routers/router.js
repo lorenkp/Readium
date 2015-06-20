@@ -22,6 +22,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       tagsCollection: this.tagsCollection,
       model: createStoryHome
     });
+    $('.search').html((new Readium.Views.Search()).render().$el);
     this._swapView(view);
   },
 

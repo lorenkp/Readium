@@ -29,21 +29,21 @@ Readium.Views.Search = Backbone.View.extend({
       display: 'username',
       source: users,
       templates: {
-        header: '<h3 class="league-name">Users</h3>'
+        header: '<p class="search-cat">Users</p>'
       }
     }, {
       name: 'tags',
       display: 'name',
       source: tags,
       templates: {
-        header: '<h3 class="league-name">Tags</h3>'
+        header: '<p class="search-cat">Tags</p>'
       }
     }, {
       name: 'stories',
       display: 'title',
       source: stories,
       templates: {
-        header: '<h3 class="league-name">Stories</h3>'
+        header: '<p class="search-cat">Stories</p>'
       }
     });
 

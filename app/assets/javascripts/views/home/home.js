@@ -15,7 +15,7 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     // This probably should be in the events hash
     $('.write-button').one('click', this.navigateToStoryNew);
     this.listenTo(this.storiesCollection, 'add', this.addNewStoryFeedPreview);
-    
+
     this.addSubview('.compose', new Readium.Views.ComposeHome({
       collection: this.storiesCollection,
     }));
@@ -40,7 +40,9 @@ Readium.Views.Home = Backbone.CompositeView.extend({
   },
 
   navigateToStoryNew: function() {
-    Backbone.history.navigate('/stories/new', {trigger: true});
+    Backbone.history.navigate('/stories/new', {
+      trigger: true
+    });
   },
 
   render: function() {

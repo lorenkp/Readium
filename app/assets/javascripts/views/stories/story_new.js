@@ -10,7 +10,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       tagsCollection: this.tagsCollection
     }));
 
-    this.addSubview('.search', new Readium.Views.Search());
+    // this.addSubview('.search', new Readium.Views.Search());
 
   },
 
