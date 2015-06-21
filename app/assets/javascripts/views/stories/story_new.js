@@ -17,10 +17,10 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
 
   publish: function(event) {
     event.preventDefault();
-    var x = $('.graf--first').wrap('<p/>').parent().html();
+    var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
+    var title = this.story.stripTitle(dirtyTitle);
     $('.graf--first').unwrap();
     $('p').each(function() {
-      debugger
       if ($(this).has('span').length !== 0) {
         this.remove();
       }
@@ -28,13 +28,12 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
         this.remove();
       }
     });
-    debugger
     if ($("div p:last-child").html() === ' <br>') {
       $("div p:last-child").remove();
     }
     $('p').wrapAll("<div class='new' />").parent().html();
     this.story.set({
-      title: x
+      title: title
     });
     this.story.set({
       body: $('.new').html()

@@ -7,19 +7,28 @@ Readium.Views.Search = Backbone.View.extend({
     var users = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('username'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: 'users'
+      prefetch: {
+        url: 'users',
+        cache: false
+      }
     });
 
     var tags = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: 'api/tags'
+      prefetch: {
+        url: 'api/tags',
+        cache: false
+      }
     });
 
     var stories = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: 'api/stories'
+      prefetch: {
+        url: 'api/stories',
+        cache: false
+      }
     });
 
     this.$('#multiple-datasets .typeahead').typeahead({}, {
