@@ -22,7 +22,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       tagsCollection: this.tagsCollection,
       model: createStoryHome
     });
-    $('.search').html((new Readium.Views.Search()).render().$el);
+    this.insertSearchBar();
     this._swapView(view);
   },
 
@@ -31,7 +31,12 @@ Readium.Routers.Router = Backbone.Router.extend({
       storiesCollection: this.storiesCollection,
       tagsCollection: this.tagsCollection,
     });
+    this.insertSearchBar();
     this._swapView(view);
+  },
+
+  insertSearchBar: function() {
+    $('.search').html((new Readium.Views.Search()).render().$el);
   },
 
   storyShow: function(id) {
@@ -39,13 +44,13 @@ Readium.Routers.Router = Backbone.Router.extend({
     var view = new Readium.Views.StoryShow({
       model: story
     });
+    this.insertSearchBar();
     this._swapView(view);
   },
 
   _swapView: function(view) {
     this._currentView && this._currentView.remove();
-    this._currentView = view;
--    this.$rootEl.html(view.render().$el);
+    this._currentView = view; - this.$rootEl.html(view.render().$el);
   },
 
   tagShow: function(id) {
@@ -53,6 +58,7 @@ Readium.Routers.Router = Backbone.Router.extend({
     var view = new Readium.Views.TagShow({
       model: tag
     });
+    this.insertSearchBar();
     this._swapView(view);
   }
 });
