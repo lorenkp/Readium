@@ -99,7 +99,7 @@ img {
     min-height: 67px;
 }
 
-.navbar-nav li a {
+.navbar-nav li .header-link {
     line-height: 67px;
     height: 67px;
     padding-top: 0;
@@ -621,7 +621,7 @@ input:focus {
 .tt-menu {
     width: 250px;
     margin: 16px;
-    left: -50px !important;
+    left: -39px !important;
     background-color: white;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.247059) 0px 1px 2px 0px, rgba(0, 0, 0, 0.34902) 0px 0px 1px 0px;
@@ -652,6 +652,9 @@ input:focus {
     margin-bottom: 10px;
     font-size: 12px;
     font-weight: 300;
+}
+
+.tt-selectable {
 }
 
 .tt-dataset {

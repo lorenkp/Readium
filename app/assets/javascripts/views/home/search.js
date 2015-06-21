@@ -35,14 +35,18 @@ Readium.Views.Search = Backbone.View.extend({
       display: 'name',
       source: tags,
       templates: {
-        header: '<p class="search-cat">Tags</p>'
+        header: '<p class="search-cat">Tags</p>',
+        suggestion: Handlebars.compile('<p><a href="#tags/{{id}}">{{name}}</a></p>')
+
       }
     }, {
       name: 'stories',
       display: 'title',
       source: stories,
       templates: {
-        header: '<p class="search-cat">Stories</p>'
+        header: '<p class="search-cat">Stories</p>',
+        suggestion: Handlebars.compile('<p><a href="#stories/{{id}}">{{title}}</a></p>')
+
       }
     });
 
