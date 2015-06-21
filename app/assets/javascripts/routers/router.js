@@ -23,6 +23,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       model: createStoryHome
     });
     this.insertSearchBar();
+    $('.publish-toolbar').empty();
     this._swapView(view);
   },
 
@@ -32,6 +33,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       tagsCollection: this.tagsCollection,
     });
     this.insertSearchBar();
+    $('.publish-toolbar').html('<button class="write-story publish-toolbar-button">Publish</button>');
     this._swapView(view);
   },
 
@@ -45,6 +47,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       model: story
     });
     this.insertSearchBar();
+    $('.publish-toolbar').empty();
     this._swapView(view);
   },
 
@@ -59,6 +62,7 @@ Readium.Routers.Router = Backbone.Router.extend({
       model: tag
     });
     this.insertSearchBar();
+    $('.publish-toolbar').empty();
     this._swapView(view);
   }
 });

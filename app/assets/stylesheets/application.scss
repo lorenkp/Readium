@@ -151,7 +151,7 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 999em;
     font-family: jaf-bernino-sans;
-    font-weight: normal !important;
+    font-weight: 300;
     padding: 0 16px;
     vertical-align: baseline;
     letter-spacing: -0.283333px;
@@ -600,8 +600,8 @@ input:focus {
 
 .search {
     position: relative;
-    top: 4px;
-    margin: 10px;
+    top: 10px;
+    margin: 5px;
 }
 
 .typeahead {
@@ -611,7 +611,7 @@ input:focus {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 999em;
     font-family: jaf-bernino-sans;
-    font-weight: normal !important;
+    font-weight: 300;
     padding: 0 16px;
     vertical-align: baseline;
     letter-spacing: -0.283333px;
@@ -656,4 +656,28 @@ input:focus {
 
 .tt-dataset {
     margin-bottom: 15px;
+}
+
+.publish-toolbar-button {
+    color: #57ad68;
+    position: relative;
+    top: 8px;
+    border-color: #a9d8b2;
+    margin-right: 5px;
+    font-weight: 300;
+}
+
+.publish-toolbar-button:hover {
+    border-color: #57ad68;
+    color: #468c54;
+}
+
+.publish-toolbar {
+    position: relative;
+    top: 8px;
+}
+
+.write-tool {
+    padding-left: 5px !important;
+    padding-right: 10px !important;
 }

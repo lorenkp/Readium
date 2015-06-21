@@ -12,15 +12,13 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .publish': 'publish',
     'click .upload': 'upload'
   },
 
   publish: function(event) {
-
     event.preventDefault();
     this.story.set({
-      title: this.$('.editable.editor-title').html()
+      title: this.$('h2', 'h3', 'h4').html()
     });
     this.story.set({
       body: this.$('.editable.editor-body').html()
@@ -37,11 +35,13 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    $('.publish-toolbar-button').one('click', this.publish);
     var content = this.template();
     this.$el.html(content);
     setTimeout(function() {
       this.editor = new Dante.Editor({
-        el: '.editor'
+        el: '.editor',
+        extra_tooltip_widgets: false
       });
       this.editor.start();
     }.bind(this), 0);
