@@ -11,5 +11,12 @@ Readium.Models.Story = Backbone.Model.extend({
         ret = ret.substr(0, 200-3) + ' . . .';
     }
     return ret;
+  },
+
+  stripTitle: function(title) {
+    var div = document.createElement("div");
+    div.innerHTML = title;
+    var strippedTitle = div.textContent || div.innerText || "";
+    return strippedTitle;
   }
 });
