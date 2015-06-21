@@ -17,16 +17,32 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
 
   publish: function(event) {
     event.preventDefault();
+    var x = $('.graf--first').wrap('<p/>').parent().html();
+    $('.graf--first').unwrap();
+    $('p').each(function() {
+      debugger
+      if ($(this).has('span').length !== 0) {
+        this.remove();
+      }
+      if ($(this).hasClass('graf--empty')) {
+        this.remove();
+      }
+    });
+    debugger
+    if ($("div p:last-child").html() === ' <br>') {
+      $("div p:last-child").remove();
+    }
+    $('p').wrapAll("<div class='new' />").parent().html();
     this.story.set({
-      title: this.$('h2', 'h3', 'h4').html()
+      title: x
     });
     this.story.set({
-      body: this.$('.editable.editor-body').html()
+      body: $('.new').html()
     });
     var that = this;
     this.story.save({}, {
       success: function(story) {
-        that.collection.add(story);
+        that.storiesCollection.add(story);
         Backbone.history.navigate('', {
           trigger: true
         });
@@ -35,13 +51,14 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    $('.publish-toolbar-button').one('click', this.publish);
+    var boundView = _.bind(this.publish, this);
+    $('.publish-toolbar-button').click(boundView);
     var content = this.template();
     this.$el.html(content);
     setTimeout(function() {
       this.editor = new Dante.Editor({
         el: '.editor',
-        extra_tooltip_widgets: false
+        body_placeholder: ' '
       });
       this.editor.start();
     }.bind(this), 0);
