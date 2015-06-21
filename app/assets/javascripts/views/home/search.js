@@ -22,9 +22,7 @@ Readium.Views.Search = Backbone.View.extend({
       prefetch: 'api/stories'
     });
 
-    this.$('#multiple-datasets .typeahead').typeahead({
-      highlight: true
-    }, {
+    this.$('#multiple-datasets .typeahead').typeahead({}, {
       name: 'users',
       display: 'username',
       source: users,

@@ -59,7 +59,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     if (this.model.followings().findWhere({follower_id: currentUser.id})) {
-      $('.tag-follow').css({'background': '#468c54', 'color': 'white'});
+      $('.tag-follow').css({'background': '#468c54', 'color': 'white', 'border-color': 'white'});
     } else {
       $('.tag-follow').css({'background': 'white',
         'color': 'rgb(87, 173, 104)'});
