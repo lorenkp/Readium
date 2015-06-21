@@ -22,15 +22,14 @@ Readium.Views.Search = Backbone.View.extend({
       prefetch: 'api/stories'
     });
 
-    this.$('#multiple-datasets .typeahead').typeahead({
-      highlight: true
-    }, {
+    this.$('#multiple-datasets .typeahead').typeahead({}, {
       name: 'users',
       display: 'username',
       source: users,
       templates: {
-        header: '<p class="search-cat">Users</p>'
-      }
+        header: '<p class="search-cat">Users</p>',
+        suggestion: Handlebars.compile('<p><a href="users/{{id}}">{{username}}</a></p>')
+      },
     }, {
       name: 'tags',
       display: 'name',

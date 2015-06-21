@@ -540,6 +540,10 @@ input:focus {
     font-size: 15px;
 }
 
+.icon--search:before{
+    content:"\f162"
+}
+
 // .icon--readingList:hover:before {
 //   color: rgba(0, 0, 0, 0.6);
 //   content: 'Bookmark';
@@ -594,23 +598,62 @@ input:focus {
     }
 }
 
-#multiple-datasets .league-name {
-    margin: 0 20px 5px 20px;
-    padding: 3px 0;
-    border-bottom: 1px solid #ccc;
+.search {
+    position: relative;
+    top: 4px;
+    margin: 10px;
+}
+
+.typeahead {
+    height: 38px;
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999em;
+    font-family: jaf-bernino-sans;
+    font-weight: normal !important;
+    padding: 0 16px;
+    vertical-align: baseline;
+    letter-spacing: -0.283333px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .tt-menu {
-  width: 250px;
-  margin: 15px 0;
-  padding: 8px 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    width: 250px;
+    margin: 16px;
+    left: -50px !important;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.247059) 0px 1px 2px 0px, rgba(0, 0, 0, 0.34902) 0px 0px 1px 0px;
+}
+
+.search-cat {
+    font-family: 'jaf-bernino-sans';
+    font-size: 11px;
+    letter-spacing: 1.10000002384186px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.0470588);
+    border-bottom-width: 1px;
+    padding-bottom: 5px;
+    font-weight: 300;
+}
+
+.tt-hightlight {
+    font-family: 'jaf-bernino-sans';
+    font-size: 12px;
+}
+
+.tt-suggestion {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tt-dataset {
+    margin-bottom: 15px;
 }
