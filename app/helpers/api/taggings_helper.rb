@@ -1,2 +1,2 @@
-module Api::StoriesHelper
+module Api::TaggingsHelper
 end

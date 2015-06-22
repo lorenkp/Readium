@@ -13,7 +13,6 @@ gem 'newrelic_rpm'
 gem 'jbuilder'
 gem 'filepicker-rails'
 gem 'figaro'
-gem 'rails_12factor'
 gem "dante-editor"
 
 group :development, :test do
@@ -21,6 +20,8 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'annotate'
