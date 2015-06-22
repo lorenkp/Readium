@@ -72,7 +72,7 @@
   upload: function() {
     var that = this;
     event.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_STORY_NEW, function(error, result) {
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
       var thumbnailUrl = data.thumbnail_url.slice(0, 4) +
         's' + data.thumbnail_url.slice(4);

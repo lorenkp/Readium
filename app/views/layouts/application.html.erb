@@ -6,9 +6,9 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <script type="text/javascript" charset="utf-8">
-    window.CLOUDINARY_STORY_NEW = {
+    window.CLOUDINARY_OPTIONS = {
       cloud_name: "<%=ENV['CLOUD_NAME']%>",
-      upload_preset: "<%= ENV['STORY_NEW_PRESET'] %>",
+      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
       sources: ['local'],
       theme: 'minimal',
       thumbnail_transformation: 'w_700'
