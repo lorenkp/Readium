@@ -5,14 +5,16 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
-    this.addSubview('.create-box', new Readium.Views.TagCreateBox({
-      story: this.story,
-      tagsCollection: this.tagsCollection
-    }));
+    setTimeout(function() {
+      this.addSubview('.create-box', new Readium.Views.TagCreateBox({
+        story: this.story,
+        tagsCollection: this.tagsCollection
+      }));
+    }.bind(this), 0);
   },
 
   events: {
-    'click .upload': 'upload'
+    'click .circle-button': 'upload'
   },
 
   publish: function(event) {
