@@ -20,6 +20,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
     var title = this.story.stripTitle(dirtyTitle);
     $('.graf--first').unwrap();
+    debugger
     $('p').each(function() {
       if ($(this).has('span').length !== 0) {
         this.remove();
@@ -31,7 +32,8 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     if ($("div p:last-child").html() === ' <br>') {
       $("div p:last-child").remove();
     }
-    $('p').wrapAll("<div class='new' />").parent().html();
+    $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
+    
     this.story.set({
       title: title
     });
@@ -57,7 +59,11 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     setTimeout(function() {
       this.editor = new Dante.Editor({
         el: '.editor',
-        body_placeholder: ' '
+        body_placeholder: ' ',
+        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        upload_callback: function(event) {
+          $('.graf-image').attr('src', event.secure_url);
+        }
       });
       this.editor.start();
     }.bind(this), 0);
