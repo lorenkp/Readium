@@ -38,7 +38,6 @@ Readium.Views.CreateItem = Backbone.View.extend({
         this.firstBackspace = false;
         this.$('.created-tag:last').remove();
       }
-
     }
   },
 

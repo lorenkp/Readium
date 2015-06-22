@@ -16,13 +16,17 @@
 class Story < ActiveRecord::Base
   validates :body, presence: true
   belongs_to :author, foreign_key: :author_id, class_name: 'User'
-  has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :taggings, class_name: :Tagging, foreign_key: :story_id
+  has_many :tags, through: :taggings, source: :tag_id
 
-  # def tagnames=(tag_names) 
-  #   find or create
-  #   self.tags <<  
-  # end
+  attr_reader :tags
 
-  
+  def tags=(tag_names)
+    byebug
+    tag_names.each do |tag|
+      @tag = Tag.find_or_create_by(name: tag)
+
+      byebug
+    end
+  end
 end

@@ -11,8 +11,8 @@
 class Tag < ActiveRecord::Base
   validates :name, presence: true
   validates :name, uniqueness: true
-  has_many :taggings
   has_many :stories, through: :taggings
+  has_many :taggings
   has_many :follows, as: :followable
   has_many :followers, through: :follows, source: :follower
 end

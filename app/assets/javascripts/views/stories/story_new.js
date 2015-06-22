@@ -20,7 +20,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
     var title = this.story.stripTitle(dirtyTitle);
     $('.graf--first').unwrap();
-    debugger
     $('p').each(function() {
       if ($(this).has('span').length !== 0) {
         this.remove();
@@ -33,12 +32,9 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       $("div p:last-child").remove();
     }
     $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
-    
     this.story.set({
-      title: title
-    });
-    this.story.set({
-      body: $('.new').html()
+      title: title,
+      body: $('.new').html(),
     });
     var that = this;
     this.story.save({}, {

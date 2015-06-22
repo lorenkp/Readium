@@ -1,7 +1,6 @@
 class Api::StoriesController < ApplicationController
   def create
     @story = current_user.stories.new(story_params)
-
     if @story.save
       render 'show'
     else
@@ -34,6 +33,6 @@ class Api::StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :subtitle, :body, :header_url, :home_url)
+    params.permit(:title, :subtitle, :body, :header_url, :home_url, :tags => [])
   end
 end
