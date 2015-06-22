@@ -686,7 +686,7 @@ input:focus {
     padding-right: 10px !important;
 }
 
-.circle-button {
+.add-banner {
     background-color: white;
     border-style: solid;
     border-width: 1px;
@@ -704,7 +704,12 @@ input:focus {
     right: -8px;
 }
 
-.circle-button:hover {
+.banner-home {
+    position: relative;
+    top: 12px
+}
+
+.add-banner:hover {
     border-color: black;
     color: black;
 }

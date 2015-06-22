@@ -6,21 +6,30 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <script type="text/javascript" charset="utf-8">
-    window.CLOUDINARY_OPTIONS = {
+    window.CLOUDINARY_STORY_NEW = {
       cloud_name: "<%=ENV['CLOUD_NAME']%>",
-      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
+      upload_preset: "<%= ENV['STORY_NEW_PRESET'] %>",
       sources: ['local'],
       theme: 'minimal',
       thumbnail_transformation: 'w_700'
     };
   </script>
 
+<!--   <script type="text/javascript" charset="utf-8">
+      window.CLOUDINARY_HOME = {
+      cloud_name: "<%=ENV['CLOUD_NAME']%>",
+      upload_preset: "<%= ENV['HOME_PRESET'] %>",
+      sources: ['local'],
+      theme: 'minimal',
+      // thumbnail_transformation: 'w_700'
+    };
+  </script> -->
 </head>
-<body>
+  <body>
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  </body>
 </html>
 
 

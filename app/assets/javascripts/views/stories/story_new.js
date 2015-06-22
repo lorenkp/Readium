@@ -1,4 +1,4 @@
-Readium.Views.StoryNew = Backbone.CompositeView.extend({
+  Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
   initialize: function(options) {
@@ -14,7 +14,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .circle-button': 'upload'
+    'click .add-banner': 'upload'
   },
 
   publish: function(event) {
@@ -72,7 +72,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
   upload: function() {
     var that = this;
     event.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+    cloudinary.openUploadWidget(CLOUDINARY_STORY_NEW, function(error, result) {
       var data = result[0];
       var thumbnailUrl = data.thumbnail_url.slice(0, 4) +
         's' + data.thumbnail_url.slice(4);

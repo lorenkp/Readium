@@ -3,7 +3,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
 
   events: {
     'click #publish': 'postStory',
-    'click .scale': 'uploadImage',
+    'click .add-banner': 'uploadImage',
     'click .compose-header': 'disappearText',
   },
 
@@ -54,9 +54,10 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     setTimeout(function() {
       this.editor = new Dante.Editor({
         el: '.compose-home',
-        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
-        // store_url: "/save" //post to save
-
+        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        upload_callback: function(event) {
+          $('.graf-image').attr('src', event.secure_url);
+        }
       });
       this.editor.start();
     }.bind(this), 500);
@@ -66,7 +67,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   uploadImage: function(event) {
     var that = this;
     event.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+    cloudinary.openUploadWidget(CLOUDINARY_HOME, function(error, result) {
       var data = result[0];
       that.story.set({
         header_url: data.url,
