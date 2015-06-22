@@ -540,8 +540,12 @@ input:focus {
     font-size: 15px;
 }
 
-.icon--search:before{
-    content:"\f162"
+.icon--addMediaImage:before {
+    content: "\f106";
+}
+
+.icon--search:before {
+    content: "\f162"
 }
 
 // .icon--readingList:hover:before {
@@ -680,4 +684,40 @@ input:focus {
 .write-tool {
     padding-left: 5px !important;
     padding-right: 10px !important;
+}
+
+.circle-button {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    width: 118px;
+    height: 33px;
+    border-radius: 999em;
+    line-height: 28px;
+    font-size: 36px;
+    border-color: rgba(0, 0, 0, 0.44);
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.44);
+    margin-top: 17px;
+    position: relative;
+    top: -22px;
+    right: -8px;
+}
+
+.circle-button:hover {
+    border-color: black;
+    color: black;
+}
+
+.editor {
+    margin-bottom: 0px;
+}
+
+.banner-text {
+    font-size: 11px;
+    vertical-align: super;
+}
+
+.create-box {
+    float: left;
 }

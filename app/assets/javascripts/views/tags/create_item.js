@@ -12,14 +12,14 @@ Readium.Views.CreateItem = Backbone.View.extend({
   // {data: {query: value}}
 
   events: {
-    'keydown': 'keyAction'
+    'keydown': 'keyAction',
   },
 
   keyAction: function(e) {
     if (e.which === 13) {
       $(e.target).remove();
       $('.tag-input').append('<p class="created-tag">' + e.target.value + '</p>');
-      if ($('.tag-input p').length < 3) {
+      if ($('.tag-input p').length < 4) {
         $('.tag-input').append('<input class="entry" type="text">');
         $('.entry').focus();
         this.attachTag(e.target.value);
@@ -34,7 +34,7 @@ Readium.Views.CreateItem = Backbone.View.extend({
       } else {
         // if not first backspace, remove highlighted p
         var tagDelete = this.$('.created-tag:last').text();
-        this.removeTag(tagDelete);
+        this.removeTag([],tagDelete);
         this.firstBackspace = false;
         this.$('.created-tag:last').remove();
       }
@@ -57,7 +57,7 @@ Readium.Views.CreateItem = Backbone.View.extend({
     }
   },
 
-  removeTag: function(tagName) {
+  removeTag: function(event, tagName) {
     var _tags = this.story.get('tags');
     _tags = _.without(_tags, tagName);
     this.story.set({
