@@ -74,21 +74,13 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
+      var thumbnailUrl = data.thumbnail_url.slice(0, 4) +
+        's' + data.thumbnail_url.slice(4);
+      $('.header-preview').append('<img src=' + thumbnailUrl + '>');
       that.story.set({
         header_url: data.secure_url,
-        home_url: data.thumbnail_url
+        home_url: thumbnailUrl
       });
     });
   }
-
-  // setTimeout(function () {
-  // this.editor = new Dante.Editor({
-  // -        el: '.editable',
-  // -        // upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
-  // -        // store_url: "/save" //post to save
-  // -
-  // -      });
-  // -      this.editor.start();
-  // -    }.bind(this), 0);
-
 });
