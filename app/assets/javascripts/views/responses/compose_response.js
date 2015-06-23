@@ -1,5 +1,5 @@
-Readium.Views.ComposeHome = Backbone.CompositeView.extend({
-  template: JST['home/compose_home'],
+Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
+  template: JST['responses/compose'],
 
   events: {
     'click #publish': 'publish',
@@ -8,6 +8,14 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.listenTo(this.collection, 'add', this.render);
+    setTimeout(function() {
+      this.editor = new Dante.Editor({
+        el: '.compose-home',
+        disable_title: true
+      });
+      this.editor.start();
+      $('.section-inner').addClass('dante-home');
+    }.bind(this), 500);
   },
 
   disappearText: function() {
@@ -56,14 +64,6 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       user: currentUser
     });
     this.$el.html(content);
-    setTimeout(function() {
-      this.editor = new Dante.Editor({
-        el: '.compose-home',
-        disable_title: true
-      });
-      this.editor.start();
-      $('.section-inner').addClass('dante-home');
-    }.bind(this), 500);
     this.attachSubviews();
     return this;
   },
