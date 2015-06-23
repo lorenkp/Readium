@@ -8,6 +8,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
+    this.listenTo(currentUser, 'sync', this.render);
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
@@ -72,7 +73,9 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var content = this.template();
+    var content = this.template({
+      user: currentUser
+    });
     this.$el.html(content);
     setTimeout(function() {
       this.editor = new Dante.Editor({

@@ -1,6 +1,6 @@
 <a href="#users/<%= story.get('author_id') %>">
   <div class="author-info">
-    <img class="avatar" src="/assets/loren_avatar.jpg"/>
+    <img class="avatar" src="<%= story.get('avatar_url') %>">
     <div class="author-time">
       <div class="author-name"><%= story.get('username') %></div>
       <div class="timeago" title="<%= story.get('created_at') %>"></div>

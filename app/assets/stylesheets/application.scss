@@ -831,11 +831,10 @@ input:focus {
     padding-left: 0px !important;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
     background: white !important;
-}
-.dropdown-menu {
-
 }
 
 .dropdown-menu > li > a {
