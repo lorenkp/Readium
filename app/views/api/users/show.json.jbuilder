@@ -11,3 +11,9 @@ json.followed_tags do
     json.extract!(tag, :id, :name)
   end
 end
+
+json.followers do
+  json.array!(@user.followers) do |user|
+    json.extract!(user, :id, :username)
+  end
+end

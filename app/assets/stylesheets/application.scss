@@ -759,4 +759,29 @@ input:focus {
 
 .follow-blurb {
     height: 63px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.following-blurb {
+    display: inline-block;
+    padding: 10px 20px 5px 20px;
+    border-right: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.0470588);
+}
+
+.follow-title {
+    font-family: 'jaf-bernino-sans';
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.follow-num {
+    font-size: 24px;
+}
+
+.followers-blurb {
+    display: inline-block;
+    padding: 10px 20px 5px 20px;
 }

@@ -2,10 +2,14 @@
   <img class="avatar-blurb" src="/assets/loren_avatar.jpg"/>
   <p class="username-blurb"><%= user.escape('username') %></p>
   <div class="follow-blurb">
-  <div class="following-blurb">
-    <p class="following-title">FOLLOWING</p>
-    <p class="following-num"></p>
+    <div class="following-blurb">
+      <p class="follow-title">FOLLOWING</p>
+      <p class="follow-num"><%= user.followedUsers().length %></p>
+    </div>
+    <div class="followers-blurb">
+      <p class="follow-title">FOLLOWERS</p>
+      <p class="follow-num"><%= user.followers().length %></p>
+    </div>
   </div>
-  <div class="follwers-blurb"></div>
-  </div>
+  <div></div>
 </div>
