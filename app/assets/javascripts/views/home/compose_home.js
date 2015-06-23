@@ -1,4 +1,4 @@
-Readium.Views.ComposeHome = Backbone.View.extend({
+Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   template: JST['home/compose_home'],
 
   events: {
@@ -7,8 +7,16 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     'click .compose-header': 'disappearText',
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.storiesCollection = options.storiesCollection;
+    this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
+    setTimeout(function() {
+      this.addSubview('.create-box', new Readium.Views.TagCreateBox({
+        story: this.story,
+        tagsCollection: this.tagsCollection
+      }));
+    }.bind(this), 0);
   },
 
   disappearText: function() {
@@ -24,7 +32,6 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   },
 
   publish: function() {
-    debugger
     $('div.section-inner img:first-child').remove();
     var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
     var title = this.story.stripTitle(dirtyTitle);
@@ -45,39 +52,25 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       title: title,
       body: $('.new').html(),
     });
-    var that = this;
     this.story.save({}, {
       success: function(story) {
-        that.collection.add(story);
-        that.refreshView();
-      }
+        this.tagsCollection.fetch();
+        this.storiesCollection.add(story);
+        this.refreshView();
+      }.bind(this)
     });
   },
-
-  // postStory: function() {
-  //   this.story.set({
-  //     body: this.$('.editable').html()
-  //   });
-  //   var that = this;
-  //   this.story.save({}, {
-  //     success: function(story) {
-  //       that.collection.add(story);
-
-  //       that.refreshView();
-  //     }
-  //   });
-  // },
 
   refreshView: function() {
     this.render();
     this.story = new Readium.Models.Story();
   },
 
-  remove: function() {
-    Backbone.View.prototype.remove.call(this);
-    $('.medium-editor-anchor-preview').remove();
-    $('.medium-editor-toolbar').remove();
-  },
+  // remove: function() {
+  //   Backbone.View.prototype.remove.call(this);
+  //   $('.medium-editor-anchor-preview').remove();
+  //   $('.medium-editor-toolbar').remove();
+  // },
 
   render: function() {
     var content = this.template();
@@ -94,6 +87,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       this.editor.start();
       $('.section-inner').addClass('dante-home')
     }.bind(this), 500);
+    this.attachSubviews();
     return this;
   },
 
@@ -109,8 +103,6 @@ Readium.Views.ComposeHome = Backbone.View.extend({
         header_url: data.url,
         home_url: data.thumbnail_url
       });
-      // $('.editable').prepend('<img src="' + data.thumbnail_url + '">');
-      // $('iframe').remove();
     });
   }
 });

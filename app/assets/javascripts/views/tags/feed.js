@@ -6,7 +6,6 @@ Readium.Views.TagFeed = Backbone.View.extend({
   },
 
   render: function() {
-    // debugger;
     var content = this.template({
       tags: this.collection
     });
