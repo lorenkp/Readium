@@ -720,8 +720,8 @@ input:focus {
     color: rgba(0, 0, 0, 0.44);
     margin-top: 17px;
     position: relative;
-    top: -22px;
-    right: -8px;
+    top: 12px;
+    margin-left: 11px;
 }
 
 .banner-home {
@@ -744,7 +744,9 @@ input:focus {
 }
 
 .tag-item {
-    float: left;
+    display: inline-block;
+    position: relative;
+    left: 14px;
 }
 
 .dante-home {
@@ -819,4 +821,8 @@ input:focus {
     margin-left: auto;
     letter-spacing: 3.6px;
     padding: 3px 8px 2px 12px;
+}
+
+.create-box {
+    display: inline-block;
 }

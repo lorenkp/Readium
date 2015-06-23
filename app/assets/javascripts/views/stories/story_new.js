@@ -43,6 +43,7 @@
         this.storiesCollection.add(story);
         this.storiesCollection.fetch();
         this.story.fetch();
+        currentUser.stories().add(story);
         Backbone.history.navigate('', {
           trigger: true
         });
