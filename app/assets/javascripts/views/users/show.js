@@ -8,7 +8,7 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.stories(), 'sync', this.render);
-    this.model.stories().each(this.addStoryFeedPreview.bind(this));
+    // this.model.stories().each(this.addStoryFeedPreview.bind(this));
     if (this.model.stories().length === 0) {
       this.listenToOnce(this.model, 'sync', function() {
         this.model.stories().each(this.addStoryFeedPreview.bind(this));
