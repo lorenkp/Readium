@@ -3,7 +3,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
   className: 'tags-show-column',
 
   events: {
-    'click .tag-follow': 'toggleFollow'
+    'click .follow-button': 'toggleFollow'
   },
 
   initialize: function() {
@@ -29,27 +29,30 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
 
   toggleFollow: function() {
     var that = this;
-    if (!this.model.followers().get({id: currentUser.id})) {
+    if (!this.model.followers().get({
+        id: currentUser.id
+      })) {
       var follow = new Readium.Models.Follow({
         followable_type: 'Tag',
         followable_id: this.model.id,
         follower_id: currentUser.id
       });
       follow.save({}, {
-        success: function(follow) {
+        success: function() {
           that.model.fetch();
         }
       });
     } else {
-      var following = this.model.followings().findWhere({follower_id: currentUser.id});
+      var following = this.model.followings().findWhere({
+        follower_id: currentUser.id
+      });
       following.destroy({
         success: function(follower) {
-          this.model.followers().remove({id: follower.escape('follower_id')});
+          this.model.followers().remove({
+            id: follower.escape('follower_id')
+          });
         }.bind(this)
-      })
-      // follow.destroy({
-      //   success: function () { this.render() }.bind(this)
-      // });
+      });
     }
   },
 
@@ -58,11 +61,22 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       tag: this.model
     });
     this.$el.html(content);
-    if (this.model.followings().findWhere({follower_id: currentUser.id})) {
-      $('.tag-follow').css({'background': '#468c54', 'color': 'white', 'border-color': 'white'});
+    if (this.model.followings().findWhere({
+        follower_id: currentUser.id
+      })) {
+      $('.follow-button').css({
+        'background': '#468c54',
+        'color': 'white',
+        'border-color': 'white'
+      });
+      $('.follow-button').text('Following');
+
     } else {
-      $('.tag-follow').css({'background': 'white',
-        'color': 'rgb(87, 173, 104)'});
+      $('.follow-button').css({
+        'background': 'white',
+        'color': 'rgb(87, 173, 104)',
+      });
+      $('.follow-button').text('Follow');
     }
     this.attachSubviews();
     return this;

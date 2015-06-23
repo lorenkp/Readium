@@ -3,21 +3,27 @@ Readium.Models.Tag = Backbone.Model.extend({
 
   stories: function() {
     if (!this._stories) {
-      this._stories = new Readium.Collections.Stories([], {tag: this});
+      this._stories = new Readium.Collections.Stories([], {
+        tag: this
+      });
     }
     return this._stories;
   },
 
   followers: function() {
     if (!this._followers) {
-      this._followers = new Readium.Collections.Users([], {tag: this});
+      this._followers = new Readium.Collections.Users([], {
+        tag: this
+      });
     }
     return this._followers;
   },
 
   followings: function() {
     if (!this._followings) {
-      this._followings = new Readium.Collections.Follows([], {tag: this});
+      this._followings = new Readium.Collections.Follows([], {
+        tag: this
+      });
     }
     return this._followings;
   },

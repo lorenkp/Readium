@@ -277,8 +277,8 @@ a::-moz-focus-inner {
 }
 
 .compose {
-    // border-bottom-style: solid;
-    // border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
     border-bottom-color: rgba(0, 0, 0, 0.1);
     padding-bottom: 25px;
 }
@@ -450,7 +450,7 @@ input:focus {
     margin-bottom: 0px;
 }
 
-.tag-follow {
+.follow-button {
     display: block;
     float: right;
     font-family: 'jaf-bernino-sans';
@@ -467,9 +467,10 @@ input:focus {
     padding-right: 16px;
     border-radius: 999em;
     font-weight: normal;
+    cursor: pointer;
 }
 
-.tag-follow:hover {
+.follow-button:hover {
     color: #468c54;
     border-color: #57ad68;
     cursor: pointer;
@@ -478,7 +479,7 @@ input:focus {
 .story-preview {
     padding: 35px 0px 35px 0px;
     border-style: solid;
-    border-width: 1px 0px 1px 0px;
+    border-width: 0px 0px 1px 0px;
     border-color: rgba(0, 0, 0, 0.14902);
 }
 
@@ -755,6 +756,7 @@ input:focus {
     margin-right: auto;
     width: 700px;
     margin-top: 30px;
+    margin-bottom: 35px;
 }
 
 .follow-blurb {
@@ -765,7 +767,7 @@ input:focus {
 
 .following-blurb {
     display: inline-block;
-    padding: 10px 20px 5px 20px;
+    padding: 0px 20px 0px 20px;
     border-right: solid;
     border-right-width: 1px;
     border-right-color: rgba(0, 0, 0, 0.0470588);
@@ -779,9 +781,42 @@ input:focus {
 
 .follow-num {
     font-size: 24px;
+    margin: 0px
 }
 
 .followers-blurb {
     display: inline-block;
     padding: 10px 20px 5px 20px;
+}
+
+.users-follow {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.follow-contain {
+    text-align: center;
+}
+
+.story-feed-user {
+    margin-top: 35px;
+    width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recent {
+    display: table;
+    margin: auto;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+    font-family: 'jaf-bernino-sans'; 
+    border-color: rgba(0, 0, 0, 0.6);
+    margin-right: auto;
+    margin-left: auto;
+    letter-spacing: 3.6px;
+    padding: 3px 8px 2px 12px;
 }

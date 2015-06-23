@@ -29,6 +29,24 @@ Readium.Models.User = Backbone.Model.extend({
     return this._followers;
   },
 
+  follows: function() {
+    if (!this._follows) {
+      this._follows = new Readium.Collections.Follows([], {
+        user: this
+      });
+    }
+    return this._follows;
+  },
+
+  stories: function() {
+    if (!this._stories) {
+      this._stories = new Readium.Collections.Stories([], {
+        user: this
+      });
+    }
+    return this._stories;
+  },
+
   parse: function(response) {
     if (response.followed_users) {
       this.followedUsers().set(response.followed_users);
@@ -44,6 +62,17 @@ Readium.Models.User = Backbone.Model.extend({
       this.followers().set(response.followers);
       delete response.followers;
     }
+    
+    if (response.follows) {
+      this.follows().set(response.follows);
+      delete response.follows;
+    } 
+    
+    if (response.stories) {
+      this.stories().set(response.stories);
+      delete response.stories;
+    }
+    
     return response;
   }
 });
