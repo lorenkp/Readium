@@ -230,6 +230,25 @@ a::-moz-focus-inner {
     height: 36px;
 }
 
+.avatar-blurb {
+    border-radius: 50%;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+}
+
+.username-blurb {
+    font-family: 'jaf-bernino-sans';
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+
 .collapsing {
     -webkit-transition-duration: 0.15s;
     transition-duration: 0.15s;
@@ -729,4 +748,15 @@ input:focus {
 
 .dante-home {
     width: 580px !important;
+}
+
+.blurb {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    margin-top: 30px;
+}
+
+.follow-blurb {
+    height: 63px;
 }
