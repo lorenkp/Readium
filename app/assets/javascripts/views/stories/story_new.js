@@ -38,14 +38,15 @@
       title: title,
       body: $('.new').html(),
     });
-    var that = this;
     this.story.save({}, {
       success: function(story) {
-        that.storiesCollection.add(story);
+        this.storiesCollection.add(story);
+        this.storiesCollection.fetch();
+        this.story.fetch();
         Backbone.history.navigate('', {
           trigger: true
         });
-      }
+      }.bind(this)
     });
   },
 

@@ -54,9 +54,13 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     });
     this.story.save({}, {
       success: function(story) {
-        this.tagsCollection.fetch();
         this.storiesCollection.add(story);
+        this.story.fetch();
+        currentUser.stories().add(story);
         this.refreshView();
+        Backbone.history.navigate('#', {
+          trigger: true
+        });
       }.bind(this)
     });
   },
@@ -65,12 +69,6 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     this.render();
     this.story = new Readium.Models.Story();
   },
-
-  // remove: function() {
-  //   Backbone.View.prototype.remove.call(this);
-  //   $('.medium-editor-anchor-preview').remove();
-  //   $('.medium-editor-toolbar').remove();
-  // },
 
   render: function() {
     var content = this.template();

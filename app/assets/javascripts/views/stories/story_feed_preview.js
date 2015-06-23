@@ -4,6 +4,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
 
   initialize: function() {
     var text = this.model.get('body');
+    this.listenTo(this.model, 'sync', this.render);
     var previewLength = this.model.previewLength(text);
     this.model.set({
       body: previewLength
@@ -20,7 +21,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
       $(".timeago").timeago();
     }, 0);
 
-    $(".timeago").timeago();
+    // $(".timeago").timeago();
     var content = this.template({
       story: this.model
     });
