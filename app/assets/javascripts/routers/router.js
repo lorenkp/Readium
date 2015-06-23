@@ -10,7 +10,8 @@ Readium.Routers.Router = Backbone.Router.extend({
     '': 'home',
     'stories/new': 'storyNew',
     'stories/:id': 'storyShow',
-    'tags/:id': 'tagShow'
+    'tags/:id': 'tagShow',
+    'users/:id': 'userShow'
   },
 
   home: function() {
@@ -61,6 +62,16 @@ Readium.Routers.Router = Backbone.Router.extend({
     var tag = this.tagsCollection.getOrFetch(id);
     var view = new Readium.Views.TagShow({
       model: tag
+    });
+    this.insertSearchBar();
+    $('.publish-toolbar').empty();
+    this._swapView(view);
+  },
+
+  userShow: function(id) {
+    var user = this.usersCollection.getOrFetch(id);
+    var view = new Readium.Views.UserShow({
+      model: user
     });
     this.insertSearchBar();
     $('.publish-toolbar').empty();

@@ -1,6 +1,6 @@
 Readium.Collections.Users = Backbone.Collection.extend({
   model: Readium.Models.User,
-  url: 'users',
+  url: 'api/users',
 
   getOrFetch: function(id) {
     var user = this.get(id);

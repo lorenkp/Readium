@@ -8,7 +8,7 @@ Readium.Views.Search = Backbone.View.extend({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('username'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       prefetch: {
-        url: 'users',
+        url: 'api/users',
         cache: false
       }
     });
@@ -37,7 +37,7 @@ Readium.Views.Search = Backbone.View.extend({
       source: users,
       templates: {
         header: '<p class="search-cat">Users</p>',
-        suggestion: Handlebars.compile('<p><a href="users/{{id}}">{{username}}</a></p>')
+        suggestion: Handlebars.compile('<p><a href="#users/{{id}}">{{username}}</a></p>')
       },
     }, {
       name: 'tags',

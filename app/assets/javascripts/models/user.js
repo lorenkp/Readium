@@ -1,5 +1,5 @@
 Readium.Models.User = Backbone.Model.extend({
-  urlRoot: 'users',
+  urlRoot: 'api/users',
 
   followedTags: function() {
     if (!this._followedTags) {
