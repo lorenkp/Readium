@@ -6,24 +6,17 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-    this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.stories(), 'sync', this.render);
-    // this.model.stories().each(this.addStoryFeedPreview.bind(this));
-    if (this.model.stories().length === 0) {
-      this.listenToOnce(this.model, 'sync', function() {
-        this.model.stories().each(this.addStoryFeedPreview.bind(this));
-      }.bind(this));
-    } else {
-      this.model.stories().each(this.addStoryFeedPreview.bind(this));
-    }
+    this.listenTo(this.model, 'sync', this.addStoryPreview);    
   },
 
-  addStoryFeedPreview: function(story) {
-    debugger
-    var view = new Readium.Views.StoryFeedPreview({
-      model: story
-    });
-    this.addSubview('.story-feed-user', view);
+  addStoryPreview: function(user) {
+    user.stories().each(function(story) {
+      var view = new Readium.Views.StoryFeedPreview({
+        model: story
+      });
+      this.addSubview('.story-feed-user', view);
+    }.bind(this));
+    this.render();
   },
 
   render: function() {
@@ -53,7 +46,6 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   toggleFollow: function() {
-    // debugger
     if (!this.model.followers().get({
         id: currentUser.id
       })) {

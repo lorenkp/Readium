@@ -29,5 +29,6 @@ json.stories do
     json.extract!(story, :id, :title, :subtitle, :body, :header_url, :home_url)
     json.extract!(story.author, :username)
     json.created_at story.created_at.iso8601
+    json.avatar_url story.author.url
   end
 end
