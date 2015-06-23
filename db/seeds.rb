@@ -19,6 +19,8 @@ Follow.create(follower_id: 2, followable_id: 6, followable_type: 'Tag')
 Follow.create(follower_id: 2, followable_id: 4, followable_type: 'Tag')
 Follow.create(follower_id: 3, followable_id: 3, followable_type: 'Tag')
 
+Response.create(response: 'testing testing', story_id: 1)
+
 
 Tag.create(name: 'Maine')
 Tag.create(name: 'Lobster')
