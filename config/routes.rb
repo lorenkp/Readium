@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     resources :tags
     resources :taggings
     resources :follows
+    resources :users, only: [:index, :show]
   end
-  
-  resources :users
-  resource :session
+
+  resources :users, only: [:create, :new]
+  resource :session, only: [:create, :new, :destroy]
 end
