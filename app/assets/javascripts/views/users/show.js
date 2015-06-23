@@ -19,11 +19,11 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   addStoryFeedPreview: function(story) {
+    debugger
     var view = new Readium.Views.StoryFeedPreview({
       model: story
     });
     this.addSubview('.story-feed-user', view);
-    // $('.story-feed-user').children('.story-preview').eq(0).css('border-top-width', '0px');
   },
 
   render: function() {
