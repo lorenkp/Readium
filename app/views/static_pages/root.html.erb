@@ -28,6 +28,16 @@ $(Readium.initialize);
         <a class="write-tool" href="#stories/new">
           <button class="write-story">Write a story</button>
         </a>
+      </li> 
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="avatar" src="/assets/loren_avatar.jpg"/></a>
+        <ul class="dropdown-menu">
+          <li><a href="#users/<%= current_user.id %>">Profile</a></li>
+          <li><%= link_to "Sign out", session_url, method: :delete %></li>
+<!--           <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li> -->
+        </ul>
       </li>
     </ul>
   </div>

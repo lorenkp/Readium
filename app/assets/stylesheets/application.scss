@@ -815,7 +815,7 @@ input:focus {
     border-style: solid;
     border-width: 1px;
     font-size: 12px;
-    font-family: 'jaf-bernino-sans'; 
+    font-family: 'jaf-bernino-sans';
     border-color: rgba(0, 0, 0, 0.6);
     margin-right: auto;
     margin-left: auto;
@@ -825,4 +825,23 @@ input:focus {
 
 .create-box {
     display: inline-block;
+}
+
+.dropdown-toggle {
+    padding-left: 0px !important;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background: white !important;
+}
+.dropdown-menu {
+
+}
+
+.dropdown-menu > li > a {
+    font-family: 'jaf-bernino-sans';
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    right: 24px !important;
 }
