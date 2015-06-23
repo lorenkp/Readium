@@ -2,7 +2,7 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   template: JST['home/compose_home'],
 
   events: {
-    'click #publish': 'postStory',
+    'click #publish': 'publish',
     'click .add-banner': 'uploadImage',
     'click .compose-header': 'disappearText',
   },
@@ -23,19 +23,50 @@ Readium.Views.ComposeHome = Backbone.View.extend({
     }
   },
 
-  postStory: function() {
+  publish: function() {
+    debugger
+    $('div.section-inner img:first-child').remove();
+    var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
+    var title = this.story.stripTitle(dirtyTitle);
+    $('.graf--first').unwrap();
+    $('p').each(function() {
+      if ($(this).has('span').length !== 0) {
+        this.remove();
+      }
+      if ($(this).hasClass('graf--empty')) {
+        this.remove();
+      }
+    });
+    if ($("div p:last-child").html() === ' <br>') {
+      $("div p:last-child").remove();
+    }
+    $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
     this.story.set({
-      body: this.$('.editable').html()
+      title: title,
+      body: $('.new').html(),
     });
     var that = this;
     this.story.save({}, {
       success: function(story) {
         that.collection.add(story);
-
         that.refreshView();
       }
     });
   },
+
+  // postStory: function() {
+  //   this.story.set({
+  //     body: this.$('.editable').html()
+  //   });
+  //   var that = this;
+  //   this.story.save({}, {
+  //     success: function(story) {
+  //       that.collection.add(story);
+
+  //       that.refreshView();
+  //     }
+  //   });
+  // },
 
   refreshView: function() {
     this.render();
@@ -55,11 +86,13 @@ Readium.Views.ComposeHome = Backbone.View.extend({
       this.editor = new Dante.Editor({
         el: '.compose-home',
         upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        body_placeholder: ' ',
         upload_callback: function(event) {
           $('.graf-image').attr('src', event.secure_url);
         }
       });
       this.editor.start();
+      $('.section-inner').addClass('dante-home')
     }.bind(this), 500);
     return this;
   },
@@ -67,14 +100,17 @@ Readium.Views.ComposeHome = Backbone.View.extend({
   uploadImage: function(event) {
     var that = this;
     event.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_HOME, function(error, result) {
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
+      var thumbnailUrl = data.thumbnail_url.slice(0, 4) +
+        's' + data.thumbnail_url.slice(4);
+      $('.section-inner').prepend('<img src=' + thumbnailUrl + ' style="width: 100%;">');
       that.story.set({
         header_url: data.url,
         home_url: data.thumbnail_url
       });
-      $('.editable').prepend('<img src="' + data.thumbnail_url + '">');
-      $('iframe').remove();
+      // $('.editable').prepend('<img src="' + data.thumbnail_url + '">');
+      // $('iframe').remove();
     });
   }
 });
