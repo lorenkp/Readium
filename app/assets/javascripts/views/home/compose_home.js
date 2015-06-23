@@ -56,6 +56,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       success: function(story) {
         this.storiesCollection.add(story);
         this.story.fetch();
+        this.tagsCollection.fetch();
         currentUser.stories().add(story);
         this.refreshView();
         Backbone.history.navigate('#', {
@@ -96,7 +97,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       var data = result[0];
       var thumbnailUrl = data.thumbnail_url.slice(0, 4) +
         's' + data.thumbnail_url.slice(4);
-      $('.section-inner').prepend('<img src=' + thumbnailUrl + ' style="width: 100%;">');
+      $('.section-inner').prepend('<img src=' + data.thumbnail_url + ' style="width: 100%;">');
       that.story.set({
         header_url: data.url,
         home_url: data.thumbnail_url
