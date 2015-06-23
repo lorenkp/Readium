@@ -1,16 +1,10 @@
-<%  $(document).ready(function() { %>
 <style>
 .background-image {
-background:
-linear-gradient(
-rgba(0, 0, 0, 0.5),
-rgba(0, 0, 0, 0.5)
-),
-url(<%= story.get('header_url') %>);
-background-size: cover;
-height: 86vh;
-background-position: center;
-margin-bottom: 80px;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= story.get('header_url') %>);
+  background-size: cover;
+  height: 86vh;
+  background-position: center;
+  margin-bottom: 80px;
 }
 </style>
 <div class="background-image">
@@ -23,4 +17,4 @@ margin-bottom: 80px;
     <%= story.get('body') %>
   </div>
 </div>
-<% }); %>
+<div class="responses-container"></div>
