@@ -21,7 +21,8 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     }));
 
     this.addSubview('.tag-feed', new Readium.Views.TagFeed({
-      collection: this.tagsCollection
+      collection: this.tagsCollection,
+      currentUserCollection: currentUser.followedTags()
     }));
   },
 

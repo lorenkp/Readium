@@ -7,6 +7,16 @@
         <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
         <% }) %>
       </div>
+      <br>
+    </div>
+    <div class= "tag-header">
+      <div class="featured-header">SUBSCRIBED TAGS</div>
+      <div class="featured-tags">
+        <% currentUser.each(function(tag) { %>
+        <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+        <% }) %>
+      </div>
+      <br>
     </div>
   </div>
 </div>

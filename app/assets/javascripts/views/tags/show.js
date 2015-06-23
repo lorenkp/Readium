@@ -40,6 +40,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       follow.save({}, {
         success: function() {
           that.model.fetch();
+          currentUser.fetch();
         }
       });
     } else {
@@ -48,6 +49,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       });
       following.destroy({
         success: function(follower) {
+          currentUser.fetch();
           this.model.followers().remove({
             id: follower.escape('follower_id')
           });
