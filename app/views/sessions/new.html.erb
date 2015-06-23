@@ -1,23 +1,41 @@
 <h1 class="sign-in">Readium</h1>
-
-  
 <form action="<%= session_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  
-
-    <div id="login-fields">
-      
-  <input type="text" class="cred-fields" name="user[username]" value="<%= @user.username %>" placeholder="Username">
-  </label>
-  <br>
-
-  <input type="password" name="user[password]" class="cred-fields" placeholder="Password">
-  <br>
-  <br>
-
-  <input type="submit" value="Log In">
+  <div id="login-fields">
+    <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username">
+    <br>
+    <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
+    <br>
+    <br>
+    <div class="log-in-buttons">
+      <input class="write-story log-in" type="submit" value="New user?">
+      <button class="follow-button log-in" type="submit" id="enter">Log in</button>
     </div>
-
-
-
+  </div>
 </form>
+<div class="contain-guest">
+  <p class="or" >Or ...</p>
+  <button class="follow-button log-in trial">Log in as a guest</button>
+</div>
+
+<script>
+  $('button.trial').click(function(){
+    $("input[name='user[username]']").val("");
+    $("input[name='user[password]']").val("");
+      autoTyper('DFW', $("input[name='user[username]']"), function(){
+        autoTyper('foster', $("input[name='user[password]']"), function(){
+          $('#enter').click();
+        });
+      });
+    });
+    var autoTyper = function(word, $el, callback){
+      var typer = setInterval(function(){
+        $el.val($el.val() + word.slice(0,1));
+        word = word.substr(1);
+        if(word.length === 0){
+          clearInterval(typer);
+          callback();
+        }
+      }, 100);
+    }
+</script>

@@ -33,6 +33,17 @@ a:hover {
     font-size: 68px;
 }
 
+.guest {
+    display: inline-block;
+}
+
+.contain-guest {
+    width: 145px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
 #login-fields {
     text-align: center;
     padding-top: 10px;
@@ -151,7 +162,7 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 999em;
     font-family: jaf-bernino-sans;
-    font-weight: 300;
+    font-weight: 400;
     padding: 0 16px;
     vertical-align: baseline;
     letter-spacing: -0.283333px;
@@ -468,6 +479,20 @@ input:focus {
     border-radius: 999em;
     font-weight: normal;
     cursor: pointer;
+}
+
+.log-in {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 32px;
+    position: relative;
+    left: -9px;
+    display: inline-block;
+}
+
+.log-in-buttons {
+    text-align: center;
 }
 
 .follow-button:hover {
