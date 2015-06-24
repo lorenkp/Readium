@@ -43,6 +43,7 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   storyShow: function(id) {
+    debugger
     var story = this.storiesCollection.getOrFetch(id);
     var view = new Readium.Views.StoryShow({
       model: story
