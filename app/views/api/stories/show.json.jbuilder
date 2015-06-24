@@ -7,3 +7,8 @@ json.responses do
     json.extract!(response, :response, :id)
   end
 end
+json.tags do
+  json.array!(@story.tag) do |tag|
+    json.extract!(tag, :name, :id)
+  end
+end

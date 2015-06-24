@@ -349,6 +349,15 @@ a::-moz-focus-inner {
     margin-top: 18px;
 }
 
+.featured-tags.show {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.0470588);
+}
+
 .featured-tags > a {
     color: rgba(0, 0, 0, 0.6);
     font-family: 'jaf-bernino-sans';

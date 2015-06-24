@@ -16,6 +16,12 @@
   <div class="article">
     <%= story.get( 'body') %>
   </div>
+  <div class="tagged-in">TAGGED IN</div>
+    <div class="featured-tags show">
+    <% story.tags().each(function(tag) { %>
+       <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+    <% }) %>
+    </div>
   <div class="editor"></div>
   <div class="responses-container"></div>
 </div>

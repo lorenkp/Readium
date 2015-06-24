@@ -11,6 +11,11 @@ Readium.Models.Story = Backbone.Model.extend({
       delete response.responses;
     }
 
+    if (response.tags) {
+      this.tags().set(response.tags);
+      delete response.tags;
+    }
+
     return response;
   },
 
@@ -36,5 +41,14 @@ Readium.Models.Story = Backbone.Model.extend({
     div.innerHTML = title;
     var strippedTitle = div.textContent || div.innerText || "";
     return strippedTitle;
+  },
+
+  tags: function() {
+    if (!this._tags) {
+      this._tags = new Readium.Collections.Tags([], {
+        story: this
+      });
+    }
+    return this._tags;
   }
 });
