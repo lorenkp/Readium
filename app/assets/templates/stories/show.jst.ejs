@@ -22,6 +22,12 @@
        <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
     <% }) %>
     </div>
+    <div class="author-blurb">
+      <a class="avatar-link" href="#users/<%= story.escape('author_id') %>">
+      <img class="avatar show" src="<%= story.get('avatar_url') %>"> 
+      </a>
+      <span class="author-show-text"><%= story.escape('username') %></span>
+      <button class="follow-button show">Follow</button>
   <div class="editor"></div>
   <div class="responses-container"></div>
 </div>
