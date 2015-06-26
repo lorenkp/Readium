@@ -30,4 +30,5 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'bullet'
+  gem 'thin'
 end
