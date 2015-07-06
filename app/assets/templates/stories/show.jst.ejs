@@ -17,17 +17,21 @@
     <%= story.get( 'body') %>
   </div>
   <div class="tagged-in">TAGGED IN</div>
-    <div class="featured-tags show">
-    <% story.tags().each(function(tag) { %>
-       <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
-    <% }) %>
-    </div>
-    <div class="author-blurb">
-      <a class="avatar-link" href="#users/<%= story.escape('author_id') %>">
-      <img class="avatar show" src="<%= story.get('avatar_url') %>"> 
-      </a>
-      <span class="author-show-text"><%= story.escape('username') %></span>
-      <button class="follow-button show">Follow</button>
+  <div class="featured-tags show">
+  <% story.tags().each(function(tag) { %>
+     <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+  <% }) %>
+  </div>
+  <div class="author-blurb">
+    <a class="avatar-link" href="#users/<%= story.escape('author_id') %>">
+    <img class="avatar show" src="<%= story.get('avatar_url') %>"> 
+    </a>
+    <span class="author-show-text"><%= story.escape('username') %></span>
+    <button class="follow-button show">Follow</button>
+  </div>
+  <div class="responses-header">
+      <div class="responses-header-text">RESPONSES</div>
+  </div>
   <div class="editor"></div>
   <div class="responses-container"></div>
 </div>

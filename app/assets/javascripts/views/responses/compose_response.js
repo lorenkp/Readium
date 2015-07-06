@@ -3,7 +3,7 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
 
   events: {
     'click #publish': 'publish',
-    'click .compose-header': 'disappearText',
+    'click .compose-header-response': 'disappearText',
   },
 
   initialize: function(options) {

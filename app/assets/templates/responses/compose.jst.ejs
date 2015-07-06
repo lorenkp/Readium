@@ -1,12 +1,15 @@
-<div class="compose-header" data-toggle="collapse" data-target="#editable">
-  <img class="avatar" src="<%= user.get('url') %>">
-  <span id="user-name"><%= user.escape('username') %></span>
-  <span id="write-here">Write a response...</span>
-</div>
-<div id="editable" class="collapse">
-  <div class="editable compose-home"></div>
-  <div class="compose-buttons">
-    <button type="submit" id="publish">Publish</button>
-    <div class="create-box"></div>
+<div class="compose">
+  <div class="compose-header-response" data-toggle="collapse" data-target="#editable">
+    <img class="avatar" src="<%= user.get('url') %>">
+    <span id="user-name"><%= user.escape('username') %></span>
+    <span id="write-here">Write a response...</span>
+  </div>
+  <div id="editable" class="collapse">
+    <div class="editable compose-home"></div>
+    <div class="compose-buttons">
+      <button type="submit" id="publish">Publish</button>
+      <div class="create-box"></div>
+    </div>
   </div>
 </div>
+<div class="response-placeholder"></div>
