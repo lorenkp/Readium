@@ -4,13 +4,36 @@ Readium.Models.Story = Backbone.Model.extend({
   defaults: {
     'tags': []
   },
-  
+
+  parse: function(response) {
+    if (response.responses) {
+      this.responses().set(response.responses);
+      delete response.responses;
+    }
+
+    if (response.tags) {
+      this.tags().set(response.tags);
+      delete response.tags;
+    }
+
+    return response;
+  },
+
   previewLength: function(text) {
     var ret = text;
     if (ret.length > 230) {
-        ret = ret.substr(0, 230-3) + ' . . .';
+      ret = ret.substr(0, 230 - 3) + ' . . .';
     }
     return ret;
+  },
+
+  responses: function() {
+    if (!this._responses) {
+      this._responses = new Readium.Collections.Responses([], {
+        story: this
+      });
+    }
+    return this._responses;
   },
 
   stripTitle: function(title) {
@@ -18,5 +41,14 @@ Readium.Models.Story = Backbone.Model.extend({
     div.innerHTML = title;
     var strippedTitle = div.textContent || div.innerText || "";
     return strippedTitle;
+  },
+
+  tags: function() {
+    if (!this._tags) {
+      this._tags = new Readium.Collections.Tags([], {
+        story: this
+      });
+    }
+    return this._tags;
   }
 });

@@ -241,6 +241,21 @@ a::-moz-focus-inner {
     height: 36px;
 }
 
+.author-show-text {
+    vertical-align: top;
+    font-weight: 700;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.avatar-link {
+    display: inline-block;
+}
+
+.avatar.show {
+    height: 60px;
+}
+
 .avatar-blurb {
     border-radius: 50%;
     height: 120px;
@@ -347,6 +362,15 @@ a::-moz-focus-inner {
 
 .featured-tags {
     margin-top: 18px;
+}
+
+.featured-tags.show {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.0470588);
 }
 
 .featured-tags > a {
@@ -481,6 +505,14 @@ input:focus {
     cursor: pointer;
 }
 
+.follow-button.show {
+    font-size: 12px;
+    padding: 0px 14px 0px 14px;
+    height: 32px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
 .log-in {
     float: none;
     margin-left: auto;
@@ -527,6 +559,11 @@ input:focus {
 
 .author-name:hover {
     color: #468c54;
+}
+
+.author-show {
+    font-size: 18px;
+    font-weight: 700px;
 }
 
 .timeago {

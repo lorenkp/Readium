@@ -1,4 +1,4 @@
-  Readium.Views.StoryNew = Backbone.CompositeView.extend({
+Readium.Views.StoryNew = Backbone.CompositeView.extend({
   template: JST['stories/new'],
 
   initialize: function(options) {
@@ -26,6 +26,7 @@
       if ($(this).has('span').length !== 0) {
         this.remove();
       }
+
       if ($(this).hasClass('graf--empty')) {
         this.remove();
       }
@@ -33,6 +34,7 @@
     if ($("div p:last-child").html() === ' <br>') {
       $("div p:last-child").remove();
     }
+
     $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
     this.story.set({
       title: title,
@@ -86,3 +88,4 @@
     });
   }
 });
+

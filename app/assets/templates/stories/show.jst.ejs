@@ -1,16 +1,10 @@
-<%  $(document).ready(function() { %>
 <style>
 .background-image {
-background:
-linear-gradient(
-rgba(0, 0, 0, 0.5),
-rgba(0, 0, 0, 0.5)
-),
-url(<%= story.get('header_url') %>);
-background-size: cover;
-height: 86vh;
-background-position: center;
-margin-bottom: 80px;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= story.get('header_url') %>);
+  background-size: cover;
+  height: 86vh;
+  background-position: center;
+  margin-bottom: 80px;
 }
 </style>
 <div class="background-image">
@@ -20,7 +14,20 @@ margin-bottom: 80px;
 </div>
 <div class="story-body-show">
   <div class="article">
-    <%= story.get('body') %>
+    <%= story.get( 'body') %>
   </div>
+  <div class="tagged-in">TAGGED IN</div>
+    <div class="featured-tags show">
+    <% story.tags().each(function(tag) { %>
+       <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+    <% }) %>
+    </div>
+    <div class="author-blurb">
+      <a class="avatar-link" href="#users/<%= story.escape('author_id') %>">
+      <img class="avatar show" src="<%= story.get('avatar_url') %>"> 
+      </a>
+      <span class="author-show-text"><%= story.escape('username') %></span>
+      <button class="follow-button show">Follow</button>
+  <div class="editor"></div>
+  <div class="responses-container"></div>
 </div>
-<% }); %>
