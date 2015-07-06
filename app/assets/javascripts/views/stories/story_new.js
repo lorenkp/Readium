@@ -5,7 +5,6 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.story = new Readium.Models.Story();
-    debugger
     setTimeout(function() {
       this.addSubview('.create-box', new Readium.Views.TagCreateBox({
         story: this.story,
@@ -27,6 +26,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
       if ($(this).has('span').length !== 0) {
         this.remove();
       }
+
       if ($(this).hasClass('graf--empty')) {
         this.remove();
       }
@@ -34,6 +34,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     if ($("div p:last-child").html() === ' <br>') {
       $("div p:last-child").remove();
     }
+
     $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
     this.story.set({
       title: title,
@@ -57,21 +58,17 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     $('.publish-toolbar-button').click(boundView);
     var content = this.template();
     this.$el.html(content);
-    debugger
-    if (story.escape('username') !== currentUser.escape('username')) {
-      debugger
-      setTimeout(function() {
-        this.editor = new Dante.Editor({
-          el: '.editor',
-          body_placeholder: ' ',
-          upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
-          upload_callback: function(event) {
-            $('.graf-image').attr('src', event.secure_url);
-          }
-        });
-        this.editor.start();
-      }.bind(this), 0);
-    }
+    setTimeout(function() {
+      this.editor = new Dante.Editor({
+        el: '.editor',
+        body_placeholder: ' ',
+        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        upload_callback: function(event) {
+          $('.graf-image').attr('src', event.secure_url);
+        }
+      });
+      this.editor.start();
+    }.bind(this), 0);
     this.attachSubviews();
     return this;
   },
@@ -91,3 +88,4 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     });
   }
 });
+
