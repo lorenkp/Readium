@@ -11,7 +11,8 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
     setTimeout(function() {
       this.editor = new Dante.Editor({
         el: '.compose-home',
-        disable_title: true
+        disable_title: true,
+        body_placeholder: ' '
       });
       this.editor.start();
       $('.section-inner').addClass('dante-home');
