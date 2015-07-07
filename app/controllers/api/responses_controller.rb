@@ -1,7 +1,7 @@
 class Api::ResponsesController < ApplicationController
   def create
-    # byebug
-    @response = Response.new(response: params[:response], story_id: params[:story_id])
+    @response = Response.new(response: params[:response],
+      story_id: params[:story_id], author_id: params[:author_id])
     render json: @response if @response.save
   end
 

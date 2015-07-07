@@ -35,10 +35,12 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
     var body = $('.section-inner').html();
     this.response.set({
       response: body,
-      story_id: this.story.id
+      story_id: this.story.id,
+      author_id: currentUser.id
     });
     this.response.save({}, {
       success: function(response) {
+        response.fetch();
         this.collection.add(response);
         $('html, body').animate({
           scrollTop: $(".responses-container div:last").offset().top
