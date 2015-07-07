@@ -7,7 +7,8 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
-    this.listenTo(this.collection, 'add', this.render);
+    // this.listenTo(this.collection, 'add', this.render);
+    this.story = options.story;
     setTimeout(function() {
       this.editor = new Dante.Editor({
         el: '.compose-home',
@@ -33,29 +34,17 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
 
   publish: function() {
     this.response = new Readium.Models.Response();
-    $('div.section-inner img:first-child').remove();
-    var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
-    var title = this.response.stripTitle(dirtyTitle);
-    $('.graf--first').unwrap();
-    $('p').each(function() {
-      if ($(this).has('span').length !== 0) {
-        this.remove();
-      }
-      if ($(this).hasClass('graf--empty')) {
-        this.remove();
-      }
-    });
-    if ($("div p:last-child").html() === ' <br>') {
-      $("div p:last-child").remove();
-    }
-    $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
+    var body = $('.section-inner').html();
     this.response.set({
-      title: title,
-      body: $('.new').html(),
+      response: body,
+      story_id: this.story.id
     });
     this.response.save({}, {
       success: function(response) {
         this.collection.add(response);
+        $('html, body').animate({
+          scrollTop: $(".responses-container div:last").offset().top
+        }, 1000);
       }.bind(this)
     });
   },

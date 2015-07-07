@@ -1,5 +1,6 @@
 Readium.Views.ResponsesItem = Backbone.View.extend({
   template: JST['responses/item'],
+  className: 'response-item',
 
   initialize: function() {},
 
