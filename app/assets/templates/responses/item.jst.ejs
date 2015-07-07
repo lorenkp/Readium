@@ -1,1 +1,10 @@
+<a href="#users/<%= response.escape('author_id') %>">
+  <div class="author-info">
+    <img class="avatar" src="<%= response.get('avatar_url') %>">
+    <div class="author-time">
+      <div class="author-name"><%= response.escape('username') %></div>
+      <div class="timeago" title="<%= response.escape('created_at') %>"></div>
+    </div>
+  </div>
+</a>
 <%= response.get('response') %>
