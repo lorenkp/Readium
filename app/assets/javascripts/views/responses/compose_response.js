@@ -7,17 +7,8 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
-    // this.listenTo(this.collection, 'add', this.render);
     this.story = options.story;
-    setTimeout(function() {
-      this.editor = new Dante.Editor({
-        el: '.compose-home',
-        disable_title: true,
-        body_placeholder: ' '
-      });
-      this.editor.start();
-      $('.section-inner').addClass('dante-home');
-    }.bind(this), 500);
+
   },
 
   disappearText: function() {
@@ -30,10 +21,17 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
         $('#write-here').slideToggle(75);
       });
     }
+
+    setTimeout(function() {
+      $('html, body').animate({
+        scrollTop: $("#publish").offset().top
+      }, 1000);
+    }, 0);
   },
 
   publish: function() {
     this.response = new Readium.Models.Response();
+    $('br').remove();
     var body = $('.section-inner').html();
     this.response.set({
       response: body,
@@ -45,11 +43,21 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
         $('html, body').animate({
           scrollTop: $(".responses-container div:last").offset().top
         }, 1000);
+        this.render();
       }.bind(this)
     });
   },
 
   render: function() {
+    setTimeout(function() {
+      this.editor = new Dante.Editor({
+        el: '.compose-home',
+        disable_title: true,
+        body_placeholder: ' ',
+      });
+      this.editor.start();
+      $('.section-inner').addClass('dante-home');
+    }.bind(this), 500);
     var content = this.template({
       user: currentUser
     });
