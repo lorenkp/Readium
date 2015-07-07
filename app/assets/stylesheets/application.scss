@@ -16,6 +16,7 @@
 @import "dante";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 a {
     text-decoration: none !important;
     color: inherit;
@@ -597,15 +598,17 @@ input:focus {
     font-family: 'jaf-bernino-sans';
     letter-spacing: -0.449999988079071px;
     font-size: 15px;
+    padding-right: 6.75px;
 }
 
 .continue:hover {
     color: #468c54;
 }
 
-// .bookmark {
-//   display: inline-block;
-// }
+.bookmark {
+    display: inline-block;
+}
+
 @font-face {
     font-family: 'medium-icons';
     src: url('medium-icons.eot');
@@ -630,6 +633,9 @@ input:focus {
     content: "\f15c";
     color: rgba(0, 0, 0, 0.14902);
     font-size: 15px;
+    padding-left: 6.75px;
+    position: relative;
+    top: 2px;
 }
 
 .icon--addMediaImage:before {
@@ -640,10 +646,6 @@ input:focus {
     content: "\f162"
 }
 
-// .icon--readingList:hover:before {
-//   color: rgba(0, 0, 0, 0.6);
-//   content: 'Bookmark';
-// }
 .min-read {
     font-family: 'jaf-bernino-sans';
     font-size: 15px;
@@ -651,12 +653,36 @@ input:focus {
     color: rgba(0, 0, 0, 0.298039);
 }
 
+.bookmark-dark {
+    font-family: 'jaf-bernino-sans';
+    font-size: 15px;
+    letter-spacing: -0.280000001192093px;
+    color: rgba(0,0,0,0.6);
+}
+
 .bookmark:hover .icon--readingList {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.bookmark:hover .min-read {
-    content: 'Bookmark';
+.bookmark-after {
+    display: none;
+}
+
+.middot {
+    color: rgba(0, 0, 0, 0.439216);
+}
+
+.bookmark:hover .bookmark-before {
+    display:none;
+}
+
+.bookmark:hover .bookmark-after {
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    .icon--readingList:before {
+        color: rgba(0, 0, 0, 0.6);
+    }
 }
 
 .response-placeholder {
@@ -937,6 +963,10 @@ input:focus {
 
 .create-box {
     display: inline-block;
+}
+
+.marker-after {
+    color: rgba(0,0,0,0.6);
 }
 
 .dropdown-toggle {
