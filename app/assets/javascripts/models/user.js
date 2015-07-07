@@ -1,15 +1,25 @@
 Readium.Models.User = Backbone.Model.extend({
   urlRoot: 'api/users',
 
+  bookmarks: function() {
+    if (!this._bookmarks) {
+      this._bookmarks = new Readium.Collections.Bookmarks([], {
+        user: this
+      });
+    }
+
+    return this._bookmarks;
+  },
+
   followedTags: function() {
     if (!this._followedTags) {
       this._followedTags = new Readium.Collections.Tags([], {
         user: this
       });
     }
+
     return this._followedTags;
   },
-
 
   followedUsers: function() {
     if (!this._followedUsers) {
@@ -17,6 +27,7 @@ Readium.Models.User = Backbone.Model.extend({
         user: this
       });
     }
+
     return this._followedUsers;
   },
 
@@ -26,6 +37,7 @@ Readium.Models.User = Backbone.Model.extend({
         user: this
       });
     }
+
     return this._followers;
   },
 
@@ -35,6 +47,7 @@ Readium.Models.User = Backbone.Model.extend({
         user: this
       });
     }
+
     return this._follows;
   },
 
@@ -44,10 +57,16 @@ Readium.Models.User = Backbone.Model.extend({
         user: this
       });
     }
+
     return this._stories;
   },
 
   parse: function(response) {
+    if (response.bookmarks) {
+      this.bookmarks().set(response.bookmarks);
+      delete response.bookmarks;
+    }
+
     if (response.followed_users) {
       this.followedUsers().set(response.followed_users);
       delete response.followed_users;

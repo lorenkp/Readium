@@ -5,7 +5,7 @@ Readium.Collections.Responses = Backbone.Collection.extend({
   getOrFetch: function(id) {
     var response = this.get(id);
     if (!response) {
-      response = new Readium.Models.response({
+      response = new Readium.Models.Response({
         id: id
       });
       response.fetch({
@@ -16,6 +16,7 @@ Readium.Collections.Responses = Backbone.Collection.extend({
     } else {
       response.fetch();
     }
+
     return response;
   }
 });
