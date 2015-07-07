@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :followings, source: :follower
   has_many :follows, class_name: :Follow, foreign_key: :follower_id
   has_many :responses, foreign_key: :author_id
+  has_many :bookmarks
 
   after_initialize :ensure_session_token
   attr_reader :password

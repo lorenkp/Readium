@@ -32,3 +32,9 @@ json.stories do
     json.avatar_url story.author.url
   end
 end
+
+json.bookmarks do
+  json.array! (@user.bookmarks) do |bookmark|
+    json.extract!(bookmark, :id, :story_id)
+  end
+end

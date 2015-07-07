@@ -28,9 +28,8 @@ Tag.create(name: 'Tennis')
 Tag.create(name: 'Federer!')
 Tag.create(name: 'Camp!')
 Tag.create(name: "Sports")
-# Tag.create(name: 'chicken wings!')
-# Tag.create(name: 'fire sale!')
-# Tag.create(name: 'jericho')
+
+Bookmark.create(story_id: 3, user_id: 1)
 
 
 Story.create(body: <<-HTML, title: 'Consider the Lobster', author_id: 1, header_url: 'https://res.cloudinary.com/loren/image/upload/v1435055369/lobster-big_kyogot.jpg', home_url: 'https://res.cloudinary.com/loren/image/upload/v1435055369/lobster-small_ofpo88.jpg')
