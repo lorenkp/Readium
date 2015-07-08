@@ -609,13 +609,13 @@ input:focus {
     display: inline-block;
 }
 
-@font-face {
-    font-family: 'medium-icons';
-    src: url('medium-icons.eot');
-    src: url('medium-icons.eot?#iefix') format("embedded-opentype"), url('medium-icons.woff') format("woff"), url("medium-icons.tff") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: 'medium-icons';
+//     src: url('medium-icons.eot');
+//     src: url('medium-icons.eot?#iefix') format("embedded-opentype"), url('medium-icons.woff') format("woff"), url("medium-icons.tff") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 .icon {
     font-family: 'medium-icons';
