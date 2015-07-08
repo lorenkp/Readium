@@ -8,7 +8,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
-    
+    this.listenTo(currentUser, 'sync', this.bookmarkShow);
   },
 
   bookmarkShow: function() {
@@ -32,11 +32,8 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     bookmark.save({}, {
       success: function() {
-        currentUser.fetch({
-          success: function() {
-            this.model.fetch();
-          }.bind(this)
-        });
+        currentUser.fetch();
+        this.model.fetch();
       }.bind(this)
     });
   },
@@ -63,7 +60,6 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
       story: this.model
     });
     this.$el.html(content);
-    this.bookmarkShow();
     return this;
   },
 
