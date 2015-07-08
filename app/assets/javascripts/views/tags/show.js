@@ -28,7 +28,6 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
   },
 
   toggleFollow: function() {
-    var that = this;
     if (!this.model.followers().get({
         id: currentUser.id
       })) {
@@ -39,9 +38,9 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       });
       follow.save({}, {
         success: function() {
-          that.model.fetch();
+          this.model.fetch();
           currentUser.fetch();
-        }
+        }.bind(this)
       });
     } else {
       var following = this.model.followings().findWhere({

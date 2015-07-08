@@ -631,7 +631,6 @@ input:focus {
 
 .icon--readingList:before {
     content: "\f15c";
-    color: rgba(0, 0, 0, 0.14902);
     font-size: 15px;
     padding-left: 6.75px;
     position: relative;
@@ -641,6 +640,8 @@ input:focus {
 .icon--addMediaImage:before {
     content: "\f106";
 }
+
+
 
 .icon--search:before {
     content: "\f162"
