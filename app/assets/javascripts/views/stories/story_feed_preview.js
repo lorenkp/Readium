@@ -32,8 +32,11 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     bookmark.save({}, {
       success: function() {
-        currentUser.fetch();
-        this.model.fetch();
+        currentUser.fetch({
+          success: function() {
+            this.model.fetch();
+          }.bind(this)
+        });
       }.bind(this)
     });
   },
@@ -60,10 +63,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
       story: this.model
     });
     this.$el.html(content);
-    setTimeout(function() {
-      this.bookmarkShow();
-    }.bind(this), 0);
-
+    this.bookmarkShow();
     return this;
   },
 
