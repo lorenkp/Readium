@@ -9,6 +9,8 @@ class Api::BookmarksController < ApplicationController
   end
 
   def destroy
+    @bookmark = Bookmark.find(params[:id])
+    render json: {} if @bookmark.destroy
   end
 
   private

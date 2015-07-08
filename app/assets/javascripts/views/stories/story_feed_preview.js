@@ -25,6 +25,31 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     }
   },
 
+  createBookmark: function() {
+    var bookmark = new Readium.Models.Bookmark({
+      user_id: currentUser.id,
+      story_id: this.model.id
+    });
+    bookmark.save({}, {
+      success: function() {
+        currentUser.fetch();
+        this.model.fetch();
+      }.bind(this)
+    });
+  },
+
+  destroyBookmark: function() {
+    var bookmark = currentUser.bookmarks().findWhere({
+      story_id: this.model.id
+    });
+    bookmark.destroy({
+      success: function() {
+        currentUser.fetch();
+        this.model.fetch();
+      }.bind(this)
+    });
+  },
+
   render: function() {
     this.makePreviewLength();
     setTimeout(function() {
@@ -56,16 +81,9 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     if (!currentUser.bookmarks().findWhere({
       story_id: this.model.id
     })) {
-      var bookmark = new Readium.Models.Bookmark({
-        user_id: currentUser.id,
-        story_id: this.model.id
-      });
-      bookmark.save({}, {
-        success: function() {
-          currentUser.fetch();
-          this.model.fetch();
-        }.bind(this)
-      });
+      this.createBookmark();
+    } else {
+      this.destroyBookmark();
     }
   }
 });
