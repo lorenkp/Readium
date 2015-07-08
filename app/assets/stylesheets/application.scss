@@ -677,13 +677,16 @@ input:focus {
     display:none;
 }
 
+.bookmark-before {
+    color: rgba(0, 0, 0, 0.298039);
+}
+
 .bookmark:hover .bookmark-after {
     cursor: pointer;
     display: inline-block;
-    color: black;
-    .icon--readingList:before {
-        color: rgba(0, 0, 0, 0.6);
-    }
+    // .icon--readingList:before {
+    //     color: rgba(0, 0, 0, 0.6);
+    // }
 }
 
 .response-placeholder {
