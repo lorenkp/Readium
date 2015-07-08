@@ -32,8 +32,8 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     bookmark.save({}, {
       success: function() {
-        currentUser.fetch();
         this.model.fetch();
+        currentUser.fetch();
       }.bind(this)
     });
   },
