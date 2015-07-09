@@ -12,15 +12,19 @@ Readium.Views.BookmarkHome = Backbone.CompositeView.extend({
       collection: this.tagsCollection,
       currentUserCollection: currentUser.followedTags()
     }));
+    this.initialized = false;
   },
 
   addStoryFeedPreview: function() {
-    this.collection.each(function(story) {
+    if (this.initialized === false) {
+      this.collection.each(function(story) {
       var view = new Readium.Views.StoryFeedPreview({
         model: story
-      });
-      this.addSubview('.story-feed', view);
-    }.bind(this));
+        });
+        this.addSubview('.story-feed', view);
+      }.bind(this));
+      this.initialized = true;        
+    }
   },
 
   render: function() {

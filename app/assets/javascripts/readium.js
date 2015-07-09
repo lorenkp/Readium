@@ -4,6 +4,8 @@ window.Readium = {
   Views: {},
   Routers: {},
   initialize: function() {
+    var bookmarkedCollection = new Readium.Collections.Stories();
+    bookmarkedCollection.url = 'api/bookmarks';
     var storiesCollection = new Readium.Collections.Stories();
     var tagsCollection = new Readium.Collections.Tags();
     var usersCollection = new Readium.Collections.Users();
@@ -12,6 +14,7 @@ window.Readium = {
       tagsCollection: tagsCollection,
       storiesCollection: storiesCollection,
       usersCollection: usersCollection,
+      bookmarkedCollection: bookmarkedCollection,
       $rootEl: $('#main')
     });
     Backbone.history.start();

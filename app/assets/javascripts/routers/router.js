@@ -4,6 +4,7 @@ Readium.Routers.Router = Backbone.Router.extend({
     this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.usersCollection = options.usersCollection;
+    this.bookmarkedCollection = options.bookmarkedCollection;
   },
 
   routes: {
@@ -16,9 +17,9 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   bookmarks: function() {
-    
+    this.bookmarkedCollection.fetch();
     var view = new Readium.Views.BookmarkHome({
-      collection: this.bookmarksCollection,
+      collection: this.bookmarkedCollection,
       tagsCollection: this.tagsCollection
     });
     this.insertSearchBar();
