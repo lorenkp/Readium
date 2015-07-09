@@ -48,6 +48,7 @@ Readium.Views.TagShow = Backbone.CompositeView.extend({
       });
       following.destroy({
         success: function(follower) {
+          this.model.fetch();
           currentUser.fetch();
           this.model.followers().remove({
             id: follower.escape('follower_id')

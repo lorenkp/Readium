@@ -60,7 +60,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
         this.tagsCollection.fetch();
         currentUser.stories().add(story);
         this.refreshView();
-        Backbone.history.navigate('#', {
+        Backbone.history.navigate('#all', {
           trigger: true
         });
       }.bind(this)

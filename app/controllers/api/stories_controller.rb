@@ -42,6 +42,11 @@ class Api::StoriesController < ApplicationController
         @stories << story
       end
     end
+    current_user.followed_users.each do |user|
+      user.stories.each do |story|
+        @stories << story
+      end
+    end
     render 'api/stories/index.json.jbuilder'
   end
 

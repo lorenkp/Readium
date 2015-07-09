@@ -6,7 +6,6 @@ User.create(username: 'Gary Shteyngart', password: 'garygary', url: 'https://res
 
 Tagging.create(story_id: 1, tag_id: 1)
 Tagging.create(story_id: 1, tag_id: 2)
-Tagging.create(story_id: 1, tag_id: 6)
 Tagging.create(story_id: 2, tag_id: 3)
 Tagging.create(story_id: 2, tag_id: 4)
 Tagging.create(story_id: 3, tag_id: 5)
