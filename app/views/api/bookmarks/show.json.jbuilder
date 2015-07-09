@@ -1,1 +1,0 @@
-json.extract!(@bookmark, :user_id, :story_id)

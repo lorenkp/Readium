@@ -11,7 +11,19 @@ Readium.Routers.Router = Backbone.Router.extend({
     'stories/new': 'storyNew',
     'stories/:id': 'storyShow',
     'tags/:id': 'tagShow',
-    'users/:id': 'userShow'
+    'users/:id': 'userShow',
+    'bookmarks': 'bookmarks'
+  },
+
+  bookmarks: function() {
+    
+    var view = new Readium.Views.BookmarkHome({
+      collection: this.bookmarksCollection,
+      tagsCollection: this.tagsCollection
+    });
+    this.insertSearchBar();
+    $('.publish-toolbar').empty();
+    this._swapView(view);
   },
 
   home: function() {
