@@ -29,7 +29,6 @@
     <img class="avatar show" src="<%= story.get('avatar_url') %>"> 
     </a>
     <span class="author-show-text"><%= story.escape('username') %></span>
-    <button class="follow-button show">Follow</button>
   </div>
   <div class="responses-header">
       <div class="responses-header-text">RESPONSES</div>
@@ -37,4 +36,15 @@
   <div class="editor"></div>
   <div class="responses-container"></div>
   <div class="placeholder"></div>
+</div>
+<div id="footer">
+  <a href="#users/<%= story.get('author_id') %>">
+  <div class="author-info">
+    <img class="avatar-footer" src="<%= story.get('avatar_url') %>">
+    <div class="author-time">
+      <div class="author-name"><%= story.get('username') %></div>
+      <div class="timeago" title="<%= story.get('created_at') %>"></div>
+    </div>
+  </div>
+</a>
 </div>

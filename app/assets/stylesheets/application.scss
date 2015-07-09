@@ -1100,4 +1100,24 @@ input:focus {
   margin-right: 20px;
 }
 
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+   box-shadow: rgba(0, 0, 0, 0.14902) 0px 0px 1px 0px;
+background: white;
+}
+
+.avatar-footer {
+    border-radius: 50%;
+    height: 36px;
+    position: relative;
+    top: 6px;
+    margin-left: 19px;
+}
+
+
+
 
