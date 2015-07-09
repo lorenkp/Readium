@@ -4,8 +4,9 @@ class Api::BookmarksController < ApplicationController
     render json: @bookmark if @bookmark.save
   end
 
-  def show
-    @bookmark = Bookmark.find(params[:id])
+  def index
+    @stories = current_user.bookmarked
+    render "api/stories/index"
   end
 
   def destroy

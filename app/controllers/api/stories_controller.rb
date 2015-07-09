@@ -1,4 +1,10 @@
 class Api::StoriesController < ApplicationController
+
+  def bookmarked
+    @stories = current_user.bookmarked
+    render 'api/stories/index.json.jbuilder'
+  end
+
   def create
     @story = current_user.stories.new(story_params)
     if @story.save
@@ -22,18 +28,11 @@ class Api::StoriesController < ApplicationController
 
   def index
     @stories = Story.all
-    render 'index'
-  end
-
-  def new
   end
 
   def show
     @story = Story.find(params[:id])
-    render "show"
-  end
-
-  def update
+    render 'show'
   end
 
   private

@@ -7,7 +7,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-    this.listenTo(currentUser, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   bookmarkShow: function() {
