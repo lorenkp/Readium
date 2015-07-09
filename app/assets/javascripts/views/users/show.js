@@ -6,17 +6,23 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-    this.listenTo(this.model, 'sync', this.addStoryPreview);    
+    this.listenTo(this.model, 'sync', this.addStoryPreview);
+    this.initialized = false;    
   },
 
   addStoryPreview: function(user) {
-    user.stories().each(function(story) {
-      var view = new Readium.Views.StoryFeedPreview({
-        model: story
-      });
-      this.addSubview('.story-feed-user', view);
-    }.bind(this));
+    if (this.initialized === false) {
+      user.stories().each(function(story) {
+        var view = new Readium.Views.StoryFeedPreview({
+          model: story
+        });
+        this.addSubview('.story-feed-user', view);
+      }.bind(this));
+      this.initialized = true;
+    }
+
     this.render();
+    
   },
 
   render: function() {
@@ -41,6 +47,7 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
       $('.follow-button').text('Follow');
 
     }
+
     this.attachSubviews();
     return this;
   },

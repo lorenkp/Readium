@@ -11,7 +11,9 @@ gem 'bcrypt'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'jbuilder'
-gem "dante-editor"
+gem 'dante-editor'
+gem 'figaro'
+
 
 group :development, :test do
   gem 'byebug'
