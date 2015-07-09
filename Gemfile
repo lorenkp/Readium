@@ -11,7 +11,6 @@ gem 'bcrypt'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'jbuilder'
-gem 'dante-editor'
 gem 'figaro'
 
 
