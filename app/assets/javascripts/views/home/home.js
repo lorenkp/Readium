@@ -12,6 +12,7 @@ Readium.Views.Home = Backbone.CompositeView.extend({
     // 'remove' should probably not trigger a full re-render-similar to add
     // listeners
     this.listenTo(this.storiesCollection, 'add remove sync', this.render);
+
     // This probably should be in the events hash
     this.listenTo(this.storiesCollection, 'add', this.addNewStoryFeedPreview);
 
@@ -19,10 +20,10 @@ Readium.Views.Home = Backbone.CompositeView.extend({
       storiesCollection: this.storiesCollection,
       tagsCollection: this.tagsCollection
     }));
-
     this.addSubview('.tag-feed', new Readium.Views.TagFeed({
       collection: this.tagsCollection,
-      currentUserCollection: currentUser.followedTags()
+      currentUserCollection: currentUser.followedTags(),
+      storiesCollection: this.storiesCollection
     }));
   },
 

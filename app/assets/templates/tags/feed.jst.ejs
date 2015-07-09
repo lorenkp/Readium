@@ -10,10 +10,19 @@
       <br>
     </div>
     <div class= "tag-header">
-      <div class="featured-header">SUBSCRIBED TAGS</div>
+      <div class="featured-header">TAGS YOU FOLLOW</div>
       <div class="featured-tags">
         <% currentUser.each(function(tag) { %>
         <a href="#tags/<%= tag.id %>"><%= tag.escape('name') %></a>
+        <% }) %>
+      </div>
+      <br>
+    </div>
+    <div class= "tag-header">
+      <div class="featured-header">TOP STORIES ON READIUM</div>
+      <div class="featured-tags">
+        <% stories.each(function(story) { %>
+        <a href="#stories/<%= story.id %>"><%= story.escape('title') %></a>
         <% }) %>
       </div>
       <br>
