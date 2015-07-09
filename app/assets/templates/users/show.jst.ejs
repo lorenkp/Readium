@@ -1,3 +1,5 @@
+
+  <div class="pic"></div>
 <div class="blurb">
   <img class="avatar-blurb" src="<%= user.get('url') %>"/>
   <p class="username-blurb"><%= user.escape('username') %></p>
@@ -19,3 +21,13 @@
 </div>
 <span class="recent">LATEST STORIES</span>
 <div class="story-feed-user"></div>
+<script type="text/javascript">
+  $(document).ready(function() {
+        var img = $('.pic')
+    $(window).scroll(function(e) {
+        var s = $(window).scrollTop();
+
+        img.css('-webkit-filter', "blur(" + Math.min(s/20,40) + "px)");
+    });
+});
+</script>

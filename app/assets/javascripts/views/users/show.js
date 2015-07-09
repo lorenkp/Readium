@@ -7,7 +7,8 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.addStoryPreview);
-    this.initialized = false;    
+    this.initialized = false;
+    $(document).bind('scroll', this.fader);   
   },
 
   addStoryPreview: function(user) {
@@ -23,6 +24,22 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
 
     this.render();
     
+  },
+
+  fader: function() {
+    var r = $('.blurred'),
+      wh = $(window).height(),
+      dt = $(document).scrollTop(),
+      elView, opacity;
+
+    r.each(function() {
+      elView = wh - ($(this).offset().top - dt + 200);
+      if (elView > 0) { // Top of DIV above bottom of window.
+        opacity = 1 / (wh + $(this).height()) * elView * 2;
+        if (opacity < 1) // Bottom of DIV below top of window.
+          $(this).css('opacity', opacity);
+      }
+    });
   },
 
   render: function() {
