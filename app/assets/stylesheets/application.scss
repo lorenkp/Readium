@@ -137,9 +137,9 @@ img {
 
 .tag-feed {
     float: right;
-    width: 325px;
+    width: 400px;
     margin-left: auto;
-    left: calc(100% - 325px);
+    left: calc(100% - 400px);
     position: absolute;
     background-color: #FAFAFA;
     height: 100%;
@@ -1007,3 +1007,60 @@ input:focus {
     height: 420px;
     margin: -5px -10px -10px -5px;
 }
+
+.story-sidebar-unit {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.0470588);
+}
+
+.story-sidebar-button {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    height: 20px;
+    display: inline-block;
+}
+
+.story-sidebar-title {
+    display: block;
+}
+.story-sidebar-author {
+    display: block;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-title-author-group {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 19.6000003814697px;
+    vertical-align: bottom;
+
+    padding-bottom: 18px;
+    margin-top: 18px;
+}
+
+.circle-container {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 18px;
+}
+
+.circle {
+    display:inline-block;
+    width:40px;
+    height:40px;
+    border-radius:20px;
+    font-size: 12px;
+    color: black;
+    line-height:40px;
+    text-align:center;
+    background: white;
+    font-weight: 700;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.0470588);
+}
+
+

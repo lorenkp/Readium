@@ -21,9 +21,19 @@
     <div class= "tag-header">
       <div class="featured-header">TOP STORIES ON READIUM</div>
       <div class="featured-tags">
+      <% var i = 1  %>
         <% stories.each(function(story) { %>
-        <a href="#stories/<%= story.id %>"><%= story.escape('title') %></a>
-        <% }) %>
+        <div class="story-sidebar-unit">
+        <div class="circle-container">
+          <div class="circle"><%= i %></div>
+        </div>
+        <div class="sidebar-title-author-group">
+          <a class="story-sidebar-title" href="#stories/<%= story.id %>"><%= story.escape('title') %></a>
+          <a class="story-sidebar-author" href="#users/<%= story.escape('author_id') %>"><%= story.escape('username') %></a>
+        </div>
+        </div>
+        <% i++ %> 
+      <% }) %>
       </div>
       <br>
     </div>
