@@ -5,15 +5,18 @@ Readium.Routers.Router = Backbone.Router.extend({
     this.tagsCollection = options.tagsCollection;
     this.usersCollection = options.usersCollection;
     this.bookmarkedCollection = options.bookmarkedCollection;
+    this.followedCollection = options.followedCollection;
   },
 
   routes: {
-    '': 'home',
+    '': 'followedFeed',
+    'all': 'home',
     'stories/new': 'storyNew',
     'stories/:id': 'storyShow',
     'tags/:id': 'tagShow',
     'users/:id': 'userShow',
-    'bookmarks': 'bookmarks'
+    'bookmarks': 'bookmarks',
+
   },
 
   bookmarks: function() {
@@ -23,6 +26,20 @@ Readium.Routers.Router = Backbone.Router.extend({
       collection: this.bookmarkedCollection,
       tagsCollection: this.tagsCollection,
       storiesCollection: this.storiesCollection
+    });
+    this.insertSearchBar();
+    $('.publish-toolbar').empty();
+    this._swapView(view);
+  },
+
+  followedFeed: function() {
+    this.followedCollection.fetch();
+    this.tagsCollection.fetch();
+    var createStoryHome = new Readium.Models.Story();
+    var view = new Readium.Views.Home({
+      storiesCollection: this.followedCollection,
+      tagsCollection: this.tagsCollection,
+      model: createStoryHome
     });
     this.insertSearchBar();
     $('.publish-toolbar').empty();

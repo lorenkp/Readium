@@ -17,6 +17,7 @@ window.Readium = {
       storiesCollection: storiesCollection,
       usersCollection: usersCollection,
       bookmarkedCollection: bookmarkedCollection,
+      followedCollection: followedCollection,
       $rootEl: $('#main')
     });
     Backbone.history.start();
