@@ -46,8 +46,7 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
       this.$el.html(content);
       this.attachSubviews();
       this.initialized++;
-      return this;
     }
-
+    return this;
   }
 });
