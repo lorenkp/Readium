@@ -4,13 +4,15 @@ Readium.Views.BookmarkHome = Backbone.CompositeView.extend({
   className: 'container main',
 
   initialize: function(options) {
+    this.storiesCollection = options.storiesCollection;
     this.tagsCollection = options.tagsCollection;
     this.listenTo(this.collection, 'sync', this.addStoryFeedPreview);
 
     // this.storiesCollection.each(this.addStoryFeedPreview.bind(this));
     this.addSubview('.tag-feed', new Readium.Views.TagFeed({
       collection: this.tagsCollection,
-      currentUserCollection: currentUser.followedTags()
+      currentUserCollection: currentUser.followedTags(),
+      storiesCollection: this.storiesCollection
     }));
     this.initialized = false;
   },

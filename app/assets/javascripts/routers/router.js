@@ -17,10 +17,12 @@ Readium.Routers.Router = Backbone.Router.extend({
   },
 
   bookmarks: function() {
+    this.storiesCollection.fetch();
     this.bookmarkedCollection.fetch();
     var view = new Readium.Views.BookmarkHome({
       collection: this.bookmarkedCollection,
-      tagsCollection: this.tagsCollection
+      tagsCollection: this.tagsCollection,
+      storiesCollection: this.storiesCollection
     });
     this.insertSearchBar();
     $('.publish-toolbar').empty();
