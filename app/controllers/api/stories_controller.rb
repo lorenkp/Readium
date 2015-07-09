@@ -35,6 +35,16 @@ class Api::StoriesController < ApplicationController
     render 'show'
   end
 
+  def tagged
+    @stories = []
+    current_user.followed_tags.each do |tag|
+      tag.stories.each do |story|
+        @stories << story
+      end
+    end
+    render 'api/stories/index.json.jbuilder'
+  end
+
   private
 
   def story_params

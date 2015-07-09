@@ -6,6 +6,8 @@ window.Readium = {
   initialize: function() {
     var bookmarkedCollection = new Readium.Collections.Stories();
     bookmarkedCollection.url = 'api/bookmarks';
+    var followedCollection = new Readium.Collections.Stories();
+    followedCollection.url = 'api/stories/tagged';
     var storiesCollection = new Readium.Collections.Stories();
     var tagsCollection = new Readium.Collections.Tags();
     var usersCollection = new Readium.Collections.Users();

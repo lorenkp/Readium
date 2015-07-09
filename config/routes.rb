@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#root'
 
   get 'api/bookmarks', to: 'api/stories#bookmarked'
+  get 'api/stories/tagged', to: 'api/stories#tagged'
 
   namespace :api, defaults: { format: :json } do
     resources :bookmarks, only: [:create, :destroy, :index]
