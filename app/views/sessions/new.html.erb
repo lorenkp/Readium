@@ -1,4 +1,4 @@
-<h1 class="sign-in">Readium</h1>
+<div class="content"><h1 class="sign-in">Readium</h1>
 <form action="<%= session_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div id="login-fields">
@@ -17,6 +17,8 @@
   <p class="or" >Or ...</p>
   <button class="follow-button log-in trial">Log in as a guest</button>
 </div>
+</div>
+
 
 <script>
   $('button.trial').click(function(){

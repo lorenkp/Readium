@@ -32,6 +32,7 @@ a:hover {
     text-align: center;
     padding-top: 250px;
     font-size: 68px;
+    color: white;
 }
 
 .placeholder {
@@ -1025,7 +1026,12 @@ input:focus {
 
 .story-sidebar-title {
     display: block;
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 }
+
 .story-sidebar-author {
     display: block;
     color: rgba(0, 0, 0, 0.3);
@@ -1065,6 +1071,33 @@ input:focus {
 
 .filler {
     height: 300px;
+}
+
+.content:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  display: block;
+  background-image: url('https://static.pexels.com/photos/6363/man-hands-working-technology.jpg');
+  width: 100%;
+  height: 100%;
+  
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}
+
+.content {
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 

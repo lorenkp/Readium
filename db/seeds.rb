@@ -1,6 +1,7 @@
 User.create(username: 'DFW', password: 'foster', url: 'https://res.cloudinary.com/loren/image/upload/v1435057951/yppu6jevzgynnujmln83.jpg')
 User.create(username: 'Susan Sontag', password: 'sontag', url: 'https://res.cloudinary.com/loren/image/upload/v1435059969/Susan-Sontag_wormli.jpg')
 User.create(username: 'John Updike', password: 'updike', url: 'https://res.cloudinary.com/loren/image/upload/v1435060951/John-Updike_ln4ri9.jpg')
+User.create(username: 'Hunter S.Thompson', password: 'thompson', url: 'https://res.cloudinary.com/loren/image/upload/v1436470828/hunter-s-thompson_p3gbcx.jpg')
 
 Tagging.create(story_id: 1, tag_id: 1)
 Tagging.create(story_id: 1, tag_id: 2)
@@ -99,4 +100,116 @@ Story.create(body: <<-HTML, title: 'Hub Fans Bid Kid Adieu', author_id: 3, heade
 <p>In 1946, Williams returned from three years as a Marine pilot to the second of his baseball avatars, that of Achilles, the hero of incomparable prowess and beauty who nevertheless was to be found sulking in his tent while the Trojans (mostly Yankees) fought through to the ships. Yawkey, a timber and mining maharajah, had surrounded his central jewel with many gems of slightly lesser water, such as Bobby Doerr, Dom DiMaggio, Rudy York, Birdie Tebbetts, and Johnny Pesky. Throughout the late forties, the Red Sox were the best paper team in baseball, yet they had little three-dimensional to show for it, and if this was a tragedy, Williams was Hamlet. A succinct review of the indictment—and a fair sample of appreciative sports-page prose—appeared the very day of Williams' valedictory, in a column by Huck Finnegan in the Boston American (no sentimentalist, Huck):</p>
 <p>Williams' career, in contrast [to Babe Ruth's], has been a series of failures except for his averages. He flopped in the only World Series he ever played in (1946) when he batted only .200. He flopped in the playoff game with Cleveland in 1948. He flopped in the final game of the 1949 season with the pennant hinging on the outcome (Yanks 5, Sox 3). He flopped in 1950 when he returned to the lineup after a two-month absence and ruined the morale of a club that seemed pennant-bound under Steve O'Neill. It has always been Williams' records first, the team second, and the Sox non-winning record is proof enough of that.</p>
 <p>There are answers to all this, of course. The fatal weakness of the great Sox slugging teams was not-quite-good-enough pitching rather than Williams' failure to hit a home run every time he came to bat. Again, Williams' depressing effect on his teammates has never been proved. Despite ample coaching to the contrary, most insisted that they liked him. He has been generous with advice to any player who asked for it. In an increasingly combative baseball atmosphere, he continued to duck beanballs docilely. With umpires he was gracious to a fault. This courtesy itself annoyed his critics, whom there was no pleasing. And against the ten crucial games (the seven World Series games with the St. Louis Cardinals, the 1948 playoff with the Cleveland Indians, and the two-game series with the Yankees at the end of the 1949 season, winning either one of which would have given the Red Sox the pennant) that make up the Achilles' heel of Williams' record, a mass of statistics can be set showing that day in and day out he was no slouch in the clutch. The correspondence columns of the Boston papers now and then suffer a sharp flurry of arithmetic on this score; indeed, for Williams to have distributed all his hits so they did nobody else any good would constitute a feat of placement unparalleled in the annals of selfishness.</p>
+HTML
+
+Story.create(body: <<-HTML, author_id: 4, title: 'The Kentucky Derby is Decadent and Depraved', home_url: 'https://res.cloudinary.com/loren/image/upload/v1436471041/kentucky-home_lnxffp.jpg', header_url: 'https://res.cloudinary.com/loren/image/upload/v1436470931/kentucky-derby_nwurtr.jpg')
+<p>I got off the plane around midnight and no one spoke as I crossed the dark runway to the
+terminal. The air was thick and hot, like wandering into a steam bath. Inside, people hugged
+each other and shook hands…big grins and a whoop here and there: “By God! You old
+bastard! Good to see you, boy! Damn good…and I mean it!”
+In the air-conditioned lounge I met a man from Houston who said his name was something
+or other–”but just call me Jimbo”–and he was here to get it on. “I’m ready for anything, by
+God! Anything at all. Yeah, what are you drinkin?” I ordered a Margarita with ice, but he
+wouldn’t hear of it: “Naw, naw…what the hell kind of drink is that for Kentucky Derby time?
+What’s wrong with you, boy?” He grinned and winked at the bartender. “Goddam, we gotta
+educate this boy. Get him some good whiskey…”
+I shrugged. “Okay, a double Old Fitz on ice.” Jimbo nodded his approval.
+“Look.” He tapped me on the arm to make sure I was listening. “I know this Derby crowd, I
+come here every year, and let me tell you one thing I’ve learned–this is no town to be giving
+people the impression you’re some kind of faggot. Not in public, anyway. Shit, they’ll roll
+you in a minute, knock you in the head and take every goddam cent you have.”
+I thanked him and fitted a Marlboro into my cigarette holder. “Say,” he said, “you look like
+you might be in the horse business…am I right?”
+“No,” I said. “I’m a photographer.”
+“Oh yeah?” He eyed my ragged leather bag with new interest. “Is that what you got there–
+cameras? Who you work for?”
+“Playboy,” I said.
+He laughed. “Well, goddam! What are you gonna take pictures of–nekkid horses? Haw! I
+guess you’ll be workin’ pretty hard when they run the Kentucky Oaks. That’s a race just for
+fillies.” He was laughing wildly. “Hell yes! And they’ll all be nekkid too!”
+I shook my head and said nothing; just stared at him for a moment, trying to look grim.
+“There’s going to be trouble,” I said. “My assignment is to take pictures of the riot.”
+“What riot?”
+I hesitated, twirling the ice in my drink. “At the track. On Derby Day. The Black Panthers.”
+I stared at him again. “Don’t you read the newspapers?”
+The grin on his face had collapsed. “What the hell are you talkin’ about?”
+“Well…maybe I shouldn’t be telling you…” I shrugged. “But hell, everybody else seems to
+know. The cops and the National Guard have been getting ready for six weeks. They have
+20,000 troops on alert at Fort Knox. They’ve warned us–all the press and photographers–to
+wear helmets and special vests like flak jackets. We were told to expect shooting…”
+“No!” he shouted; his hands flew up and hovered momentarily between us, as if to ward off
+the words he was hearing. Then he whacked his fist on the bar. “Those sons of bitches! God
+Almighty! The Kentucky Derby!” He kept shaking his head. “No! Jesus! That’s almost too
+bad to believe!” Now he seemed to be sagging on the stool, and when he looked up his eyes
+were misty. “Why? Why here? Don’t they respect anything?“
+I shrugged again. “It’s not just the Panthers. The FBI says busloads of white crazies are
+coming in from all over the country–to mix with the crowd and attack all at once, from
+every direction. They’ll be dressed like everybody else. You know–coats and ties and all that.
+But when the trouble starts…well, that’s why the cops are so worried.”
+He sat for a moment, looking hurt and confused and not quite able to digest all this terrible
+news. Then he cried out: “Oh…Jesus! What in the name of God is happening in this
+country? Where can you get away from it?”
+“Not here,” I said, picking up my bag. “Thanks for the drink…and good luck.”
+He grabbed my arm, urging me to have another, but I said I was overdue at the Press Club
+and hustled off to get my act together for the awful spectacle. At the airport newsstand I
+picked up a Courier-Journal and scanned the front page headlines: “Nixon Sends GI’s into
+Cambodia to Hit Reds”… “B-52’s Raid, then 20,000 GI’s Advance 20 Miles”…”4,000 U.S.
+Troops Deployed Near Yale as Tension Grows Over Panther Protest.” At the bottom of the
+page was a photo of Diane Crump, soon to become the first woman jockey ever to ride in
+the Kentucky Derby. The photographer had snapped her “stopping in the barn area to
+fondle her mount, Fathom.” The rest of the paper was spotted with ugly war news and
+stories of “student unrest.” There was no mention of any trouble brewing at university in
+Ohio called Kent State.
+I went to the Hertz desk to pick up my car, but the moon-faced young swinger in charge
+said they didn’t have any. “You can’t rent one anywhere,” he assured me. “Our Derby
+reservations have been booked for six weeks.” I explained that my agent had confirmed a
+white Chrysler convertible for me that very afternoon but he shook his head. “Maybe we’ll
+have a cancellation. Where are you staying?”
+I shrugged. “Where’s the Texas crowd staying? I want to be with my people.”
+He sighed. “My friend, you’re in trouble. This town is flat full. Always is, for the Derby.”
+I leaned closer to him, half-whispering: “Look, I’m from Playboy. How would you like a job?”
+He backed off quickly. “What? Come on, now. What kind of a job?”
+“Never mind,” I said. “You just blew it.” I swept my bag off the counter and went to find a
+cab. The bag is a valuable prop in this kind of work; mine has a lot of baggage tags on it–SF,
+LA, NY, Lima, Rome, Bangkok, that sort of thing–and the most prominent tag of all is a
+very official, plastic-coated thing that says “Photog. Playboy Mag.” I bought it from a pimp
+in Vail, Colorado, and he told me how to use it. “Never mention Playboy until you’re sure
+they’ve seen this thing first,” he said. “Then, when you see them notice it, that’s the time to
+strike. They’ll go belly up ever time. This thing is magic, I tell you. Pure magic.”
+Well…maybe so. I’d used it on the poor geek in the bar, and now humming along in a Yellow
+Cab toward town, I felt a little guilty about jangling the poor bugger’s brains with that evil
+fantasy. But what the hell? Anybody who wanders around the world saying, “Hell yes, I’m
+from Texas,” deserves whatever happens to him. And he had, after all, come here once again
+to make a nineteenth-century ass of himself in the midst of some jaded, atavistic freakout
+with nothing to recommend it except a very saleable “tradition.” Early in our chat, Jimbo
+had told me that he hadn’t missed a Derby since 1954. “The little lady won’t come anymore,”
+he said. “She grits her teeth and turns me loose for this one. And when I say ‘loose’ I do
+mean loose! I toss ten-dollar bills around like they were goin’ out of style! Horses, whiskey,
+women…shit, there’s women in this town that’ll do anything for money.”
+Why not? Money is a good thing to have in these twisted times. Even Richard Nixon is
+hungry for it. Only a few days before the Derby he said, “If I had any money I’d invest it in
+the stock market.” And the market, meanwhile, continued its grim slide.</p>
+<hr>
+<p>The next day was heavy. With only thirty hours until post time I had no press credentials
+and–according to the sports editor of the Louisville Courier-Journal–no hope at all of
+getting any. Worse, I needed two sets: one for myself and another for Ralph Steadman, the
+English illustrator who was coming from London to do some Derby drawings. All I knew
+about him was that this was his first visit to the United States. And the more I pondered the
+fact, the more it gave me fear. How would he bear up under the heinous culture shock of
+being lifted out of London and plunged into the drunken mob scene at the Kentucky
+Derby? There was no way of knowing. Hopefully, he would arrive at least a day or so ahead,
+and give himself time to get acclimated. Maybe a few hours of peaceful sightseeing in the
+Bluegrass country around Lexington. My plan was to pick him up at the airport in the huge
+Pontiac Ballbuster I’d rented from a used-car salesman name Colonel Quick, then whisk him
+off to some peaceful setting that might remind him of England.
+Colonel Quick had solved the car problem, and money (four times the normal rate) had
+bought two rooms in a scumbox on the outskirts of town. The only other kink was the task
+of convincing the moguls at Churchill Downs that Scanlan’s was such a prestigious sporting
+journal that common sense compelled them to give us two sets of the best press tickets.
+This was not easily done. My first call to the publicity office resulted in total failure. The
+press handler was shocked at the idea that anyone would be stupid enough to apply for press
+credentials two days before the Derby. “Hell, you can’t be serious,” he said. “The deadline
+was two months ago. The press box is full; there’s no more room…and what the hell is
+Scanlan’s Monthly anyway?</p>
+
 HTML
