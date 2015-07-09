@@ -12,6 +12,7 @@ gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'jbuilder'
 gem 'figaro'
+gem 'dante-editor'
 
 
 group :development, :test do

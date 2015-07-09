@@ -74,6 +74,7 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     daemons (1.2.3)
+    dante-editor (0.0.13)
     debug_inspector (0.0.2)
     eco (1.0.0)
       coffee-script
@@ -201,6 +202,7 @@ DEPENDENCIES
   bullet
   byebug
   coffee-rails (~> 4.1.0)
+  dante-editor
   figaro
   jbuilder
   jquery-rails
