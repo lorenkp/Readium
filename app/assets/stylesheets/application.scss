@@ -262,6 +262,8 @@ a::-moz-focus-inner {
 }
 
 .avatar-blurb {
+    position: relative;
+    bottom: 90px;
     border-radius: 50%;
     height: 120px;
     margin-left: auto;
@@ -991,8 +993,8 @@ input:focus {
     right: 24px !important;
 }
 
-.pic-contain {
-    position: relative;
+.pic-container {
+    overflow: hidden;
 }
 
 // .one {
@@ -1002,5 +1004,6 @@ input:focus {
 .pic {
     background: url("http://d1oi7t5trwfj5d.cloudfront.net/b2/3d/bd777bb84af4a486672ed963cb57/regarding-susan-sontag.jpg") no-repeat top center fixed;
     background-size: cover;
-    height: 500px;
+    height: 420px;
+    margin: -5px -10px -10px -5px;
 }
