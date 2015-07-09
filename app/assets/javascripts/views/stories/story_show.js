@@ -8,6 +8,7 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.addComposeResponse);
     this.model.responses().each(this.addResponses.bind(this));
     this.listenTo(this.model.responses(), 'add', this.addResponses);
+    this.initialized = 0;
   },
 
   addComposeResponse: function() {
@@ -23,25 +24,30 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
   addResponses: function(response) {
 
     // this.model.responses().each(function(response) {
-      var content = new Readium.Views.ResponsesItem({
+    var content = new Readium.Views.ResponsesItem({
         model: response
       });
-      this.addSubview('.responses-container', content);
+    this.addSubview('.responses-container', content);
+
     // }.bind(this));
   },
 
   render: function() {
-    var title = this.model.get('title');
-    var strippedTitle = this.model.stripTitle(title);
-    this.model.set({
+    if (this.initialized < 2) {
+      var title = this.model.get('title');
+      var strippedTitle = this.model.stripTitle(title);
+      this.model.set({
       title: strippedTitle
     });
 
-    var content = this.template({
+      var content = this.template({
       story: this.model
     });
-    this.$el.html(content);
-    this.attachSubviews();
-    return this;
+      this.$el.html(content);
+      this.attachSubviews();
+      this.initialized++;
+      return this;
+    }
+
   }
 });
