@@ -1,26 +1,28 @@
-<div class="content"><h1 class="sign-in">Readium</h1>
-<form action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <div id="login-fields">
-    <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username">
-    <br>
-    <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
-    <br>
-    <br>
-    <div class="log-in-buttons">
-      <input class="follow-button log-in" type="submit" value="New user?">
-      <button class="follow-button log-in" type="submit" id="enter">Log in</button>
+  <!-- <div class="content"> -->
+    <div class="modal">
+      <h1 class="sign-in">Readium</h1>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div id="login-fields">
+          <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username" style="margin-bottom: 4px;">
+          <br>
+          <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
+          <br>
+          <br>
+          <div class="log-in-buttons">
+            <button class="follow-button log-in" type="submit" id="enter" style="margin-right: 7px;">Log In</button>
+          <button class="follow-button log-in trial">Guest Log In</button>
+
+          </div>
+        </div>
+      </form>
     </div>
-  </div>
-</form>
-<div class="contain-guest">
-  <button class="follow-button log-in trial">Log in as a guest</button>
-</div>
-</div>
+  <!-- </div>  -->
 
 
 <script>
-  $('button.trial').click(function(){
+  $('button.trial').click(function(event){
+    event.preventDefault();
     $("input[name='user[username]']").val("");
     $("input[name='user[password]']").val("");
       autoTyper('DFW', $("input[name='user[username]']"), function(){

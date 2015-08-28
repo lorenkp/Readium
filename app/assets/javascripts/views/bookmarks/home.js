@@ -20,12 +20,12 @@ Readium.Views.BookmarkHome = Backbone.CompositeView.extend({
   addStoryFeedPreview: function() {
     if (this.initialized === false) {
       this.collection.each(function(story) {
-      var view = new Readium.Views.StoryFeedPreview({
-        model: story
+        var view = new Readium.Views.StoryFeedPreview({
+          model: story
         });
         this.addSubview('.story-feed', view);
       }.bind(this));
-      this.initialized = true;        
+      this.initialized = true;
     }
   },
 
