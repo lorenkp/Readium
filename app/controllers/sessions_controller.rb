@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
                                      params[:user][:password])
     if @user.nil?
       @user = User.new
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:errors] = ["Invalid username or password"]
       render :new
     else
       log_in(@user)

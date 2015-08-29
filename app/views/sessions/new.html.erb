@@ -1,24 +1,29 @@
-  <!-- <div class="content"> -->
-    <div class="modal">
-      <h1 class="sign-in">Readium</h1>
-      <form action="<%= session_url %>" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <div id="login-fields">
-          <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username" style="margin-bottom: 4px;">
-          <br>
-          <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
-          <br>
-          <br>
-          <div class="log-in-buttons">
-            <button class="follow-button log-in" type="submit" id="enter" style="margin-right: 7px;">Log In</button>
-          <button class="follow-button log-in trial">Guest Log In</button>
 
-          </div>
-        </div>
-      </form>
+<div class="log-in-box">
+  <h1 class="sign-in">Readium</h1>
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div id="login-fields">
+      <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username" style="margin-bottom: 4px;">
+      <br>
+      <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
+      <br>
+      <a href="" class="sign-up-link">Sign Up</a>
+      <br>
+      <div class="log-in-buttons">
+        <button class="follow-button log-in" type="submit" id="enter" style="margin-right: 7px;">Log In</button>
+        <button class="follow-button log-in trial">Tour</button>
+      </div>
     </div>
-  <!-- </div>  -->
-
+  </form>
+  <% if flash[:errors] %>
+    <div class="errors">
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end  %>
+    </div>
+  <%  end %>
+</div>
 
 <script>
   $('button.trial').click(function(event){

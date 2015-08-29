@@ -34,9 +34,20 @@ a:hover {
     letter-spacing: 2px;
     color: white;
     margin-top: 66px;
+    cursor: default;
 }
 
-.modal {
+.sign-up-link {
+    display: block;
+    color: gray;
+    font-weight: 300;
+    position: relative;
+    left: 86px;
+    top: 8px;
+    font-size: 11px;
+}
+
+.log-in-box {
     margin-top: 200px;
     display: block;
     height: 388px;
@@ -47,6 +58,13 @@ a:hover {
     border-width: 1px;
     border-radius: 7px;
     border-color: black;
+}
+
+.log-in-container {
+    height: 388px;
+    width: 447px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .placeholder {
@@ -96,6 +114,13 @@ a:hover {
 
 *:focus {
     outline: 0;
+}
+
+.errors {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 25px;
+    color: red;
 }
 
 img {
@@ -570,6 +595,12 @@ input:focus {
     font-size: 13px;
     font-weight: 300;
     cursor: pointer;
+}
+
+.log-in:hover {
+    border-color: black !important;
+    background: black;
+    color: white !important;
 }
 
 ::-webkit-input-placeholder {
