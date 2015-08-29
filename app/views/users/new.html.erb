@@ -1,6 +1,28 @@
-<h1>Sign up</h1>
+<div class="log-in-box">
+  <h1 class="sign-in" style="text-shadow:none;color:black;letter-spacing:0px">Sign Up</h1>
+  <form action="<%= users_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div id="login-fields">
+      <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username" style="margin-bottom: 4px;">
+      <br>
+      <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
+      <br>
+      <br>
+      <div class="log-in-buttons">
+        <button class="follow-button log-in" type="submit" id="enter">Sign Up</button>
+      </div>
+    </div>
+  </form>
+  <% if flash[:errors] %>
+    <div class="errors">
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end  %>
+    </div>
+  <%  end %>
+</div>
 
-<form action="<%= users_url %>" method="post">
+<!-- <form action="<%= users_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   
   <label>Username
@@ -12,4 +34,4 @@
   </label>
 
   <input type="submit" value="Sign up">
-</form>
+</form> -->

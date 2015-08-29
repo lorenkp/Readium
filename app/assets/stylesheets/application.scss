@@ -39,10 +39,10 @@ a:hover {
 
 .sign-up-link {
     display: block;
-    color: gray;
+    color: green;
     font-weight: 300;
     position: relative;
-    left: 86px;
+    left: 95px;
     top: 8px;
     font-size: 11px;
 }
@@ -86,7 +86,7 @@ a:hover {
     text-align: center;
     padding-top: 10px;
     font-size: 12px;
-    color: gray;
+    color: black;
 }
 
 .cred-fields {
@@ -704,13 +704,13 @@ input:focus {
     display: inline-block;
 }
 
-// @font-face {
-//     font-family: 'medium-icons';
-//     src: url('medium-icons.eot');
-//     src: url('medium-icons.eot?#iefix') format("embedded-opentype"), url('medium-icons.woff') format("woff"), url("medium-icons.tff") format("truetype");
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+  font-family: "medium-icons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.GL0UGUn2SflsrDQQebdo3Q.eot?#iefix") format("embedded-opentype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.d6MdYRMP1ChpRcny39OG0A.woff") format("woff"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.rdyBNjSOKY-N-X0oDet8vg.ttf") format("truetype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.hyBKi3oc7ZM24Bj_5sEhOg.svg?#medium-icons") format("svg");
+}
+
 .icon {
     font-family: 'medium-icons';
     font-weight: normal;
