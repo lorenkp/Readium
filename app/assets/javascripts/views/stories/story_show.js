@@ -23,13 +23,11 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
 
   addResponses: function(response) {
 
-    // this.model.responses().each(function(response) {
     var content = new Readium.Views.ResponsesItem({
         model: response
       });
     this.addSubview('.responses-container', content);
 
-    // }.bind(this));
   },
 
   render: function() {

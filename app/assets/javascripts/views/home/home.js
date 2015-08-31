@@ -9,11 +9,8 @@ Readium.Views.Home = Backbone.CompositeView.extend({
 
     this.storiesCollection.each(this.addStoryFeedPreview.bind(this));
 
-    // 'remove' should probably not trigger a full re-render-similar to add
-    // listeners
     this.listenTo(this.storiesCollection, 'add remove sync', this.render);
 
-    // This probably should be in the events hash
     this.listenTo(this.storiesCollection, 'add', this.addNewStoryFeedPreview);
 
     this.addSubview('.compose', new Readium.Views.ComposeHome({
