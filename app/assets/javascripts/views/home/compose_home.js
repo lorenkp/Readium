@@ -84,11 +84,10 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
         body_placeholder: ' ',
         upload_callback: function(event) {
           $('.graf-image').attr('src', event.secure_url);
-        }
+        },
       });
       this.editor.start();
-      $('.section-inner').addClass('dante-home')
-    }.bind(this), 500);
+    }.bind(this), 20);
     this.attachSubviews();
     return this;
   },

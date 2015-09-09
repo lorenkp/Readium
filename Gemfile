@@ -14,7 +14,6 @@ gem 'jbuilder'
 gem 'figaro'
 gem 'dante-editor'
 
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

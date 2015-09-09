@@ -20,7 +20,7 @@
 //= require backbone
 //= require cloudinary
 //= require sanitize
-//= require dante-editor
+//= require 'dante'
 //= require readium
 //= require composite_view
 //= require_tree ../templates
