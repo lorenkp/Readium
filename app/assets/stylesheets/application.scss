@@ -1,18 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_self
- */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "dante";
@@ -34,6 +19,7 @@ a:hover {
     letter-spacing: 2px;
     color: white;
     margin-top: 66px;
+    margin-bottom: -3px;
     cursor: default;
 }
 
@@ -44,6 +30,17 @@ a:hover {
     position: relative;
     left: 95px;
     top: 8px;
+    font-size: 11px;
+}
+
+.medium-link {
+    color: green;
+}
+
+.clone-of {
+    text-align: center;
+    font-weight: 300;
+    font-family: 'jaf-bernino-sans';
     font-size: 11px;
 }
 
@@ -705,10 +702,10 @@ input:focus {
 }
 
 @font-face {
-  font-family: "medium-icons";
-  font-style: normal;
-  font-weight: normal;
-  src: url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.GL0UGUn2SflsrDQQebdo3Q.eot?#iefix") format("embedded-opentype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.d6MdYRMP1ChpRcny39OG0A.woff") format("woff"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.rdyBNjSOKY-N-X0oDet8vg.ttf") format("truetype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.hyBKi3oc7ZM24Bj_5sEhOg.svg?#medium-icons") format("svg");
+    font-family: "medium-icons";
+    font-style: normal;
+    font-weight: normal;
+    src: url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.GL0UGUn2SflsrDQQebdo3Q.eot?#iefix") format("embedded-opentype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.d6MdYRMP1ChpRcny39OG0A.woff") format("woff"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.rdyBNjSOKY-N-X0oDet8vg.ttf") format("truetype"), url("https://cdn-static-1.medium.com/_/fp/fonts/medium-icons.hyBKi3oc7ZM24Bj_5sEhOg.svg?#medium-icons") format("svg");
 }
 
 .icon {
