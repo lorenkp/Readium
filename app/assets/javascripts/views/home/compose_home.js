@@ -31,22 +31,23 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       });
     }
 
-    if ($('[data-accordion]').hasClass('open')) {
-      $('[data-content]').css({
-        'overflow': 'visible'
-      })
-      setTimeout(function() {
-        $('[data-content]').css({
-          'max-height': 'none'
-        })
+    // setTimeout(function() {
+    //   if ($('[data-accordion]').hasClass('open')) {
+    //     $('[data-content]').css({
+    //       'overflow': 'visible'
+    //     })
+    //     setTimeout(function() {
+    //       $('[data-content]').css({
+    //         'max-height': 'none'
+    //       })
+    //     }, 100);
+    //   } else {
+    //     $('[data-content]').css({
+    //       'overflow': 'hidden'
+    //     })
+    //   }
 
-      }, 200);
-    } else {
-      $('[data-content]').css({
-        'overflow': 'hidden'
-      })
-
-    }
+    // }, 100)
   },
 
   publish: function() {
