@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.timeago
+//= require jquery.accordion
 //= require handlebars.min
 //= require typeahead.bundle.min
 //= require jquery_ujs

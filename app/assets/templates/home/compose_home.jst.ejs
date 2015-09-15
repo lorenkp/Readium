@@ -1,12 +1,34 @@
-<div class="compose-header" data-toggle="collapse" data-target="#editable">
+<!-- <div class="compose-header" data-toggle="collapse" data-target="#editable">
   <img class="avatar" src="<%= user.get('url') %>">
   <span id="user-name"><%= user.escape('username') %></span>
   <span id="write-here">Write here...</span>
 </div>
+	
 <div id="editable" class="collapse">
   <div class="editable compose-home"></div>
   <div class="compose-buttons">
     <button type="submit" id="publish">Publish</button>
     <div class="create-box"></div>
   </div>
+</div> -->
+<div data-accordion class="testing">
+	
+<div data-control class="toggle-open">
+  <img class="avatar" src="<%= user.get('url') %>">
+  <span id="user-name"><%= user.escape('username') %></span>
+  <span id="write-here">Write here...</span>
 </div>
+<div data-content>
+<div id="editable">
+  <div class="editable compose-home"></div>
+  <div class="compose-buttons">
+    <button type="submit" id="publish">Publish</button>
+    <div class="create-box"></div>
+  </div>
+</div>
+	
+</div>
+</div>
+<script type="text/javascript">
+$('.testing').accordion()
+</script>

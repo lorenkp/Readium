@@ -4,7 +4,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   events: {
     'click #publish': 'publish',
     'click .add-banner': 'uploadImage',
-    'click .compose-header': 'disappearText',
+    'click .toggle-open': 'disappearText',
   },
 
   initialize: function(options) {
@@ -29,6 +29,13 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       $('#user-name').slideToggle(75, function() {
         $('#write-here').slideToggle(75);
       });
+    }
+
+    if ($('[data-accordion]').hasClass('open')) {
+      $('[data-content]').css({'overflow':'visible'})
+    } else {
+      $('[data-content]').css({'overflow':'hidden'})
+
     }
   },
 
