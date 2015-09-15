@@ -40,21 +40,15 @@
   </div>
 </div>
 <script type="text/javascript">
-  jQuery(function($) {
-  function fixDiv() {
-    var $cache = $('.tag-frame');
-    if ($(window).scrollTop() > 100)
-      $cache.css({
-        'position': 'fixed',
-        'top': '10px'
-      });
-    else
-      $cache.css({
-        'position': 'relative',
-        'top': 'auto'
-      });
-  }
-  $(window).scroll(fixDiv);
-  fixDiv();
-});
+$(window).scroll(function() {
+var scrollPos = $('body').scrollTop()
+if (scrollPos >= 68) {
+$('.tag-feed').addClass('locked')
+} else {
+$('.tag-feed').removeClass('locked')
+console.log('hi')
+
+}
+  
+})
 </script>
