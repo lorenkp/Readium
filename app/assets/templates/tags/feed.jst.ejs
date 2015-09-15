@@ -42,11 +42,10 @@
 <script type="text/javascript">
 $(window).scroll(function() {
 var scrollPos = $('body').scrollTop()
-if (scrollPos >= 68) {
+if (scrollPos > 68) {
 $('.tag-feed').addClass('locked')
 } else {
 $('.tag-feed').removeClass('locked')
-console.log('hi')
 
 }
   

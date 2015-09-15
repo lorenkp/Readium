@@ -32,9 +32,19 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     }
 
     if ($('[data-accordion]').hasClass('open')) {
-      $('[data-content]').css({'overflow':'visible'})
+      $('[data-content]').css({
+        'overflow': 'visible'
+      })
+      setTimeout(function() {
+        $('[data-content]').css({
+          'max-height': 'none'
+        })
+
+      }, 200);
     } else {
-      $('[data-content]').css({'overflow':'hidden'})
+      $('[data-content]').css({
+        'overflow': 'hidden'
+      })
 
     }
   },
