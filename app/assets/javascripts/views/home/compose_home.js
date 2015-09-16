@@ -31,23 +31,23 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       });
     }
 
-    // setTimeout(function() {
-    //   if ($('[data-accordion]').hasClass('open')) {
-    //     $('[data-content]').css({
-    //       'overflow': 'visible'
-    //     })
-    //     setTimeout(function() {
-    //       $('[data-content]').css({
-    //         'max-height': 'none'
-    //       })
-    //     }, 100);
-    //   } else {
-    //     $('[data-content]').css({
-    //       'overflow': 'hidden'
-    //     })
-    //   }
+    setTimeout(function() {
+      if ($('[data-accordion]').hasClass('open')) {
+        $('[data-content]').css({
+          'overflow': 'visible'
+        })
+        setTimeout(function() {
+          $('[data-content]').css({
+            'max-height': 'none'
+          })
+        }, 100);
+      } else {
+        $('[data-content]').css({
+          'overflow': 'hidden'
+        })
+      }
 
-    // }, 100)
+    }, 100)
   },
 
   publish: function() {
@@ -78,7 +78,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
         this.tagsCollection.fetch();
         currentUser.stories().add(story);
         this.refreshView();
-        Backbone.history.navigate('#all', {
+        Backbone.history.navigate('#', {
           trigger: true
         });
       }.bind(this)
@@ -91,11 +91,14 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var content = this.template({
-      user: currentUser
-    });
-    this.$el.html(content);
+
+
     setTimeout(function() {
+      var content = this.template({
+        user: currentUser
+      });
+
+      this.$el.html(content);
       this.editor = new Dante.Editor({
         el: '.compose-home',
         upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
@@ -105,8 +108,9 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
         },
       });
       this.editor.start();
-    }.bind(this), 20);
-    this.attachSubviews();
+      $('.graf--last').remove();
+      this.attachSubviews();
+    }.bind(this), 500);
     return this;
   },
 
