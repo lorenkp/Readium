@@ -110,7 +110,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       this.editor.start();
       $('.graf--last').remove();
       this.attachSubviews();
-    }.bind(this), 500);
+    }.bind(this),100);
     return this;
   },
 

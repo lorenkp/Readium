@@ -2,19 +2,21 @@
 
 [Readium](readium.io)
 
+<img src="https://res.cloudinary.com/loren/image/upload/v1443125096/Screen_Shot_2015-09-24_at_1.04.20_PM_a6uzqf.jpg" alt="">
+
 ## Minimum Viable Product
-Readium is a clone of Medium built on Backbone, and Ruby on Rails. Users can do the following:
+Readium a blog-publishing app inspired by Medium built on Backbone, and Ruby on Rails. Users can do the following:
 
 
-- [ ] Create an account
-- [ ] Create a session (log in)
-- [ ] View a feed of stories on home page
-- [ ] Compose a story from home page, with styling of text and photo uploading
-- [ ] Select a tag from sidebar to view stories with that tag
-- [ ] Follow other users
-- [ ] View own and other users' profile pages (stories written, bookmarked, and recommended by user; followed users, and followers)
-- [ ] Bookmark a story
-- [ ] Write responses to stories
+- [x] Create an account
+- [x] Create a session (log in)
+- [x] View a feed of stories on home page
+- [x] Compose a story from home page, with styling of text and photo uploading
+- [x] Select a tag from sidebar to view stories with that tag
+- [x] Follow other users
+- [x] View own and other users' profile pages (stories written, bookmarked, and recommended by user; followed users, and followers)
+- [x] Bookmark a story
+- [x] Write responses to stories
 
 ## Design Docs
 * [View Wireframes][views]
@@ -62,8 +64,8 @@ Tabbed view on index page to see stories bookmarked, and stories from followed u
 
 ### Bonus Features (TBD)
 - [ ] Style composition's image uploader to better imitate Medium's
-- [ ] Search by keyword
-- [ ] Follow a tag
+- [x] Search by keyword
+- [x] Follow a tag
 - [ ] Create/own publication; invite other users to edit
 - [ ] Drafts page
 - [ ] Leave notes on sections of stories
