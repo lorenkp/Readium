@@ -14,6 +14,7 @@
 //= require jquery.timeago
 //= require jquery.accordion
 //= require handlebars.min
+//= require ekko-lightbox.min
 //= require typeahead.bundle.min
 //= require jquery_ujs
 //= require bootstrap-sprockets
