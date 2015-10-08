@@ -71,13 +71,15 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       title: title,
       body: $('.new').html(),
     });
-    this.refreshView();
+    // this.refreshView();
+    this.render();
     this.story.save({}, {
       success: function(story) {
         this.story.fetch();
         currentUser.stories().add(story);
         this.storiesCollection.add(story);
         this.tagsCollection.fetch();
+        this.story = new Readium.Models.Story();
         Backbone.history.navigate('#', {
           trigger: true
         });
