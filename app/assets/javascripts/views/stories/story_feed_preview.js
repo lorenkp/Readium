@@ -54,7 +54,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    this.makePreviewLength();
+    // this.makePreviewLength();
     setTimeout(function() {
       $(".timeago").timeago();
     }, 0);
