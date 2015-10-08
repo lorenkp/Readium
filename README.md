@@ -1,8 +1,10 @@
 # Readium
 
-[Readium](readium.io)
+[Live](readium.io)
 
-<img src="https://res.cloudinary.com/loren/image/upload/v1443125096/Screen_Shot_2015-09-24_at_1.04.20_PM_a6uzqf.jpg" alt="">
+<!-- <img src="https://res.cloudinary.com/loren/image/upload/v1443125096/Screen_Shot_2015-09-24_at_1.04.20_PM_a6uzqf.jpg" alt=""> -->
+
+Readium is a single page Rails app, built on PostgreSQL and Backbone.js, and deployed to Heroku. Incorporates Twitter's [Typeahead](https://github.com/twitter/typeahead.js/) library, and [Dante](https://github.com/michelson/Dante) WYSIWYG library.
 
 ## Minimum Viable Product
 Readium a blog-publishing app inspired by Medium built on Backbone, and Ruby on Rails. Users can do the following:
@@ -31,12 +33,12 @@ Readium a blog-publishing app inspired by Medium built on Backbone, and Ruby on 
 
 Create log in page and implement user authentication.
 
-Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view, making ability to compose story on home page, above feed of stories. Implement "medium-editor" library to add text styling. Implement image upload capability.
+Basic feed of stories (seed data) viewable on homepage. Create Rails API to serve up story attributes to Backbone to be displayed in Backbone feed index view. Create Backbone post-form view, making ability to compose story on home page, above feed of stories. Implement Dante library to add text styling. Implement image upload capability.
 
 [Details][phase-one]
 
 ### Phase 2: View story page (~2 days)
-Create Backbone view for story page. Give edit functionality on this page for the author.
+Create Backbone view for story page.
 
 
 [Details][phase-two]
@@ -62,8 +64,7 @@ Tabbed view on index page to see stories bookmarked, and stories from followed u
 
 [Details][phase-five]
 
-### Bonus Features (TBD)
-- [ ] Style composition's image uploader to better imitate Medium's
+### To do
 - [x] Search by keyword
 - [x] Follow a tag
 - [ ] Create/own publication; invite other users to edit
