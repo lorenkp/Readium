@@ -71,10 +71,10 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       title: title,
       body: $('.new').html(),
     });
+    this.refreshView();
     this.story.save({}, {
       success: function(story) {
         this.story.fetch();
-        this.refreshView();
         currentUser.stories().add(story);
         this.storiesCollection.add(story);
         this.tagsCollection.fetch();
@@ -91,24 +91,23 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    // debugger
     setTimeout(function() {
-    var content = this.template({
-      user: currentUser
-    });
+      var content = this.template({
+        user: currentUser
+      });
 
-    this.$el.html(content);
-    this.editor = new Dante.Editor({
-      el: '.compose-home',
-      upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
-      body_placeholder: ' ',
-      upload_callback: function(event) {
-        $('.graf-image').attr('src', event.secure_url);
-      },
-    });
-    this.editor.start();
-    $('.graf--last').remove();
-    this.attachSubviews();
+      this.$el.html(content);
+      this.editor = new Dante.Editor({
+        el: '.compose-home',
+        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+        body_placeholder: ' ',
+        upload_callback: function(event) {
+          $('.graf-image').attr('src', event.secure_url);
+        },
+      });
+      this.editor.start();
+      $('.graf--last').remove();
+      this.attachSubviews();
     }.bind(this));
     return this;
   },
