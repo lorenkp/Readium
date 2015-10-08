@@ -2,15 +2,23 @@ Readium.Views.StoryFeed = Backbone.CompositeView.extend({
   template: JST['stories/feed_index'],
 
   initialize: function() {
-    this.listenTo(this.collection, 'sync', this.populateStories);
-    this.listenTo(this.collection, 'add', this.newStory);
+    // this.listenTo(this.collection, 'sync', this.addExistingStories);
+    this.listenTo(this.collection, 'add', this.addExistingStories);
+    this.collection.each(this.addNewStory.bind(this));
   },
 
-  newStory: function(story) {
+  addExistingStories: function(story) {
     var view = new Readium.Views.StoryFeedPreview({
       model: story
     });
     this.addSubview('.the-feed', view, true);
+  },
+
+  addNewStory: function(story) {
+    var view = new Readium.Views.StoryFeedPreview({
+      model: story
+    });
+    this.addSubview('.the-feed', view);
   },
 
   populateStories: function() {

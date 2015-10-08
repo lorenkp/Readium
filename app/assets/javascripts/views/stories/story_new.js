@@ -46,7 +46,7 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
         this.storiesCollection.fetch();
         this.story.fetch();
         currentUser.stories().add(story);
-        Backbone.history.navigate('#all', {
+        Backbone.history.navigate('', {
           trigger: true
         });
       }.bind(this)
