@@ -26,7 +26,6 @@ Readium.Views.Home = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template();
     this.$el.html(content);
-    this.attachSubviews();
     return this;
   }
 });

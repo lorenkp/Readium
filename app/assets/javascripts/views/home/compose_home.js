@@ -73,11 +73,11 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     });
     this.story.save({}, {
       success: function(story) {
-        this.storiesCollection.add(story);
         this.story.fetch();
-        this.tagsCollection.fetch();
-        currentUser.stories().add(story);
         this.refreshView();
+        currentUser.stories().add(story);
+        this.storiesCollection.add(story);
+        this.tagsCollection.fetch();
         Backbone.history.navigate('#', {
           trigger: true
         });
@@ -109,7 +109,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     this.editor.start();
     $('.graf--last').remove();
     this.attachSubviews();
-    }.bind(this),100);
+    }.bind(this));
     return this;
   },
 
