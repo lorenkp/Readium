@@ -1,5 +1,5 @@
 Backbone.CompositeView = Backbone.View.extend({
-  addSubview: function (selector, subview, prepend) {
+  addSubview: function(selector, subview, prepend) {
     if (prepend) {
       this.subviews(selector).unshift(subview);
     } else {
@@ -8,11 +8,11 @@ Backbone.CompositeView = Backbone.View.extend({
     // Try to attach the subview. Render it as a convenience.
     setTimeout(function() {
 
-    this.attachSubview(selector, subview.render(), prepend);
-    }.bind(this),0);
+      this.attachSubview(selector, subview.render(), prepend);
+    }.bind(this), 0);
   },
 
-  attachSubview: function (selector, subview, prepend) {
+  attachSubview: function(selector, subview, prepend) {
     if (prepend) {
       this.$(selector).prepend(subview.$el);
     } else {
@@ -27,7 +27,7 @@ Backbone.CompositeView = Backbone.View.extend({
     }
   },
 
-  attachSubviews: function () {
+  attachSubviews: function() {
     // I decided I didn't want a function that renders ALL the
     // subviews together. Instead, I think:
     //
@@ -40,54 +40,56 @@ Backbone.CompositeView = Backbone.View.extend({
     // relevant points in the parent CompositeView.
 
     var view = this;
-    this.subviews().each(function (selectorSubviews, selector) {
+    this.subviews().each(function(selectorSubviews, selector) {
       view.$(selector).empty();
-      selectorSubviews.each(function (subview) {
+      selectorSubviews.each(function(subview) {
         view.attachSubview(selector, subview);
       });
     });
   },
 
   eachSubview: function(callback) {
-    this.subviews().each(function (selectorSubviews, selector) {
-      selectorSubviews.each(function (subview) {
+    this.subviews().each(function(selectorSubviews, selector) {
+      selectorSubviews.each(function(subview) {
         callback(subview, selector);
       });
     });
   },
 
   onRender: function() {
-    this.eachSubview(function (subview) {
+    this.eachSubview(function(subview) {
       subview.onRender && subview.onRender();
     });
   },
 
-  remove: function () {
+  remove: function() {
     Backbone.View.prototype.remove.call(this);
-    this.eachSubview(function (subview) {
+    this.eachSubview(function(subview) {
       subview.remove();
     });
   },
 
-  removeSubview: function (selector, subview) {
+  removeSubview: function(selector, subview) {
     subview.remove();
 
     var selectorSubviews = this.subviews(selector);
     selectorSubviews.splice(selectorSubviews.indexOf(subview), 1);
   },
 
-  removeModelSubview: function (selector, model) {
+  removeModelSubview: function(selector, model) {
     var selectorSubviews = this.subviews(selector);
-    var i = selectorSubviews.findIndex(function (subview) {
+    var i = selectorSubviews.findIndex(function(subview) {
       return subview.model === model;
     });
-    if (i === -1) { return; }
+    if (i === -1) {
+      return;
+    }
 
     selectorSubviews.toArray()[i].remove();
     selectorSubviews.splice(i, 1);
   },
 
-  subviews: function (selector) {
+  subviews: function(selector) {
     // Map of selectors to subviews that live inside that selector.
     // Optionally pass a selector and I'll initialize/return an array
     // of subviews for the sel.
@@ -101,7 +103,7 @@ Backbone.CompositeView = Backbone.View.extend({
     }
   },
 
-  unshiftSubview: function (selector, subview) {
+  unshiftSubview: function(selector, subview) {
     this.addSubview(selector, subview, true);
   }
 });
