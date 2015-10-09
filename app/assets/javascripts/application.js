@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.timeago
 //= require jquery.accordion
+//= require jquery.dotdotdot
 //= require handlebars.min
 //= require ekko-lightbox.min
 //= require typeahead.bundle.min

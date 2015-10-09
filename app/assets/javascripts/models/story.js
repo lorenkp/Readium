@@ -19,14 +19,6 @@ Readium.Models.Story = Backbone.Model.extend({
     return response;
   },
 
-  previewLength: function(text) {
-    var ret = text;
-    if (ret.length > 230) {
-      ret = ret.substr(0, 230 - 3) + ' . . .';
-    }
-    return ret;
-  },
-
   responses: function() {
     if (!this._responses) {
       this._responses = new Readium.Collections.Responses([], {
