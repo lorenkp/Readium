@@ -60,11 +60,20 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
 
     var content = this.template({
-      story: this.model
+      story: this.model,
+      time: this.minRead()
     });
     this.$el.html(content);
     this.bookmarkShow();
     return this;
+  },
+
+
+
+  minRead: function() {
+    var text = $(this.model.get('body')).text();
+    var wordCount = text.split(' ').length;
+    return Math.ceil(wordCount / 300);
   },
 
   toggleBookmark: function() {
