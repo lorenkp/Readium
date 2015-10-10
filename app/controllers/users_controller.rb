@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def create
-    @user = User.new(user_params)
-
+    params = user_params
+    unless params.key?('url')
+      params.merge!(:url => 'https://res.cloudinary.com/loren/image/upload/v1440812303/Beaker-Muppet_qasv7t.jpg',
+                        :banner_url => 'https://res.cloudinary.com/loren/image/upload/v1444511633/maxresdefault_yu6891.jpg')
+    end
+    @user = User.new(params)
     if @user.save
       log_in(@user)
       redirect_to root_url

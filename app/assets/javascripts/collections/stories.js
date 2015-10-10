@@ -8,14 +8,15 @@ Readium.Collections.Stories = Backbone.Collection.extend({
 
   getOrFetch: function(id) {
     var story = this.get(id);
-    var that = this;
 
     if (!story) {
-      story = new Readium.Models.Story({id: id});
+      story = new Readium.Models.Story({
+        id: id
+      });
       story.fetch({
         success: function(story) {
-          that.add(story);
-        }
+          this.add(story);
+        }.bind(this)
       });
     } else {
       story.fetch();
