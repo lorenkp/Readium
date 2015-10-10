@@ -11,6 +11,14 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
 
   },
 
+  cropPreviews: function() {
+    $('.story-preview-text').each(function() {
+      if ($(this).text().length < 200) {
+        $(this).css('height', 'inherit');
+      }
+    });
+  },
+
   bookmarkShow: function() {
     if (currentUser.bookmarks().findWhere({
         story_id: this.model.id
@@ -57,7 +65,8 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     setTimeout(function() {
       $('.story-preview-text').dotdotdot();
       $(".timeago").timeago();
-    });
+      this.cropPreviews();
+    }.bind(this), 0);
 
     var content = this.template({
       story: this.model,
