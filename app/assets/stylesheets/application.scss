@@ -705,9 +705,10 @@ input:focus {
   font-size: 14px;
   letter-spacing: -0.366667px;
   line-height: 19.6px;
-  font-weight: 300px;
+  font-weight: 300;
   cursor: pointer;
   display: block;
+  vertical-align: top;
 }
 
 .author-name:hover {
@@ -728,10 +729,12 @@ input:focus {
   line-height: 13.2px;
   margin: 0px;
   display: block;
+  height: 13px;
 }
 
 .author-info {
   margin-bottom: 20px;
+  height: 36px;
 }
 
 .continue {
