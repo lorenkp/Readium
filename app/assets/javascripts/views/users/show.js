@@ -23,7 +23,7 @@ Readium.Views.UserShow = Backbone.CompositeView.extend({
     }
 
     this.render();
-    
+
   },
 
   render: function() {

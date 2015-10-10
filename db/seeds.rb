@@ -1,8 +1,8 @@
-User.create(username: 'DFW', password: 'foster', url: 'https://res.cloudinary.com/loren/image/upload/v1435057951/yppu6jevzgynnujmln83.jpg')
-User.create(username: 'Susan Sontag', password: 'sontag', url: 'https://res.cloudinary.com/loren/image/upload/v1435059969/Susan-Sontag_wormli.jpg')
-User.create(username: 'John Updike', password: 'updike', url: 'https://res.cloudinary.com/loren/image/upload/v1435060951/John-Updike_ln4ri9.jpg')
-User.create(username: 'Hunter S.Thompson', password: 'thompson', url: 'https://res.cloudinary.com/loren/image/upload/v1436470828/hunter-s-thompson_p3gbcx.jpg')
-User.create(username: 'Gary Shteyngart', password: 'garygary', url: 'https://res.cloudinary.com/loren/image/upload/v1436473049/gary_profile_dr5h8o.jpg')
+User.create(username: 'DFW', password: 'foster', url: 'https://res.cloudinary.com/loren/image/upload/v1435057951/yppu6jevzgynnujmln83.jpg', banner_url: 'https://res.cloudinary.com/loren/image/upload/v1444505294/david-foster-wallace1-2_xqphko.jpg')
+User.create(username: 'Susan Sontag', password: 'sontag', url: 'https://res.cloudinary.com/loren/image/upload/v1435059969/Susan-Sontag_wormli.jpg', banner_url: 'http://d1oi7t5trwfj5d.cloudfront.net/b2/3d/bd777bb84af4a486672ed963cb57/regarding-susan-sontag.jpg')
+User.create(username: 'John Updike', password: 'updike', url: 'https://res.cloudinary.com/loren/image/upload/v1435060951/John-Updike_ln4ri9.jpg', banner_url: 'https://res.cloudinary.com/loren/image/upload/v1444505467/updike_j1zcoe.jpg')
+User.create(username: 'Hunter S.Thompson', password: 'thompson', url: 'https://res.cloudinary.com/loren/image/upload/v1436470828/hunter-s-thompson_p3gbcx.jpg', banner_url: 'https://res.cloudinary.com/loren/image/upload/v1444501944/t1686343_716_qtg3wi.jpg')
+User.create(username: 'Gary Shteyngart', password: 'garygary', url: 'https://res.cloudinary.com/loren/image/upload/v1436473049/gary_profile_dr5h8o.jpg', banner_url: 'https://res.cloudinary.com/loren/image/upload/v1444501047/gary_shteyngart_gutft4.jpg')
 
 Tagging.create(story_id: 1, tag_id: 1)
 Tagging.create(story_id: 1, tag_id: 2)

@@ -1,4 +1,4 @@
-json.extract!(@user, :username, :id, :url)
+json.extract!(@user, :username, :id, :url, :banner_url)
 
 json.followed_users do
   json.array!(@user.followed_users) do |user|
