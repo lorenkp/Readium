@@ -24,8 +24,8 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
 
     setTimeout(function() {
       $('html, body').animate({
-        scrollTop: $("#publish").offset().top
-      }, 1000);
+        scrollTop: $('.compose').offset().top
+      }, 700);
     }, 0);
   },
 
@@ -42,9 +42,11 @@ Readium.Views.ComposeResponse = Backbone.CompositeView.extend({
       success: function(response) {
         response.fetch();
         this.collection.add(response);
-        $('html, body').animate({
-          scrollTop: $(".responses-container div:last").offset().top
-        }, 1000);
+        setTimeout(function() {
+          $('html, body').animate({
+            scrollTop: $(".responses-container div:last").offset().top
+          }, 700);
+        });
         this.render();
       }.bind(this)
     });

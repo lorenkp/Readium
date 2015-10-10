@@ -30,13 +30,6 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    debugger
-    // var title = this.model.get('title');
-    // var strippedTitle = this.model.stripTitle(title);
-    // this.model.set({
-    //   title: strippedTitle
-    // });
-
     var content = this.template({
       story: this.model
     });
