@@ -8,11 +8,12 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
+    // this.render();
 
   },
 
   cropPreviews: function() {
-    $('.story-preview-text').each(function() {
+    this.$('.story-preview-text').each(function() {
       if ($(this).text().length < 200) {
         $(this).css('height', 'inherit');
       }
@@ -62,11 +63,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    setTimeout(function() {
-      $('.story-preview-text').dotdotdot();
-      $(".timeago").timeago();
-      this.cropPreviews();
-    }.bind(this), 0);
+    // debugger
 
     var content = this.template({
       story: this.model,
@@ -74,6 +71,14 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.bookmarkShow();
+    // debugger
+    setTimeout(function() {
+    this.$('.timeago').timeago();
+      $('.story-preview-text').dotdotdot();
+      // debugger
+    });
+    this.cropPreviews();
+
     return this;
   },
 

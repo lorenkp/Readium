@@ -21,6 +21,7 @@ Readium.Views.StoryFeed = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    // debugger
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
