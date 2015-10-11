@@ -30,6 +30,16 @@
   float: right!important;
 }
 
+.empty-post-error {
+  position: absolute;
+  right: 50%;
+  margin-right: -175px;
+  width: 350px;
+  text-align: center;
+  top: 0;
+  display: none;
+}
+
 a {
   text-decoration: none !important;
   color: inherit;

@@ -35,56 +35,76 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       if ($('[data-accordion]').hasClass('open')) {
         $('[data-content]').css({
           'overflow': 'visible'
-        })
+        });
         setTimeout(function() {
           $('[data-content]').css({
             'max-height': 'none'
-          })
+          });
         }, 100);
       } else {
         $('[data-content]').css({
           'overflow': 'hidden'
-        })
+        });
       }
 
-    }, 100)
+    }, 100);
+  },
+
+  // if the editor is ever used, an 'is-selected' class is added and remains
+  // even if the editor is deselected. if the class isn't there, it therefore means text
+  // was never entered
+
+  editorSelected: function() {
+    if ($('.section-inner').find('.is-selected').length > 0) {
+      return true;
+    }
+    return false;
+  },
+
+  hasEntry: function() {
+    if (this.editorSelected() && this.textEntered()) {
+      return true;
+    }
+    $('.empty-post-error').css('display', 'block');
+    return false;
   },
 
   publish: function() {
-    $('div.section-inner img:first-child').remove();
-    var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
-    var title = this.story.stripTitle(dirtyTitle);
-    $('.graf--first').unwrap();
-    $('p').each(function() {
-      if ($(this).has('span').length !== 0) {
-        this.remove();
+    if (this.hasEntry()) {
+      $('div.section-inner img:first-child').remove();
+      var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
+      var title = this.story.stripTitle(dirtyTitle);
+      $('.graf--first').unwrap();
+      $('p').each(function() {
+        if ($(this).has('span').length !== 0) {
+          this.remove();
+        }
+        if ($(this).hasClass('graf--empty')) {
+          this.remove();
+        }
+      });
+      if ($("div p:last-child").html() === ' <br>') {
+        $("div p:last-child").remove();
       }
-      if ($(this).hasClass('graf--empty')) {
-        this.remove();
-      }
-    });
-    if ($("div p:last-child").html() === ' <br>') {
-      $("div p:last-child").remove();
+      $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
+      this.story.set({
+        title: title,
+        body: $('.new').html(),
+      });
+      this.render();
+      this.story.save({}, {
+        success: function(story) {
+          this.story.fetch();
+          currentUser.stories().add(story);
+          this.storiesCollection.add(story);
+          this.tagsCollection.fetch();
+          this.story = new Readium.Models.Story();
+          Backbone.history.navigate('#', {
+            trigger: true
+          });
+        }.bind(this)
+      });
     }
-    $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
-    this.story.set({
-      title: title,
-      body: $('.new').html(),
-    });
-    // this.refreshView();
-    this.render();
-    this.story.save({}, {
-      success: function(story) {
-        this.story.fetch();
-        currentUser.stories().add(story);
-        this.storiesCollection.add(story);
-        this.tagsCollection.fetch();
-        this.story = new Readium.Models.Story();
-        Backbone.history.navigate('#', {
-          trigger: true
-        });
-      }.bind(this)
-    });
   },
 
   refreshView: function() {
@@ -107,11 +127,26 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
           $('.graf-image').attr('src', event.secure_url);
         },
       });
+
       this.editor.start();
-      // $('.graf--last').remove();
       this.attachSubviews();
     }.bind(this));
     return this;
+  },
+
+  textEntered: function() {
+    var textPresent = false;
+    $('.section-inner').find('*').each(function() {
+      if ($(this).text().trim().length) {
+        textPresent = true;
+        return false;
+      }
+    });
+    if (textPresent) {
+      return true;
+    } else {
+      return false;
+    }
   },
 
   uploadImage: function(event) {

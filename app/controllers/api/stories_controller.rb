@@ -6,7 +6,9 @@ class Api::StoriesController < ApplicationController
   end
 
   def create
-    @story = current_user.stories.new(story_params)
+    @params = story_params
+    default_images
+    @story = current_user.stories.new(@params)
     if @story.save
       if params[:tags]
         params[:tags].each do |tag|
@@ -16,8 +18,15 @@ class Api::StoriesController < ApplicationController
       end
       render json: @story
     else
+      fail
       render json: @story.errors.full_messages, status: :unprocessable_entity
     end
+  end
+
+  def default_images
+    return if @params[:header_url]
+    url = 'http://placekitten.com/1920/1200'
+    @params.merge!(:header_url => url, :home_url => url)
   end
 
   def destroy
