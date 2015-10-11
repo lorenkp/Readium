@@ -8,8 +8,6 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
-    // this.render();
-
   },
 
   cropPreviews: function() {
@@ -63,26 +61,20 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    // debugger
-
     var content = this.template({
       story: this.model,
       time: this.minRead()
     });
     this.$el.html(content);
     this.bookmarkShow();
-    // debugger
     setTimeout(function() {
-    this.$('.timeago').timeago();
+      this.$('.timeago').timeago();
       $('.story-preview-text').dotdotdot();
-      // debugger
     });
     this.cropPreviews();
 
     return this;
   },
-
-
 
   minRead: function() {
     var text = $(this.model.get('body')).text();

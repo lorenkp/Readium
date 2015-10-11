@@ -113,24 +113,20 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    setTimeout(function() {
-      var content = this.template({
-        user: currentUser
-      });
-
-      this.$el.html(content);
-      this.editor = new Dante.Editor({
-        el: '.compose-home',
-        upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
-        body_placeholder: ' ',
-        upload_callback: function(event) {
-          $('.graf-image').attr('src', event.secure_url);
-        },
-      });
-
-      this.editor.start();
-      this.attachSubviews();
-    }.bind(this));
+    var content = this.template({
+      user: currentUser
+    });
+    this.$el.html(content);
+    this.editor = new Dante.Editor({
+      el: this.$('.compose-home'),
+      upload_url: 'https://api.cloudinary.com/v1_1/loren/image/upload?upload_preset=c9xf7v86',
+      body_placeholder: ' ',
+      upload_callback: function(event) {
+        $('.graf-image').attr('src', event.secure_url);
+      },
+    });
+    this.editor.start();
+    this.attachSubviews();
     return this;
   },
 
