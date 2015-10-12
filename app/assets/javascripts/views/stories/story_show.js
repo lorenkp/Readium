@@ -4,7 +4,7 @@ Readium.Views.StoryShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     window.scrollTo(0, 0);
-    this.listenTo(this.model, 'fetched', this.render);
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addComposeResponse);
     this.model.responses().each(this.addResponses.bind(this));
     this.listenTo(this.model.responses(), 'add', this.addResponses);
