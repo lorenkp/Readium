@@ -29,6 +29,14 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
       this.$('.bookmark-after .icon--readingList').css({
         'color': 'rgb(87, 173, 104)'
       });
+    } else {
+      this.$('.bookmark-before .icon--readingList').css({
+        'color': ''
+      });
+      this.$('.bookmark-dark').text('Bookmark');
+      this.$('.bookmark-after .icon--readingList').css({
+        'color': ''
+      });
     }
   },
 
@@ -55,7 +63,7 @@ Readium.Views.StoryFeedPreview = Backbone.CompositeView.extend({
     bookmark.destroy({
       success: function() {
         currentUser.fetch();
-        this.model.fetch();
+        this.bookmarkShow();
       }.bind(this)
     });
   },
