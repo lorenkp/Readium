@@ -1,6 +1,6 @@
 # Readium
 
-[Live](readium.io)
+[Live](http://www.readium.io)
 
 <!-- <img src="https://res.cloudinary.com/loren/image/upload/v1443125096/Screen_Shot_2015-09-24_at_1.04.20_PM_a6uzqf.jpg" alt=""> -->
 

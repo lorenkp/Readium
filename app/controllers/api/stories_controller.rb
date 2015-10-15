@@ -18,7 +18,6 @@ class Api::StoriesController < ApplicationController
       end
       render json: @story
     else
-      fail
       render json: @story.errors.full_messages, status: :unprocessable_entity
     end
   end
