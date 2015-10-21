@@ -24,6 +24,7 @@
 //= require cloudinary
 //= require sanitize
 //= require 'dante'
+//= require 'cloudinary_analytics'
 //= require readium
 //= require composite_view
 //= require_tree ../templates
