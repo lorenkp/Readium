@@ -78,7 +78,7 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
       $('div.section-inner img:first-child').remove();
       var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
       var title = this.story.stripTitle(dirtyTitle);
-      if ($('.graf--first').find('.defaultValue')) {
+      if ($('.graf--first').find('.defaultValue').length > 0) {
         title = '';
       }
       $('.graf--first').unwrap();
