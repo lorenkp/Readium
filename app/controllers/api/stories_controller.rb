@@ -24,7 +24,7 @@ class Api::StoriesController < ApplicationController
 
   def default_images
     return if @params[:header_url]
-    url = 'http://placekitten.com/1920/1200'
+    url = 'https://res.cloudinary.com/loren/image/upload/v1448062289/OjPNvo1448062143_copy_zjxieq.jpg'
     @params.merge!(:header_url => url, :home_url => url)
   end
 
