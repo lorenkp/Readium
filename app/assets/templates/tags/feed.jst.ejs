@@ -28,7 +28,7 @@
           <div class="circle"><%= i %></div>
         </div>
         <div class="sidebar-title-author-group">
-          <a class="story-sidebar-title" href="#stories/<%= story.id %>"><%= story.escape('title') %></a>
+          <a class="story-sidebar-title" href="#stories/<%= story.id %>"><%= story.escape('title') == '' ? "[untitled]" : story.escape('title') %></a>
           <a class="story-sidebar-author" href="#users/<%= story.escape('author_id') %>"><%= story.escape('username') %></a>
         </div>
         </div>

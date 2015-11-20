@@ -1,6 +1,6 @@
 window.CLOUDINARY_OPTIONS = {
-  cloud_name: "<%=ENV['CLOUD_NAME']%>",
-  upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
+  cloud_name: "loren",
+  upload_preset: "c9xf7v86",
   sources: ['local'],
   theme: 'minimal',
   thumbnail_transformation: 'w_700'

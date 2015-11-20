@@ -70,10 +70,17 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
   },
 
   publish: function() {
+
+    // I really had to battle this editor library: parsing title from body, 
+    // and taking out extra HTML required a lot of jQuery
+
     if (this.hasEntry()) {
       $('div.section-inner img:first-child').remove();
       var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
       var title = this.story.stripTitle(dirtyTitle);
+      if ($('.graf--first').find('.defaultValue')) {
+        title = '';
+      }
       $('.graf--first').unwrap();
       $('p').each(function() {
         if ($(this).has('span').length !== 0) {
