@@ -50,23 +50,20 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     }, 100);
   },
 
-  // if the editor is ever used, an 'is-selected' class is added and remains
-  // even if the editor is deselected. if the class isn't there, it therefore means text
-  // was never entered
-
-  editorSelected: function() {
-    if ($('.section-inner').find('.is-selected').length > 0) {
-      return true;
-    }
-    return false;
-  },
-
   hasEntry: function() {
-    if (this.editorSelected() && this.textEntered()) {
+    var textFound;
+    $('.section-inner').find('p').each(function() {
+      if ($(this).text().trim().length > 0) {
+        textFound = true;
+        return;
+      }
+    });
+    if (textFound) {
       return true;
+    } else {
+      $('.empty-post-error').css('display', 'block');
+      return false;
     }
-    $('.empty-post-error').css('display', 'block');
-    return false;
   },
 
   publish: function() {
@@ -135,21 +132,6 @@ Readium.Views.ComposeHome = Backbone.CompositeView.extend({
     this.editor.start();
     this.attachSubviews();
     return this;
-  },
-
-  textEntered: function() {
-    var textPresent = false;
-    $('.section-inner').find('*').each(function() {
-      if ($(this).text().trim().length) {
-        textPresent = true;
-        return false;
-      }
-    });
-    if (textPresent) {
-      return true;
-    } else {
-      return false;
-    }
   },
 
   uploadImage: function(event) {

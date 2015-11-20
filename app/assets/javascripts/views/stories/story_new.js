@@ -17,40 +17,61 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     'click .add-banner': 'upload'
   },
 
+  hasEntry: function() {
+    var textFound;
+    $('.section-inner').find('p').each(function() {
+      if ($(this).text().trim().length > 0) {
+        textFound = true;
+        return;
+      }
+    });
+    if (textFound) {
+      return true;
+    } else {
+      $('.empty-post-error').css('display', 'block');
+      return false;
+    }
+  },
+
   publish: function(event) {
     event.preventDefault();
-    var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
-    var title = this.story.stripTitle(dirtyTitle);
-    $('.graf--first').unwrap();
-    $('p').each(function() {
-      if ($(this).has('span').length !== 0) {
-        this.remove();
+    if (this.hasEntry()) {
+      var dirtyTitle = $('.graf--first').wrap('<p/>').parent().html();
+      var title = this.story.stripTitle(dirtyTitle);
+      if ($('.graf--first').find('.defaultValue').length > 0) {
+        title = '';
+      }
+      $('.graf--first').unwrap();
+      $('p').each(function() {
+        if ($(this).has('span').length !== 0) {
+          this.remove();
+        }
+
+        if ($(this).hasClass('graf--empty')) {
+          this.remove();
+        }
+      });
+      if ($("div p:last-child").html() === ' <br>') {
+        $("div p:last-child").remove();
       }
 
-      if ($(this).hasClass('graf--empty')) {
-        this.remove();
-      }
-    });
-    if ($("div p:last-child").html() === ' <br>') {
-      $("div p:last-child").remove();
+      $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
+      this.story.set({
+        title: title,
+        body: $('.new').html(),
+      });
+      this.story.save({}, {
+        success: function(story) {
+          this.storiesCollection.add(story);
+          this.storiesCollection.fetch();
+          this.story.fetch();
+          currentUser.stories().add(story);
+          Backbone.history.navigate('#', {
+            trigger: true
+          });
+        }.bind(this)
+      });
     }
-
-    $('.section-inner > h3').siblings().wrapAll('<div class="new" />');
-    this.story.set({
-      title: title,
-      body: $('.new').html(),
-    });
-    this.story.save({}, {
-      success: function(story) {
-        this.storiesCollection.add(story);
-        this.storiesCollection.fetch();
-        this.story.fetch();
-        currentUser.stories().add(story);
-        Backbone.history.navigate('', {
-          trigger: true
-        });
-      }.bind(this)
-    });
   },
 
   render: function() {
@@ -88,4 +109,3 @@ Readium.Views.StoryNew = Backbone.CompositeView.extend({
     });
   }
 });
-
