@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :logins
   root 'static_pages#root'
 
   get 'api/bookmarks', to: 'api/stories#bookmarked'
