@@ -1,5 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+/*
+  *= require bootstrap
+  *= require_self
+*/
+
 @import "dante";
 @media screen and (max-width: 1120px) {
   .tag-feed {
@@ -20,6 +23,35 @@
 .navbar-nav>li,
 .navbar-nav {
   float: left !important;
+}
+
+.desktop-holder {
+  position: relative;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desktop-image {
+  width: 100%;
+}
+
+.bigger-container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 550px;
+  position: relative;
+}
+
+.carousel {
+  position: absolute;
+  top: 10px;
+}
+
+.carousel-control {
+  background-image: none !important;
+  opacity: 1;
 }
 
 .navbar-nav.navbar-right:last-child {

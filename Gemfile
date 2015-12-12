@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'backbone-on-rails'
-gem 'bootstrap-sass'
 gem 'jbuilder'
 gem 'figaro'
 gem 'dante-editor'
@@ -19,6 +18,11 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
+
 
 gem 'rails_12factor', group: :production
 

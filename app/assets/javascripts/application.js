@@ -17,8 +17,8 @@
 //= require handlebars.min
 //= require ekko-lightbox.min
 //= require typeahead.bundle.min
+//= require bootstrap
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require underscore
 //= require backbone
 //= require cloudinary
