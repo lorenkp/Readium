@@ -1,37 +1,126 @@
-<div class="bigger-container">
-    <a class="left carousel-control" href="#carousel-features" role="button" data-slide="prev">
+<div class="sign-in-main">
+    <nav class="navbar navbar-default">
+        <div class="container bar">
+            <a href="#" class="navbar-brand" style="width:224px">
+      <img style="width: 146px;height: 34px"src="<%= asset_path( 'readium_logo.png' ) %>">
+    </a>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/users/new" class="splash">
+                        <button class="follow-button log-in">Sign Up</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="splash">
+                        <button data-toggle="modal" data-target="#myModal" class="follow-button log-in">Sign In</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="splash trial">
+                        <button data-toggle="modal" data-target="#myModal" class="follow-button log-in guest-log-in">Guest Login</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="demo-container">
+        <!--     <a class="left carousel-control" href="#carousel-features" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
-    </a>
-    <div class="desktop-holder">
-        <img class="desktop-image" src="http://d3po2y9ogyd5ah.cloudfront.net/images/site/sales/index-desktop-browser.png" alt="">
-        <div id="carousel-features" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="https://pmcvariety.files.wordpress.com/2014/04/disney-nature-bears-film-review.jpg?w=670&h=377&crop=1" alt="...">
-                    <div class="carousel-caption">
-                        ...
+    </a> -->
+        <div class="desktop-holder">
+            <img class="desktop-image" src="http://d3po2y9ogyd5ah.cloudfront.net/images/site/sales/index-desktop-browser.png" alt="">
+            <div id="carousel-features" class="carousel slide">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item video active">
+                        <%= video_tag("editor.mp4", height: '375') %>
+                    </div>
+                    <div class="item video">
+                        <%= video_tag("user-page.mp4", height: '375') %>
+                    </div>
+                    <div class="item video">
+                        <%= video_tag("tags.mp4", height: '375') %>
+                    </div>
+                    <div class="item video">
+                        <%= video_tag("search.mp4", height: '375') %>
+                    </div>
+                    <div class="item video">
+                        <%= video_tag("bookmark", height: '375') %>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="https://pmcvariety.files.wordpress.com/2014/04/disney-nature-bears-film-review.jpg?w=670&h=377&crop=1" alt="...">
-                    <div class="carousel-caption">
-                        ...
-                    </div>
-                </div>
-                ...
             </div>
-            <!-- Controls -->
         </div>
-    </div>
-    <a class="right carousel-control" href="#carousel-features" role="button" data-slide="next">
+        <!--     <a class="right carousel-control" href="#carousel-features" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-    </a>
+    </a> -->
+    </div>
+    <div class="descriptions">
+        <p>Tell your story</p>
+        <p>Follow your favorite authors to see their latest stories</p>
+        <p>Follow tags to find quickly the stories you care about</p>
+        <p>It's easy to search Readium to find users, stories, and tags</p>
+        <p>Bookmark stories to save for later</p>
+    </div>
 </div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="log-in-box">
+        <h1 class="sign-in">Readium</h1>
+        <form action="<%= session_url %>" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div id="login-fields">
+                <input type="text" class="cred-fields username" name="user[username]" value="<%= @user.username %>" placeholder="Username" style="margin-bottom: 4px;">
+                <br>
+                <input type="password" name="user[password]" class="cred-fields password" placeholder="Password">
+                <br>
+                <br>
+                <div class="log-in-buttons">
+                    <button class="follow-button log-in" type="submit" id="enter" style="margin-right: 7px;">Sign In</button>
+                </div>
+            </div>
+        </form>
+        <% if flash[:errors] %>
+            <div class="errors">
+                <% flash[:errors].each do |error| %>
+                    <%= error %>
+                        <% end  %>
+            </div>
+            <%  end %>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    var carousel = $('#carousel-features');
+    $('video').on('ended', function() {
+        setTimeout(function() {
+            carousel.carousel('next');
+        }, 1000);
+    });
+
+    carousel.on('slide.bs.carousel', function(ev) {
+        var currentElIndex = $(ev.relatedTarget.previousElementSibling).index();
+        var nextElIndex = $(ev.relatedTarget).index();
+        var descriptions = $('.descriptions');
+        var fadingOutEl = descriptions.children().eq(currentElIndex);
+        var fadingInEl = descriptions.children().eq(nextElIndex);
+        fadingOutEl.fadeTo(500, 0, 'swing', function() {
+            fadingInEl.fadeTo(500, 1, 'swing');
+        });
+        ev.relatedTarget.childNodes[1].play();
+    });
+
+
+    $('body').css('opacity', '0').fadeTo(1500, 1, 'swing', function() {
+
+        setTimeout(function() {
+            $('.item.active')[0].childNodes[1].play();
+
+        }, 500);
+        $('.descriptions').children().eq(0).fadeTo(500, 1, 'swing');
+        carousel.carousel({
+            interval: false
+        });
+    });
+});
+</script>
