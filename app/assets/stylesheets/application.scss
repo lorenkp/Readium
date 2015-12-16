@@ -137,6 +137,32 @@ body.modal-open .sign-in-main {
   filter: blur(15px);
 }
 
+.footer-text {
+  line-height: 45px;
+  font-size: 11px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.footer-text-right {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.footer-text-left {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.splash-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 .sign-in {
   font-family: 'clarendon_btbold';
   text-align: center;
@@ -144,6 +170,7 @@ body.modal-open .sign-in-main {
   margin-top: 52px;
   margin-bottom: 21px;
   cursor: default;
+  background-color: #fafafa;
 }
 
 .sign-up-link {
@@ -154,17 +181,6 @@ body.modal-open .sign-in-main {
   left: 95px;
   top: 8px;
   font-size: 11px;
-}
-
-.medium-link {
-  color: green;
-}
-
-.clone-of {
-  text-align: center;
-  font-weight: 300;
-  font-family: 'jaf-bernino-sans';
-  font-size: 10px;
 }
 
 .log-in-box {
